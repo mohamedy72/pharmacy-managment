@@ -1,0 +1,51 @@
+:root {
+  --primary: #009099;
+
+  --white: #fff;
+  --light-gray: #edf1f5;
+  --dark-gray: #283342;
+  --darker-gray: #1d242e;
+
+  --reddish: #f0483e;
+  --yellowish: #fed600;
+  --greenish: #01a768;
+  --blueish: #03a9f5;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  background-color: var(--light-gray);
+}
+
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+input {
+  border: none;
+  outline: none;
+}
+
+input:focus,
+input:focus-within {
+  border: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+

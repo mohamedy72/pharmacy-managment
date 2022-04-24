@@ -1,9 +1,6 @@
-import React from 'react';
-import classes from './configuration.module.css';
+import classes from "./configuration.module.css";
 
-export const Configuration = () => {
-	
-	return (
-		<div></div>
-	);
+const Configuration = () => {
+  return <div>Configurations</div>;
 };
+export default Configuration;

@@ -24,7 +24,6 @@ body {
   font-family: Poppins, sans-serif;
   font-size: 1rem;
   line-height: 1.5;
-  background-color: var(--light-gray);
 }
 
 a {
@@ -49,3 +48,21 @@ img {
   display: block;
 }
 
+svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  margin-inline: auto;
+  background-color: var(--light-gray);
+  display: grid;
+  grid-template-columns: minmax(10rem, 16rem) 1fr;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}

@@ -1,0 +1,84 @@
+.navmenu {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--dark-gray);
+  color: var(--white);
+}
+
+.navmenu > *:not(.navlist) {
+  padding-inline: 1.5625rem;
+}
+
+.control {
+  position: absolute;
+  right: -1.5rem;
+}
+
+
+
+.logo {
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding-block: 1.125rem;
+  background-color: var(--darker-gray);
+  display: flex;
+  align-items: center;
+  gap: 0 1rem;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  padding-block-start: 1.875rem;
+}
+
+.user_img {
+  position: relative;
+  margin-inline-end: 1rem;
+}
+
+.user_img > img {
+  width: 2.625rem;
+  height: 2.625rem;
+  border-radius: 5px;
+}
+
+.user_img::after {
+  content: "";
+  width: 0.875rem;
+  height: 0.875rem;
+  background-color: var(--greenish);
+  position: absolute;
+  right: -0.45rem;
+  bottom: 0.2rem;
+  border-radius: 50%;
+}
+
+.user_info {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.user_name {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.user_role {
+  color: var(--yellowish);
+  font-size: 0.6875rem;
+}
+
+/* Navigation */
+.navlist {
+  margin-block-start: 1.875rem;
+}
+
+.navlist > * {
+  padding-inline-start: 1.5rem;
+}

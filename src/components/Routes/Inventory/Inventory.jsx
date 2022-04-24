@@ -1,9 +1,7 @@
-import React from 'react';
-import classes from './inventory.module.css';
+import React from "react";
+import classes from "./inventory.module.css";
 
-export const Inventory = () => {
-	
-	return (
-		<div></div>
-	);
+const Inventory = () => {
+  return <div>Inventory</div>;
 };
+export default Inventory;

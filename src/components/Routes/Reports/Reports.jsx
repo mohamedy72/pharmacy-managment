@@ -1,9 +1,7 @@
-import React from 'react';
-import classes from './reports.module.css';
+import React from "react";
+import classes from "./reports.module.css";
 
-export const Reports = () => {
-	
-	return (
-		<div></div>
-	);
+const Reports = () => {
+  return <div>Reports</div>;
 };
+export default Reports;

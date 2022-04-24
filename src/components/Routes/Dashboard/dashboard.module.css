@@ -1,0 +1,62 @@
+.dashboard {
+  padding-inline: 2.5rem;
+  padding-block-start: 1.875rem;
+}
+
+.dashboard_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard_header_text > h2 {
+  font-size: 1.5rem;
+}
+.dashboard_header_text > p {
+  font-size: 0.875rem;
+  color: rgba(29, 36, 46, 1);
+}
+
+.dashboard button {
+  background-color: var(--white);
+  border: 1px solid var(--darker-gray);
+  transition: background-color 0.3s ease-in-out;
+}
+.dashboard button:hover {
+  background-color: var(--light-gray);
+}
+
+.dashboard_statues {
+  margin-block-start: 1.5625rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13.25rem, 1fr));
+  gap: 2rem;
+}
+
+.dashboard_statues div:first-child {
+  border: 1px solid var(--greenish);
+}
+.dashboard_statues div:first-child a {
+  background-color: rgba(1, 167, 104, 0.3);
+}
+
+.dashboard_statues div:nth-child(2) {
+  border: 1px solid var(--yellowish);
+}
+.dashboard_statues div:nth-child(2) a {
+  background-color: rgba(254, 214, 0, 0.3);
+}
+
+.dashboard_statues div:nth-child(3) {
+  border: 1px solid var(--blueish);
+}
+.dashboard_statues div:nth-child(3) a {
+  background-color: rgba(3, 169, 245, 0.3);
+}
+
+.dashboard_statues div:last-child {
+  border: 1px solid var(--reddish);
+}
+.dashboard_statues div:last-child a {
+  background-color: rgba(240, 72, 62, 0.3);
+}

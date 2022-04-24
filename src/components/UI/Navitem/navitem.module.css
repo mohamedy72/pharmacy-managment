@@ -1,0 +1,28 @@
+.nav_icon {
+  width: 0.875rem;
+  height: 0.875rem;
+  margin-inline-end: 0.75rem;
+}
+.nav_link,
+.active {
+  display: flex;
+  align-items: center;
+  padding-block: 0.75rem;
+  color: var(--white);
+  text-transform: capitalize;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.active {
+  background-color: #009099;
+}
+
+.icon2 {
+  margin-inline-start: auto;
+  padding-inline-end: 1.5625rem;
+}
+.icon2 > svg {
+  width: 0.8rem;
+  height: 0.8rem;
+}

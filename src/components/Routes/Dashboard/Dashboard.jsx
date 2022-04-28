@@ -3,6 +3,8 @@ import Status from "../../UI/Widgets/Status";
 import classes from "./dashboard.module.css";
 
 import { statues } from "../../data/statues";
+import { states } from "../../data/states";
+import State from "../../UI/Widgets/State";
 
 const Dashboard = () => {
   return (
@@ -23,6 +25,18 @@ const Dashboard = () => {
             label={status.label}
             subheader={status.subheader}
             linktext={status.linktext}
+          />
+        ))}
+      </section>
+      <section className={classes.dashboard_states}>
+        {states?.map((state) => (
+          <State
+            header={state.header}
+            linktext={state.linktext}
+            state={state.state}
+            state2={state.state2}
+            label={state.label}
+            label2={state.label2}
           />
         ))}
       </section>

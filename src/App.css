@@ -10,6 +10,9 @@
   --yellowish: #fed600;
   --greenish: #01a768;
   --blueish: #03a9f5;
+
+  /* Spaces */
+  --page-padding: 2.5rem;
 }
 
 *,
@@ -60,9 +63,21 @@ svg {
   background-color: var(--light-gray);
   display: grid;
   grid-template-columns: minmax(10rem, 16rem) 1fr;
+  overflow-x: hidden;
 }
 
 img {
   max-width: 100%;
   display: block;
+}
+@media screen and (max-width: 56.25rem) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 34.375rem) {
+  :root {
+    --page-padding: 1.3rem
+  }
 }

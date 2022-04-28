@@ -1,7 +1,6 @@
 /* [x]: Searchbar */
 .searchbox {
   position: relative;
-  width: max(15rem, 27.5rem);
   border-radius: 0.3125rem;
 }
 input {
@@ -27,12 +26,29 @@ input::placeholder {
 
 /* [x]: Selectbox */
 .selectbox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.selectbox > select {
   appearance: none;
   all: unset;
 }
 
+.selectbox > svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-inline-end: 0.625rem;
+}
+
 .selectbox select option {
   margin-inline-end: 0.5rem;
+}
+
+@media screen and (max-width: 20.3125rem) {
+  .searchbox {
+    width: 70vw;
+  }
 }
 
 /* [x]: Weather */
@@ -74,6 +90,12 @@ input::placeholder {
   height: 5px;
 }
 
+@media screen and (max-width: 20.3125rem) {
+  .weather {
+    display: none;
+  }
+}
+
 /* [x]: Status box */
 .statusbox {
   display: flex;
@@ -81,6 +103,7 @@ input::placeholder {
   justify-content: center;
   align-items: center;
   text-align: center;
+  width: 13.25rem;
   background-color: var(--white);
   padding-block-start: 1.25rem;
   color: var(--darker-gray);
@@ -114,4 +137,75 @@ input::placeholder {
   margin-inline-start: 0.625rem;
   width: 12px;
   height: 12px;
+}
+
+/* [x]: State box */
+.statebox {
+  display: flex;
+  flex-direction: column;
+  padding-block: 0.9375rem;
+  border: 1px solid rgba(29, 36, 46, 0.3);
+}
+
+.state_header,
+.state_body {
+  padding-inline: 1.5625rem;
+}
+
+.state_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.state_header > h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.state_header > a {
+  display: flex;
+  align-items: center;
+  font-size: 0.75rem;
+  color: var(--darker-gray);
+}
+
+.state_icon > svg {
+  margin-inline-start: 0.625rem;
+
+  width: 12px;
+  height: 12px;
+}
+
+.state_body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.state > h4 {
+  font-size: 1.25rem;
+}
+
+.state > p {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.statebox hr {
+  margin-block: 1.0625rem 1.25rem;
+  border: 1px solid rgba(29, 36, 46, 0.3);
+}
+
+@media screen and (max-width: 23.75rem) {
+  .state_header > h3 {
+    font-size: 0.9rem;
+  }
+  .state > h4 {
+    font-size: 1rem;
+  }
+  .state > p {
+    font-size: 0.5;
+    font-weight: 400;
+  }
+  
 }

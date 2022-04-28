@@ -1,9 +1,10 @@
 .header {
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
-  padding-inline: 2.5rem;
+  gap: 1rem;
+  padding-inline: var(--page-padding);
   padding-block: 0.6875rem;
   background-color: var(--white);
 }
@@ -15,6 +16,31 @@
 .select_lang {
   display: flex;
   align-items: center;
-  max-width: 7.375rem;
+  max-width: 7.5rem;
   font-size: 0.75rem;
+}
+
+.hamburger {
+  display: none;
+  flex-basis: 10%;
+}
+
+@media screen and (max-width: 720px) {
+  .hamburger {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .select_lang {
+    flex-grow: 5;
+    flex-basis: 50%;
+  }
+}
+
+@media screen and (max-width: 20.3125rem) {
+  .select_lang {
+    margin-inline: auto;
+    flex: 1;
+  }
 }

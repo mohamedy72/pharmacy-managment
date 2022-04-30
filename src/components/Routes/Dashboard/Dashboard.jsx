@@ -1,25 +1,33 @@
 import LayoutHeader from "../../Layouts/LayoutHeader/LayoutHeader";
-import Status from "../../UI/Widgets/Status";
+
 import classes from "./dashboard.module.css";
 
-import { statues } from "../../data/statues";
-import { states } from "../../data/states";
-import State from "../../UI/Widgets/State";
+import { statistics } from "../../data/statistics";
+import { summery } from "../../data/summery";
+import { Summery, Statistic } from "../../UI/Widgets";
 
-const Dashboard = () => {
+const Dashboard = ({
+  handleDropDown,
+  dropdownOpen,
+  position,
+  SetdropdownOpen,
+}) => {
   return (
     <section className={classes.dashboard}>
       <LayoutHeader
-        layoutClass={classes.dashboard_header}
-        textClass={classes.dashboard_header_text}
         iconDir="right"
         label="Download layout"
         text="Dashboard"
         paragraph="A quick data overview of the inventory."
+        hasDropdown
+        handleDropDown={handleDropDown}
+        dropdownOpen={dropdownOpen}
+        position={position}
+        SetdropdownOpen={SetdropdownOpen}
       />
       <section className={classes.dashboard_statues}>
-        {statues?.map((status) => (
-          <Status
+        {statistics?.map((status) => (
+          <Statistic
             key={status.id}
             icon={status.icon}
             label={status.label}
@@ -29,14 +37,14 @@ const Dashboard = () => {
         ))}
       </section>
       <section className={classes.dashboard_states}>
-        {states?.map((state) => (
-          <State
-            header={state.header}
-            linktext={state.linktext}
-            state={state.state}
-            state2={state.state2}
-            label={state.label}
-            label2={state.label2}
+        {summery?.map((sum) => (
+          <Summery
+            header={sum.header}
+            linktext={sum.linktext}
+            state={sum.state}
+            state2={sum.state2}
+            label={sum.label}
+            label2={sum.label2}
           />
         ))}
       </section>

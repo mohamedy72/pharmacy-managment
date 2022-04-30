@@ -56,6 +56,10 @@ svg {
   height: 2rem;
 }
 
+h2 {
+  font-size: 1.5rem;
+}
+
 .app {
   width: 100vw;
   height: 100vh;
@@ -66,10 +70,6 @@ svg {
   overflow-x: hidden;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
 @media screen and (max-width: 56.25rem) {
   .app {
     grid-template-columns: 1fr;
@@ -78,6 +78,6 @@ img {
 
 @media screen and (max-width: 34.375rem) {
   :root {
-    --page-padding: 1.3rem
+    --page-padding: 1.3rem;
   }
 }

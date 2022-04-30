@@ -1,4 +1,4 @@
-export const states = [
+export const summery = [
   {
     header: "Inventory",
     linktext: "Configuration Page",

@@ -1,0 +1,13 @@
+.layoutheader {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1.875rem;
+  padding-inline: var(--page-padding);
+}
+
+.layout_text > p {
+  font-size: 0.875rem;
+  color: rgba(29, 36, 46, 1);
+}

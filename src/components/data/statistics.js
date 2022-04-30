@@ -3,7 +3,7 @@ import money from "../../assets/icons/money.png";
 import medicines from "../../assets/icons/medicines.png";
 import warning from "../../assets/icons/warning.png";
 
-export const statues = [
+export const statistics = [
   {
     id: 1,
     icon: inventory,

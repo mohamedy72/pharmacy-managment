@@ -208,3 +208,42 @@ input::placeholder {
     font-weight: 400;
   }
 }
+
+/* [x]: Dropdown */
+.dropdown {
+  width: 10rem;
+  position: absolute;
+  top: 100%;
+  background-color: var(--white);
+  color: var(--darker-gray);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5px;
+}
+
+
+
+.dropdown > p {
+  padding-inline: 1.0625rem;
+  padding-block: 1.25rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.dropdown > p > svg {
+  margin-inline-end: 0.75rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.dropdown > p > a {
+  font-size: 0.875rem;
+  color: var(--darker-gray);
+  text-transform: capitalize;
+}
+
+.dropdown > p:last-child,
+.dropdown > p:last-child > a {
+  color: var(--reddish);
+}

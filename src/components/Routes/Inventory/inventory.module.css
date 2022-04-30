@@ -1,0 +1,35 @@
+.inventory_statues {
+  padding-inline: var(--page-padding);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.dashboard_statues div:first-child {
+  border: 1px solid var(--greenish);
+}
+.dashboard_statues div:first-child a {
+  background-color: rgba(1, 167, 104, 0.3);
+}
+
+.dashboard_statues div:nth-child(2) {
+  border: 1px solid var(--yellowish);
+}
+.dashboard_statues div:nth-child(2) a {
+  background-color: rgba(254, 214, 0, 0.3);
+}
+
+.dashboard_statues div:nth-child(3) {
+  border: 1px solid var(--blueish);
+}
+.dashboard_statues div:nth-child(3) a {
+  background-color: rgba(3, 169, 245, 0.3);
+}
+
+.dashboard_statues div:last-child {
+  border: 1px solid var(--reddish);
+}
+.dashboard_statues div:last-child a {
+  background-color: rgba(240, 72, 62, 0.3);
+}

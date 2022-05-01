@@ -2,13 +2,13 @@ import classes from "./widgets.module.css";
 
 import { AiOutlineArrowRight } from "react-icons/ai";
 
-const Status = ({ label, icon, subheader, linktext }) => {
+const Statistic = ({ label, icon, subheader, linktext }) => {
   return (
-    <div className={classes.statusbox}>
+    <div className={classes.statisticbox}>
       <img src={icon} alt={subheader} />
-      <h3 className={classes.status_header}>{label}</h3>
-      <h4 className={classes.status_subheader}>{subheader}</h4>
-      <a href="#" className={classes.status_details}>
+      <h3 className={classes.stat_header}>{label}</h3>
+      <h4 className={classes.stat_subheader}>{subheader}</h4>
+      <a href="#" className={classes.stat_details}>
         {linktext}
         <i>
           <AiOutlineArrowRight />
@@ -18,4 +18,4 @@ const Status = ({ label, icon, subheader, linktext }) => {
   );
 };
 
-export default Status;
+export default Statistic;

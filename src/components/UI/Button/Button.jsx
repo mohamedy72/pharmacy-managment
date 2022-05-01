@@ -1,7 +1,12 @@
 import classes from "./button.module.css";
-const Button = ({ iconDir, label, icon, handleDropDown }) => {
+const Button = ({ iconDir, label, icon, handleDropDown, btnClass }) => {
   return (
-    <button className={classes.btn} onClick={handleDropDown}>
+    <button
+      className={`
+      ${classes.btn} ${btnClass}
+    `}
+      onClick={handleDropDown}
+    >
       {iconDir === "left" ? (
         <>
           <i>{icon}</i> <span>{label}</span>

@@ -2,7 +2,7 @@ import medicines from "../../assets/icons/medicines.png";
 import medicines_green from "../../assets/icons/medicines_green.png";
 import warning from "../../assets/icons/warning.png";
 
-export const statues = [
+export const inventory = [
   {
     id: 1,
     icon: medicines,

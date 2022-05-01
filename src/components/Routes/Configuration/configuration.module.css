@@ -1,0 +1,10 @@
+.config_btn {
+  display: none;
+}
+
+.configs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28.5rem, 1fr));
+  gap: 2rem;
+  padding-inline: var(--page-padding);
+}

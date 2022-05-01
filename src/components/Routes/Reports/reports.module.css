@@ -1,0 +1,24 @@
+.reports_stats {
+  padding-inline: var(--page-padding);
+  display: flex;
+  flex-flow: row wrap;
+  gap: 2rem;
+}
+
+.reports_stats div:first-child {
+  border: 1px solid var(--yellowish);
+}
+.reports_stats div:first-child a {
+  background-color: rgba(254, 214, 0, 0.3);
+}
+
+.reports_stats div:nth-child(2) {
+  border: 1px solid var(--greenish);
+}
+.reports_stats div:nth-child(2) a {
+  background-color: rgba(1, 167, 104, 0.3);
+}
+
+.reports_btn {
+  display: none;
+}

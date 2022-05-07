@@ -6,6 +6,7 @@ export const summery = [
     state2: "24",
     label: "Total no of Medicines",
     label2: "Medicine Groups",
+    href: "/config",
   },
   {
     header: "Quick Report",
@@ -14,6 +15,7 @@ export const summery = [
     state2: "5,288",
     label: "Qty of Medicines Sold",
     label2: "Invoices Generated",
+    href: "/reports",
   },
   {
     header: "My Pharmacy",
@@ -22,6 +24,7 @@ export const summery = [
     state2: "05",
     label: "Total no of Suppliers",
     label2: "Total no of Users",
+    href: "#",
   },
   {
     header: "Customers",
@@ -30,5 +33,6 @@ export const summery = [
     state2: "Adalimumab",
     label: "Total no of Customers",
     label2: "Frequently bought Item",
+    href: "#",
   },
 ];

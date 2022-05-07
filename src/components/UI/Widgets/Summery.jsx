@@ -1,17 +1,18 @@
 import classes from "./widgets.module.css";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
-const State = ({ header, linktext, state, state2, label, label2 }) => {
+const State = ({ header, linktext, state, state2, label, label2, href }) => {
   return (
     <div className={classes.statebox}>
       <div className={classes.state_header}>
         <h3>{header}</h3>
-        <a href="#">
+        <Link to={href}>
           {linktext}
           <i className={classes.state_icon}>
             <AiOutlineArrowRight />
           </i>
-        </a>
+        </Link>
       </div>
       <hr />
       <div className={classes.state_body}>

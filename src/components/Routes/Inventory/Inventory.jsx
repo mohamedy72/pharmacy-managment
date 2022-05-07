@@ -24,6 +24,7 @@ const Inventory = () => {
             label={inv.label}
             subheader={inv.subheader}
             linktext={inv.linktext}
+            href={inv.href}
           />
         ))}
       </section>

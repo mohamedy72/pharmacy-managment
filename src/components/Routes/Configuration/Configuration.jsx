@@ -1,6 +1,8 @@
 import classes from "./configuration.module.css";
 import LayoutHeader from "../../Layouts/LayoutHeader/LayoutHeader";
-import { Config } from "../../UI/Widgets";
+import { Config, Page, Pages } from "../../UI/Widgets";
+
+import { pages } from "../../data/pages";
 
 const Configuration = () => {
   return (
@@ -28,6 +30,13 @@ const Configuration = () => {
           value_2="user@email.com"
           property_2="owner email"
         />
+        <Pages label="pages" action="Action">
+          {pages?.map((page) => (
+            <tr key={page.id}>
+              <Page page_name={page.page_name} />
+            </tr>
+          ))}
+        </Pages>
       </section>
     </section>
   );

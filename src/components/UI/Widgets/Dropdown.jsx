@@ -1,27 +1,21 @@
 import { useRef, useEffect } from "react";
+import { createPortal } from "react-dom";
+import useBodyDismiss from "../../../hooks/personalHooks/useBodyDismiss";
 import classes from "./widgets.module.css";
 
-const Dropdown = ({ children, position, SetdropdownOpen }) => {
+const Dropdown = ({ children, SetdropdownOpen }) => {
   const ref = useRef(null);
+
   useEffect(() => {
-    console.log(ref.current);
-    function handleClickOutside(event) {
-      if (ref.current && !ref.current.contains(event.target)) {
-        SetdropdownOpen(false);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    useBodyDismiss(ref, SetdropdownOpen);
   }, [ref]);
 
   return (
     <div
       ref={ref}
       style={{
-        right: position.right + 20,
-        top: position.top + 90,
+        right: "3.0625rem",
+        top: "calc(100% - 2rem)",
       }}
       className={classes.dropdown}
     >

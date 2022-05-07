@@ -12,6 +12,7 @@ import Sidebar from "./components/UI/Sidebar/Sidebar";
 
 import "./App.css";
 import { useEffect } from "react";
+import Subpage from "./components/UI/Sidebar/Subpage";
 
 function App() {
   const [navOpen, setNavOpen] = useState(false);
@@ -19,7 +20,7 @@ function App() {
   const [matches, setMatches] = useState(
     window.matchMedia("(min-width: 56.25rem)").matches
   );
-  const [position, setPosition] = useState({});
+  // const [position, setPosition] = useState({});
   const [dropdownOpen, SetdropdownOpen] = useState(false);
 
   useEffect(() => {
@@ -40,14 +41,9 @@ function App() {
     sidebarRef.current.classList.remove("active");
   };
   const handleDropDown = (e) => {
-    // Get the e.target position from the left of the viewport
-    const elPosition = e.target.getBoundingClientRect();
-    console.log(e.target.parentElement);
-    // Save that value into state
-    console.log(elPosition);
-    setPosition(elPosition);
+    // const elPosition = e.target.getBoundingClientRect();
+    // setPosition(elPosition);
 
-    // Handle opening the dropdown at the position of e.target
     SetdropdownOpen(!dropdownOpen);
   };
 
@@ -58,7 +54,7 @@ function App() {
         handleNavClose={handleNavClose}
         sidebarRef={sidebarRef}
         handleDropDown={handleDropDown}
-        position={position}
+        // position={position}
         dropdownOpen={dropdownOpen}
         SetdropdownOpen={SetdropdownOpen}
       />
@@ -71,12 +67,14 @@ function App() {
               <Dashboard
                 handleDropDown={handleDropDown}
                 dropdownOpen={dropdownOpen}
-                position={position}
+                // position={position}
                 SetdropdownOpen={SetdropdownOpen}
               />
             }
           />
-          <Route path="/inventory" element={<Inventory />} />
+          <Route path="/inventory" element={<Inventory />}>
+            <Route path=":subpage" element={<Subpage />} />
+          </Route>
           <Route path="/reports" element={<Reports />} />
           <Route path="/config" element={<Configuration />} />
         </Routes>

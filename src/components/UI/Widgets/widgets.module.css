@@ -247,8 +247,9 @@ input::placeholder {
 }
 
 /* [x]: Config box */
-.config {
-  max-width: 28.5rem;
+.config,
+.config_pages {
+  /* max-width: 28.5rem; */
   padding-inline: 1.875rem;
   padding-block: 0.8125rem;
   display: flex;
@@ -264,19 +265,33 @@ input::placeholder {
   align-items: center;
 }
 
-.config_header > h3 {
+.config_header > h3,
+.config_pages_header > h3,
+.config_pages_header > small {
   font-size: 1rem;
   font-weight: 600;
 }
 
-.config_header > svg {
+.config_header > svg,
+.config_pages svg {
   width: 0.875rem;
   height: 0.875rem;
+}
+
+.config_header > svg {
   fill: var(--blueish);
 }
 
 .config > hr {
   margin-block: 0.75rem 1.25rem;
+}
+
+.config_pages > hr:first-of-type {
+  margin-block: 0.75rem 1.25rem;
+}
+
+.config_pages hr:last-of-type {
+  margin-block: 1.25rem 0.75rem;
 }
 
 .config_body {
@@ -290,4 +305,54 @@ input::placeholder {
 .config_body_box > small {
   font-size: 0.875rem;
   font-weight: 500;
+}
+
+.config_pages_header tr {
+  display: flex;
+  gap: 0 8.75rem;
+}
+
+.config_pages_body tr > td:first-child {
+  padding-inline-end: 4.25rem;
+}
+.config_pages_body tr > td:nth-child(2) {
+  color: var(--blueish);
+  padding-inline-end: 3.125rem;
+}
+.config_pages_body tr > td:nth-child(2) a {
+  font-size: 0.875rem;
+  text-decoration: underline;
+  color: var(--blueish);
+}
+.config_pages_body tr > td:nth-child(3) > svg:first-child {
+  margin-inline-end: 1.6875rem;
+}
+.config_pages_body tr > td:nth-child(3) > svg:first-child {
+  fill: var(--blueish);
+}
+.config_pages_body tr > td:nth-child(3) > svg:last-child {
+  fill: var(--reddish);
+}
+
+/* [x]: Config single Page */
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.page > h4 {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.page > a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-inline-end: 3.125rem;
+  text-align: center;
+}
+
+.page > svg:first-child {
+  margin-inline-end: 1.6875rem;
 }

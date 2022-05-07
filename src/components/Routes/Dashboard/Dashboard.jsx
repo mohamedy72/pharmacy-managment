@@ -39,6 +39,8 @@ const Dashboard = ({
       <section className={classes.dashboard_states}>
         {summery?.map((sum) => (
           <Summery
+            key={sum.state}
+            href={sum.href}
             header={sum.header}
             linktext={sum.linktext}
             state={sum.state}

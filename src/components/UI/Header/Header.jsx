@@ -31,16 +31,18 @@ const Header = ({ handleNavOpen }) => {
         placeholder="Search for anything here.."
         label="search-input"
       />
-      <p className={classes.select_lang}>
+      <div className={classes.select_lang}>
         <i className={classes.header_icon}>
           <HiTranslate />
         </i>
         <Selectbox name="language">
           {langs?.map((lang) => (
-            <option value={lang.code}>{lang.label}</option>
+            <option key={lang.code} value={lang.code}>
+              {lang.label}
+            </option>
           ))}
         </Selectbox>
-      </p>
+      </div>
       <Weather greet="Good morning!" />
     </header>
   );

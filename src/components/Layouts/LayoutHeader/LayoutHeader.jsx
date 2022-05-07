@@ -3,6 +3,8 @@ import { Dropdown } from "../../UI/Widgets";
 
 import classes from "./layoutheader.module.css";
 
+import { AiOutlineFileExcel, AiOutlineFilePdf } from "react-icons/ai";
+
 const LayoutHeader = ({
   btnClass,
   iconDir,
@@ -12,7 +14,6 @@ const LayoutHeader = ({
   hasDropdown,
   handleDropDown,
   dropdownOpen,
-  position,
   SetdropdownOpen,
 }) => {
   return (
@@ -32,13 +33,13 @@ const LayoutHeader = ({
         <Button btnClass={btnClass} iconDir={iconDir} label={label} />
       )}
       {dropdownOpen && (
-        <Dropdown position={position} SetdropdownOpen={SetdropdownOpen}>
+        <Dropdown SetdropdownOpen={SetdropdownOpen}>
           <p>
-            {/* <CgProfile /> */}
+            <AiOutlineFileExcel />
             <a href="$">my profile</a>
           </p>
           <p>
-            {/* <CgLogOut /> */}
+            <AiOutlineFilePdf />
             <a href="$">Log out</a>
           </p>
         </Dropdown>

@@ -1,6 +1,5 @@
 import { useRef, useEffect } from "react";
-import { createPortal } from "react-dom";
-import useBodyDismiss from "../../../hooks/personalHooks/useBodyDismiss";
+import useBodyDismiss from "../../../hooks/useBodyDismiss";
 import "./widgets.css";
 
 const Dropdown = ({ children, SetdropdownOpen }) => {
@@ -9,7 +8,6 @@ const Dropdown = ({ children, SetdropdownOpen }) => {
   useEffect(() => {
     useBodyDismiss(ref, SetdropdownOpen);
   }, [ref]);
-
   return (
     <div
       ref={ref}

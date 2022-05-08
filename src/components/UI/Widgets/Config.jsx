@@ -1,5 +1,5 @@
 import "./widgets.css";
-import { Pencil } from "react-boostrap-icons";
+import { Pencil } from "react-bootstrap-icons";
 
 const Config = ({ label, value, property, value_2, property_2 }) => {
   return (

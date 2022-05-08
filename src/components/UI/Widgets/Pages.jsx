@@ -1,4 +1,4 @@
-import { Plus } from "react-boostrap-icons";
+import { Plus } from "react-bootstrap-icons";
 import "./widgets.css";
 
 const Pages = ({ label, action, children }) => {

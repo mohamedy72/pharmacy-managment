@@ -1,9 +1,9 @@
-import classes from "./button.module.css";
+import "./button.css";
 const Button = ({ iconDir, label, icon, handleDropDown, btnClass }) => {
   return (
     <button
       className={`
-      ${classes.btn} ${btnClass}
+      btn ${btnClass}
     `}
       onClick={handleDropDown}
     >

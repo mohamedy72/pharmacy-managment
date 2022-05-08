@@ -1,0 +1,48 @@
+.nav_icon {
+  width: 0.875rem;
+  height: 0.875rem;
+  margin-inline-end: 0.75rem;
+}
+
+.nav_link {
+  display: flex;
+  align-items: center;
+  padding-block: 0.75rem;
+  text-decoration: none;
+  padding-inline-start: 1.5rem;
+  color: var(--white);
+  text-transform: capitalize;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.nav_link.active {
+  background-color: #009099;
+}
+
+.nav_chevron {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-inline-start: auto;
+  margin-inline-end: 1.875rem;
+}
+
+.submenu {
+  padding-top: 0.25em;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease-in-out;
+}
+
+.submenu .nav_link {
+  padding-inline-start: 3.125rem;
+}
+
+.nav_item.open .submenu {
+  height: auto;
+}
+.nav_item.open .nav_chevron {
+  transform: rotate(180deg);
+  transform-origin: center;
+  transition: transform 0.3s ease-in-out;
+}

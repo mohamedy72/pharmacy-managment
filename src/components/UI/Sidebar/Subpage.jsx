@@ -1,16 +1,10 @@
-import { Link } from "react-router-dom";
-import classes from "./sidebar.module.css";
+import { useParams } from "react-router-dom";
+import "./sidebar.css";
 
-import { pages } from "../../data/pages";
-
-const Subpage = () => {
-  return (
-    <div className={classes.subpage_container}>
-      <ul>
-        <li></li>
-      </ul>
-    </div>
-  );
+const Subpage = ({ children }) => {
+  const { param } = useParams();
+  console.log();
+  return <div className="subpage_container"></div>;
 };
 
 export default Subpage;

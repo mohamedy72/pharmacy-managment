@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
 import useBodyDismiss from "../../../hooks/personalHooks/useBodyDismiss";
-import classes from "./widgets.module.css";
+import "./widgets.css";
 
 const Dropdown = ({ children, SetdropdownOpen }) => {
   const ref = useRef(null);
@@ -17,7 +17,7 @@ const Dropdown = ({ children, SetdropdownOpen }) => {
         right: "3.0625rem",
         top: "calc(100% - 2rem)",
       }}
-      className={classes.dropdown}
+      className="dropdown"
     >
       {children}
     </div>

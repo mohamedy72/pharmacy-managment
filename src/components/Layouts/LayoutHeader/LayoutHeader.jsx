@@ -1,7 +1,7 @@
 import Button from "../../UI/Button/Button";
 import { Dropdown } from "../../UI/Widgets";
 
-import classes from "./layoutheader.module.css";
+import "./layoutheader.css";
 
 import { AiOutlineFileExcel, AiOutlineFilePdf } from "react-icons/ai";
 
@@ -17,8 +17,8 @@ const LayoutHeader = ({
   SetdropdownOpen,
 }) => {
   return (
-    <section className={classes.layoutheader}>
-      <div className={classes.layout_text}>
+    <section className="layoutheader">
+      <div className="layout_text">
         <h2>{text}</h2>
         <p>{paragraph}</p>
       </div>

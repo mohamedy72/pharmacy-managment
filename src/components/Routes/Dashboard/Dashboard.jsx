@@ -1,6 +1,6 @@
 import LayoutHeader from "../../Layouts/LayoutHeader/LayoutHeader";
 
-import classes from "./dashboard.module.css";
+import "./dashboard.css";
 
 import { statistics } from "../../data/statistics";
 import { summery } from "../../data/summery";
@@ -13,7 +13,7 @@ const Dashboard = ({
   SetdropdownOpen,
 }) => {
   return (
-    <section className={classes.dashboard}>
+    <section className="dashboard">
       <LayoutHeader
         iconDir="right"
         label="Download layout"
@@ -25,7 +25,7 @@ const Dashboard = ({
         position={position}
         SetdropdownOpen={SetdropdownOpen}
       />
-      <section className={classes.dashboard_statues}>
+      <section className="dashboard_statistics">
         {statistics?.map((status) => (
           <Statistic
             key={status.id}
@@ -36,7 +36,7 @@ const Dashboard = ({
           />
         ))}
       </section>
-      <section className={classes.dashboard_states}>
+      <section className="dashboard_summery">
         {summery?.map((sum) => (
           <Summery
             key={sum.state}

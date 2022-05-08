@@ -1,9 +1,9 @@
 import { IoSearch } from "react-icons/io5";
-import classes from "./widgets.module.css";
+import "./widgets.css";
 
 const Searchbar = ({ name, label, type, placeholder }) => {
   return (
-    <p className={classes.searchbox}>
+    <p className="searchbox">
       <input
         type={type}
         name={name}

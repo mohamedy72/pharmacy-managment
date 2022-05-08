@@ -18,6 +18,7 @@ const Reports = () => {
       <section className={classes.reports_stats}>
         {reports?.map((report) => (
           <Statistic
+            key={report.id}
             icon={report.icon}
             id={report.id}
             label={report.label}

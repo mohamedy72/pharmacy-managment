@@ -1,4 +1,4 @@
-import classes from "./configuration.module.css";
+import "./configuration.css";
 import LayoutHeader from "../../Layouts/LayoutHeader/LayoutHeader";
 import { Config, Page, Pages } from "../../UI/Widgets";
 
@@ -6,16 +6,16 @@ import { pages } from "../../data/pages";
 
 const Configuration = () => {
   return (
-    <section className={classes.config}>
+    <section className="config">
       <LayoutHeader
-        layoutClass={classes.config_header}
-        textClass={classes.config_header_text}
-        btnClass={classes.config_btn}
+        layoutClass="config_header"
+        textClass="config_header_text"
+        btnClass="config_btn"
         iconDir="left"
         text="Configurations"
         paragraph="Configure your pharmacy application."
       />
-      <section className={classes.configs}>
+      <section className="configs">
         <Config
           label="branding"
           value="enter name"

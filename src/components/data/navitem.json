@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Dashboard",
+    "icon": "./src/assets/icons/dashboard.png",
+    "path": "/"
+  },
+  {
+    "title": "Inventory",
+    "icon": "./src/assets/icons/inventory.png",
+    "path": "/inventory",
+    "chevron": "./src/assets/icons/chevron-down.svg",
+    "submenus": [
+      {
+        "title": "List of medicines",
+        "path": "/medicineslist"
+      },
+      {
+        "title": "Medicines group",
+        "path": "/medicinesgroup"
+      }
+    ]
+  },
+  {
+    "title": "Reports",
+    "icon": "./src/assets/icons/reports.png",
+    "path": "/reports",
+    "chevron": "./src/assets/icons/chevron-down.svg",
+    "submenus": [
+      {
+        "title": "Sales reports",
+        "path": "/sales"
+      },
+      {
+        "title": "payments reports",
+        "path": "/payments"
+      }
+    ]
+  },
+  {
+    "title": "Configurations",
+    "icon": "./src/assets/icons/config.png",
+    "path": "/config"
+  }
+]

@@ -1,88 +1,41 @@
-import classes from "./sidebar.module.css";
+import "./sidebar.css";
 
-import { IoEllipsisVertical, IoClose } from "react-icons/io5";
-import { CgProfile, CgLogOut } from "react-icons/cg";
-
-import logo from "../../../assets/images/logo.png";
-import user from "../../../assets/images/avatar.jpg";
-
-import { navItems } from "../../data/navitem";
 import NavItem from "../Navitem/NavItem";
 import { Dropdown } from "../Widgets";
 
-const Sidebar = ({
-  navOpen,
-  handleNavClose,
-  sidebarRef,
-  position,
-  dropdownOpen,
-  handleDropDown,
-  SetdropdownOpen,
-}) => {
+import menuItems from "../../data/navitem.json";
+
+import { IoEllipsisVertical, IoClose } from "react-icons/io5";
+import { CgProfile, CgLogOut } from "react-icons/cg";
+import logo from "../../../assets/images/logo.png";
+import user from "../../../assets/images/avatar.jpg";
+
+const Sidebar = ({ navOpen, handleNavClose, sidebarRef, handleDropDown }) => {
   return (
     <>
       {navOpen && (
-        <nav
-          className={
-            navOpen
-              ? `
-          ${classes.navmenu} ${classes.active} 
-        `
-              : classes.navmenu
-          }
-          ref={sidebarRef}
-        >
-          <i className={classes.navmenu_close} onClick={handleNavClose}>
+        <nav className="navmenu" ref={sidebarRef}>
+          <i className="navmenu_close" onClick={handleNavClose}>
             <IoClose />
           </i>
-          <h1 className={classes.logo}>
+          <h1 className="logo">
             <img src={logo} alt="pharmaone logo" /> pharma one
           </h1>
 
-          <div className={classes.user}>
-            <div className={classes.user_img}>
+          <div className="user">
+            <div className="user_img">
               <img src={user} alt="User image" />
             </div>
-            <p className={classes.user_info}>
-              <span className={classes.user_name}>Mohamed</span>
-              <span className={classes.user_role}>super admin</span>
+            <p className="user_info">
+              <span className="user_name">Mohamed</span>
+              <span className="user_role">super admin</span>
             </p>
             <IoEllipsisVertical onClick={handleDropDown} />
-
-            {dropdownOpen && (
-              <Dropdown SetdropdownOpen={SetdropdownOpen}>
-                <p>
-                  <CgProfile />
-                  <a href="$">my profile</a>
-                </p>
-                <p>
-                  <CgLogOut />
-                  <a href="$">Log out</a>
-                </p>
-              </Dropdown>
-            )}
           </div>
-          <ul className={classes.navlist}>
-            {navItems &&
-              navItems.map((item) =>
-                item.label === "inventory" || item.label === "reports" ? (
-                  <NavItem
-                    hasDropDown
-                    path={item.path}
-                    label={item.label}
-                    icon={item.icon}
-                    icon2={item.icon2}
-                    key={item.id}
-                  />
-                ) : (
-                  <NavItem
-                    icon={item.icon}
-                    label={item.label}
-                    key={item.id}
-                    path={item.path}
-                  />
-                )
-              )}
+          <ul className="navlist">
+            {menuItems?.map((link, index) => (
+              <NavItem key={index} link={link} />
+            ))}
           </ul>
         </nav>
       )}

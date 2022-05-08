@@ -1,6 +1,6 @@
 import { BiPlus } from "react-icons/bi";
 import { MdDelete, MdEdit } from "react-icons/md";
-import classes from "./widgets.module.css";
+import "./widgets.css";
 
 const Page = ({ page_name }) => {
   return (
@@ -11,7 +11,7 @@ const Page = ({ page_name }) => {
           <BiPlus /> Add sub page
         </a>
       </td>
-      <td className={classes.page_icons}>
+      <td className="page_icons">
         <MdEdit />
         <MdDelete />
       </td>

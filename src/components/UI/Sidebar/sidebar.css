@@ -85,14 +85,9 @@
   margin-block-start: 1.875rem;
 }
 
-.navlist > * {
-  padding-inline-start: 1.5rem;
-}
 
 
 /* [x] Subpage Styles */
-
-
 
 @media screen and (max-width: 56.25rem) {
   .navmenu {

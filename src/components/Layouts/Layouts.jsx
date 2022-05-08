@@ -1,11 +1,19 @@
-import classes from "./layouts.module.css";
+import "./layouts.css";
 
 const Layouts = ({ children }) => {
-  return <main className={classes.main_app}>{children}</main>;
+  return <main className="main_app">{children}</main>;
 };
 
 const GridLayout = ({ gridClass, children }) => {
-  return <div className={(gridClass, classes.grid)}>{children}</div>;
+  return (
+    <div
+      className={`
+      grid ${gridClass}
+    `}
+    >
+      {children}
+    </div>
+  );
 };
 
 export { Layouts, GridLayout };

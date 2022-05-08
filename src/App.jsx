@@ -20,7 +20,6 @@ function App() {
   const [matches, setMatches] = useState(
     window.matchMedia("(min-width: 56.25rem)").matches
   );
-  // const [position, setPosition] = useState({});
   const [dropdownOpen, SetdropdownOpen] = useState(false);
 
   useEffect(() => {
@@ -34,16 +33,13 @@ function App() {
 
   const handleNavOpen = () => {
     setNavOpen(true);
-    sidebarRef.current.classList.add("active");
+    sidebarRef.current?.classList.add("active");
   };
   const handleNavClose = () => {
     setNavOpen(false);
-    sidebarRef.current.classList.remove("active");
+    sidebarRef.current?.classList.remove("active");
   };
   const handleDropDown = (e) => {
-    // const elPosition = e.target.getBoundingClientRect();
-    // setPosition(elPosition);
-
     SetdropdownOpen(!dropdownOpen);
   };
 
@@ -54,7 +50,6 @@ function App() {
         handleNavClose={handleNavClose}
         sidebarRef={sidebarRef}
         handleDropDown={handleDropDown}
-        // position={position}
         dropdownOpen={dropdownOpen}
         SetdropdownOpen={SetdropdownOpen}
       />
@@ -67,7 +62,6 @@ function App() {
               <Dashboard
                 handleDropDown={handleDropDown}
                 dropdownOpen={dropdownOpen}
-                // position={position}
                 SetdropdownOpen={SetdropdownOpen}
               />
             }

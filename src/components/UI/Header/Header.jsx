@@ -1,11 +1,10 @@
-import classes from "./header.module.css";
+import "./header.css";
 
 import { Searchbar, Selectbox, Weather } from "../Widgets";
 
 import { HiTranslate } from "react-icons/hi";
 import { GiHamburgerMenu } from "react-icons/gi";
 
-// Data (Temporary location)
 const langs = [
   {
     code: "en-US",
@@ -23,16 +22,16 @@ const langs = [
 
 const Header = ({ handleNavOpen }) => {
   return (
-    <header className={classes.header}>
-      <GiHamburgerMenu className={classes.hamburger} onClick={handleNavOpen} />
+    <header className="header">
+      <GiHamburgerMenu className="hamburger" onClick={handleNavOpen} />
       <Searchbar
         type="text"
         name="search-input"
         placeholder="Search for anything here.."
         label="search-input"
       />
-      <div className={classes.select_lang}>
-        <i className={classes.header_icon}>
+      <div className="select_lang">
+        <i className="header_icon">
           <HiTranslate />
         </i>
         <Selectbox name="language">

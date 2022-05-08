@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import * as Icons from "react-bootstrap-icons";
 import "./navitem.css";
 
 const NavItem = ({ link }) => {
   const [open, setOpen] = useState(false);
+  const { [link.icon]: Icon } = Icons;
   if (link.submenus) {
     return (
       <div className={open ? "nav_item open" : "nav_item"}>
@@ -12,7 +14,7 @@ const NavItem = ({ link }) => {
           className="nav_link"
           onClick={() => setOpen(!open)}
         >
-          {link.icon && <img src={link.icon} className="nav_icon" />}
+          {link.icon && <Icon className="nav_icon" />}
           {link.title}
           <svg fill="#fff" className="nav_chevron" viewBox="0 0 16 16">
             <path
@@ -31,7 +33,7 @@ const NavItem = ({ link }) => {
   } else {
     return (
       <NavLink to={link.path} className="nav_link">
-        {link.icon && <img src={link.icon} className="nav_icon" />}
+        {link.icon && <Icon className="nav_icon" />}
         {link.title}
       </NavLink>
     );

@@ -1,6 +1,6 @@
 import "./widgets.css";
 
-import { AiOutlineArrowRight } from "react-icons/ai";
+import { ArrowRight } from "react-bootstrap-icons";
 
 const Statistic = ({ label, icon, subheader, linktext, href }) => {
   return (
@@ -11,7 +11,7 @@ const Statistic = ({ label, icon, subheader, linktext, href }) => {
       <a href={href} className="stat_details">
         {linktext}
         <i>
-          <AiOutlineArrowRight />
+          <ArrowRight />
         </i>
       </a>
     </div>

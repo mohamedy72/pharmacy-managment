@@ -1,13 +1,13 @@
 import "./widgets.css";
 
-import { BiChevronDown } from "react-icons/bi";
+import { ChevronDown } from "react-bootstrap-icons";
 const Selectbox = ({ children, name }) => {
   return (
     <p className="selectbox">
       <select id={name} name={name}>
         {children}
       </select>
-      <BiChevronDown />
+      <ChevronDown />
     </p>
   );
 };

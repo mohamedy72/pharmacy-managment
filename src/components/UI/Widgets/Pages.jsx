@@ -1,4 +1,4 @@
-import { BiPlus } from "react-icons/bi";
+import { Plus } from "react-boostrap-icons";
 import "./widgets.css";
 
 const Pages = ({ label, action, children }) => {
@@ -14,7 +14,7 @@ const Pages = ({ label, action, children }) => {
       <tbody className="config_pages_body">{children}</tbody>
       <hr />
       <a href="#">
-        <BiPlus /> Add a new page
+        <Plus /> Add a new page
       </a>
     </table>
   );

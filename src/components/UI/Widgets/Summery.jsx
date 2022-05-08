@@ -1,5 +1,5 @@
 import "./widgets.css";
-import { AiOutlineArrowRight } from "react-icons/ai";
+import { ArrowRight } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
 
 const State = ({ header, linktext, state, state2, label, label2, href }) => {
@@ -10,7 +10,7 @@ const State = ({ header, linktext, state, state2, label, label2, href }) => {
         <Link to={href}>
           {linktext}
           <i className="state_icon">
-            <AiOutlineArrowRight />
+            <ArrowRight />
           </i>
         </Link>
       </div>

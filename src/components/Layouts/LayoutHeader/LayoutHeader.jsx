@@ -3,7 +3,7 @@ import { Dropdown } from "../../UI/Widgets";
 
 import "./layoutheader.css";
 
-import { AiOutlineFileExcel, AiOutlineFilePdf } from "react-icons/ai";
+import { FileEarmarkExcel, FileEarmarkPdf } from "react-bootstrap-icons";
 
 const LayoutHeader = ({
   btnClass,
@@ -35,11 +35,11 @@ const LayoutHeader = ({
       {dropdownOpen && (
         <Dropdown SetdropdownOpen={SetdropdownOpen}>
           <p>
-            <AiOutlineFileExcel />
+            <FileEarmarkExcel />
             <a href="$">my profile</a>
           </p>
           <p>
-            <AiOutlineFilePdf />
+            <FileEarmarkPdf />
             <a href="$">Log out</a>
           </p>
         </Dropdown>

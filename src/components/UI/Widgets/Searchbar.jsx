@@ -1,4 +1,4 @@
-import { IoSearch } from "react-icons/io5";
+import { Search } from "react-bootstrap-icons";
 import "./widgets.css";
 
 const Searchbar = ({ name, label, type, placeholder }) => {
@@ -11,7 +11,7 @@ const Searchbar = ({ name, label, type, placeholder }) => {
         placeholder={placeholder}
         aria-label={label}
       />
-      <IoSearch />
+      <Search />
     </p>
   );
 };

@@ -1,12 +1,12 @@
 import "./widgets.css";
-import { MdEdit } from "react-icons/md";
+import { Pencil } from "react-boostrap-icons";
 
 const Config = ({ label, value, property, value_2, property_2 }) => {
   return (
     <div className="config">
       <div className="config_header">
         <h3>{label}</h3>
-        <MdEdit />
+        <Pencil />
       </div>
       <hr />
       <div className="config_body">

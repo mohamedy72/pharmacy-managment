@@ -2,8 +2,7 @@ import "./header.css";
 
 import { Searchbar, Selectbox, Weather } from "../Widgets";
 
-import { HiTranslate } from "react-icons/hi";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { Translate, List } from "react-bootstrap-icons";
 
 const langs = [
   {
@@ -23,7 +22,7 @@ const langs = [
 const Header = ({ handleNavOpen }) => {
   return (
     <header className="header">
-      <GiHamburgerMenu className="hamburger" onClick={handleNavOpen} />
+      <List className="hamburger" onClick={handleNavOpen} />
       <Searchbar
         type="text"
         name="search-input"
@@ -32,7 +31,7 @@ const Header = ({ handleNavOpen }) => {
       />
       <div className="select_lang">
         <i className="header_icon">
-          <HiTranslate />
+          <Translate />
         </i>
         <Selectbox name="language">
           {langs?.map((lang) => (

@@ -1,14 +1,14 @@
 [
   {
     "title": "Dashboard",
-    "icon": "./src/assets/icons/dashboard.png",
+    "icon": "Kanban",
     "path": "/"
   },
   {
     "title": "Inventory",
-    "icon": "./src/assets/icons/inventory.png",
+    "icon": "Archive",
     "path": "/inventory",
-    "chevron": "./src/assets/icons/chevron-down.svg",
+    "chevron": "ChevronDown",
     "submenus": [
       {
         "title": "List of medicines",
@@ -22,9 +22,9 @@
   },
   {
     "title": "Reports",
-    "icon": "./src/assets/icons/reports.png",
+    "icon": "EnvelopePaper",
     "path": "/reports",
-    "chevron": "./src/assets/icons/chevron-down.svg",
+    "chevron": "ChevronDown",
     "submenus": [
       {
         "title": "Sales reports",
@@ -38,7 +38,7 @@
   },
   {
     "title": "Configurations",
-    "icon": "./src/assets/icons/config.png",
+    "icon": "Gear",
     "path": "/config"
   }
 ]

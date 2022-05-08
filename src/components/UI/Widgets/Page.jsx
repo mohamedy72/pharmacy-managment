@@ -1,5 +1,4 @@
-import { BiPlus } from "react-icons/bi";
-import { MdDelete, MdEdit } from "react-icons/md";
+import { Pencil, Trash, Plus } from "react-boostrap-icons";
 import "./widgets.css";
 
 const Page = ({ page_name }) => {
@@ -8,12 +7,12 @@ const Page = ({ page_name }) => {
       <td>{page_name}</td>
       <td>
         <a href="#">
-          <BiPlus /> Add sub page
+          <Plus /> Add sub page
         </a>
       </td>
       <td className="page_icons">
-        <MdEdit />
-        <MdDelete />
+        <Pencil />
+        <Trash />
       </td>
     </>
   );

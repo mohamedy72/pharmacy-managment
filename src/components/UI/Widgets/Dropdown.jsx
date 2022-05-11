@@ -1,22 +1,14 @@
-import { useRef, useEffect } from "react";
-import useBodyDismiss from "../../../hooks/useBodyDismiss";
 import "./widgets.css";
 
-const Dropdown = ({ children, SetdropdownOpen }) => {
-  const ref = useRef(null);
-
-  useEffect(() => {
-    useBodyDismiss(ref, SetdropdownOpen);
-  }, [ref]);
+const Dropdown = ({ children, bottomPos }) => {
   return (
-    <div
-      ref={ref}
-      style={{
-        right: "3.0625rem",
-        top: "calc(100% - 2rem)",
-      }}
-      className="dropdown"
-    >
+    <div className="dropdown_menu">
+      <span
+        className="pointer"
+        style={{
+          bottom: bottomPos,
+        }}
+      ></span>
       {children}
     </div>
   );

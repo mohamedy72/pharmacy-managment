@@ -2,6 +2,9 @@ import LayoutHeader from "../../Layouts/LayoutHeader/LayoutHeader";
 import { Statistic } from "../../UI/Widgets";
 import "./inventory.css";
 import { inventory } from "../../data/inventory";
+import { Outlet } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { useOutlet } from "react-router-dom";
 
 const Inventory = () => {
   return (
@@ -24,7 +27,7 @@ const Inventory = () => {
             label={inv.label}
             subheader={inv.subheader}
             linktext={inv.linktext}
-            href={inv.href}
+            linkpath={inv.linkpath}
           />
         ))}
       </section>

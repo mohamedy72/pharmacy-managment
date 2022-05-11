@@ -1,9 +1,15 @@
+import { useState, useRef, useEffect } from "react";
 import Button from "../../UI/Button/Button";
-import { Dropdown } from "../../UI/Widgets";
-
 import "./layoutheader.css";
 
-import { FileEarmarkExcel, FileEarmarkPdf } from "react-bootstrap-icons";
+import {
+  FileEarmarkExcel,
+  FileEarmarkPdf,
+  ArrowDownShort,
+} from "react-bootstrap-icons";
+import { Dropdown } from "../../UI/Widgets";
+
+import useBodyDismiss from "../../../hooks/useBodyDismiss";
 
 const LayoutHeader = ({
   btnClass,
@@ -12,10 +18,17 @@ const LayoutHeader = ({
   text,
   paragraph,
   hasDropdown,
-  handleDropDown,
-  dropdownOpen,
-  SetdropdownOpen,
 }) => {
+  const [headerDropdown, setHeaderDropdown] = useState(false);
+  const hRef = useRef(null);
+  const handleHeaderDropdown = () => {
+    setHeaderDropdown(!headerDropdown);
+  };
+
+  useEffect(() => {
+    useBodyDismiss(hRef, setHeaderDropdown);
+  }, [hRef]);
+
   return (
     <section className="layoutheader">
       <div className="layout_text">
@@ -27,25 +40,41 @@ const LayoutHeader = ({
           btnClass={btnClass}
           iconDir={iconDir}
           label={label}
-          handleDropDown={handleDropDown}
+          icon={<ArrowDownShort />}
+          handleHeaderDropdown={handleHeaderDropdown}
         />
       ) : (
         <Button btnClass={btnClass} iconDir={iconDir} label={label} />
       )}
-      {dropdownOpen && (
-        <Dropdown SetdropdownOpen={SetdropdownOpen}>
-          <p>
-            <FileEarmarkExcel />
-            <a href="$">my profile</a>
-          </p>
-          <p>
-            <FileEarmarkPdf />
-            <a href="$">Log out</a>
-          </p>
-        </Dropdown>
-      )}
+      <div className="dropdown" ref={hRef}>
+        {headerDropdown && (
+          <Dropdown>
+            <p>
+              <FileEarmarkExcel />
+              <a href="$">Excel</a>
+            </p>
+            <hr />
+            <p>
+              <FileEarmarkPdf />
+              <a href="$">PDF</a>
+            </p>
+          </Dropdown>
+        )}
+      </div>
     </section>
   );
 };
 
 export default LayoutHeader;
+/* {dropdownOpen && (
+  <Dropdown>
+  <p>
+    <FileEarmarkExcel />
+    <a href="$">my profile</a>
+  </p>
+  <p>
+    <FileEarmarkPdf />
+    <a href="$">Log out</a>
+  </p>
+</Dropdown>
+)} */

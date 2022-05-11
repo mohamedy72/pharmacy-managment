@@ -12,7 +12,10 @@ import Sidebar from "./components/UI/Sidebar/Sidebar";
 
 import "./App.css";
 import { useEffect } from "react";
-import Subpage from "./components/UI/Sidebar/Subpage";
+import MedicinesList from "./components/SubRoutes/MedicinesList/MedicinesList";
+import MedicinesGroup from "./components/SubRoutes/MedicinesGroup/MedicinesGroup";
+import Payments from "./components/SubRoutes/Payments/Payments";
+import Sales from "./components/SubRoutes/Sales/Sales";
 
 function App() {
   const [navOpen, setNavOpen] = useState(false);
@@ -20,7 +23,6 @@ function App() {
   const [matches, setMatches] = useState(
     window.matchMedia("(min-width: 56.25rem)").matches
   );
-  const [dropdownOpen, SetdropdownOpen] = useState(false);
 
   useEffect(() => {
     window
@@ -39,9 +41,6 @@ function App() {
     setNavOpen(false);
     sidebarRef.current?.classList.remove("active");
   };
-  const handleDropDown = (e) => {
-    SetdropdownOpen(!dropdownOpen);
-  };
 
   return (
     <div className="app">
@@ -49,28 +48,22 @@ function App() {
         navOpen={navOpen}
         handleNavClose={handleNavClose}
         sidebarRef={sidebarRef}
-        handleDropDown={handleDropDown}
-        dropdownOpen={dropdownOpen}
-        SetdropdownOpen={SetdropdownOpen}
       />
       <Layouts>
         <Header navOpen={navOpen} handleNavOpen={handleNavOpen} />
         <Routes>
-          <Route
-            path="/"
-            element={
-              <Dashboard
-                handleDropDown={handleDropDown}
-                dropdownOpen={dropdownOpen}
-                SetdropdownOpen={SetdropdownOpen}
-              />
-            }
-          />
-          <Route path="/inventory" element={<Inventory />}>
-            <Route path=":subpage" element={<Subpage />} />
+          <Route path="/" element={<Dashboard />} />
+          {/* TODO: Implement Dynamic route for subpages */}
+          <Route path="inventory" element={<Inventory />}>
+            <Route path="medicineslist" element={<MedicinesList />} />
+            <Route path="medicinesgroup" element={<MedicinesGroup />} />
           </Route>
-          <Route path="/reports" element={<Reports />} />
-          <Route path="/config" element={<Configuration />} />
+          <Route path="reports" element={<Reports />}>
+            <Route path="sales" element={<Sales />} />
+            <Route path="payments" element={<Payments />} />
+          </Route>
+          <Route path="config" element={<Configuration />} />
+          <Route path="*" element={<h1>Coming Soon...</h1>} />
         </Routes>
       </Layouts>
     </div>

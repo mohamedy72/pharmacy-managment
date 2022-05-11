@@ -1,5 +1,4 @@
 .reports_stats {
-  padding-inline: var(--page-padding);
   display: flex;
   flex-flow: row wrap;
   gap: 2rem;
@@ -21,4 +20,11 @@
 
 .reports_btn {
   display: none;
+}
+
+@media screen and (max-width: 31.25rem) {
+  .reports_stats {
+    justify-content: center;
+    align-items: center;
+  }
 }

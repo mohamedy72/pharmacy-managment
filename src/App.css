@@ -62,7 +62,7 @@ h2 {
 }
 
 .app {
-  width: 100vw;
+  width: min(90rem, 100vw);
   height: 100vh;
   margin-inline: auto;
   background-color: var(--light-gray);
@@ -70,6 +70,11 @@ h2 {
   grid-template-columns: minmax(10rem, 16rem) 1fr;
   overflow-x: hidden;
 }
+.main_app > section:not(.dashboard) {
+  padding-inline: var(--page-padding);
+}
+
+
 
 @media screen and (max-width: 56.25rem) {
   .app {

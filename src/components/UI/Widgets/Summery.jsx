@@ -1,5 +1,6 @@
 import "./widgets.css";
-import { ArrowRight } from "react-bootstrap-icons";
+import { ArrowRight, CaretDown } from "react-bootstrap-icons";
+
 import { Link } from "react-router-dom";
 
 const State = ({ header, linktext, state, state2, label, label2, href }) => {
@@ -9,9 +10,12 @@ const State = ({ header, linktext, state, state2, label, label2, href }) => {
         <h3>{header}</h3>
         <Link to={href}>
           {linktext}
-          <i className="state_icon">
-            <ArrowRight />
-          </i>
+
+          {href.includes("reports") ? (
+            <CaretDown className="state_icon" />
+          ) : (
+            <ArrowRight className="state_icon" />
+          )}
         </Link>
       </div>
       <hr />

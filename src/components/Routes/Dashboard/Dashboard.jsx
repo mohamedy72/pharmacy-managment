@@ -2,42 +2,35 @@ import LayoutHeader from "../../Layouts/LayoutHeader/LayoutHeader";
 
 import "./dashboard.css";
 
-import { statistics } from "../../data/statistics";
-import { summery } from "../../data/summery";
+import { dashboard_statistics } from "../../data/dashboard_statistics";
+import { dashboard_summery } from "../../data/dashboard_summery";
 import { Summery, Statistic } from "../../UI/Widgets";
 
-const Dashboard = ({
-  handleDropDown,
-  dropdownOpen,
-  position,
-  SetdropdownOpen,
-}) => {
+const Dashboard = () => {
   return (
     <section className="dashboard">
       <LayoutHeader
+        btnClass="download_btn"
         iconDir="right"
         label="Download layout"
         text="Dashboard"
         paragraph="A quick data overview of the inventory."
         hasDropdown
-        handleDropDown={handleDropDown}
-        dropdownOpen={dropdownOpen}
-        position={position}
-        SetdropdownOpen={SetdropdownOpen}
       />
       <section className="dashboard_statistics">
-        {statistics?.map((status) => (
+        {dashboard_statistics?.map((stat) => (
           <Statistic
-            key={status.id}
-            icon={status.icon}
-            label={status.label}
-            subheader={status.subheader}
-            linktext={status.linktext}
+            key={stat.id}
+            icon={stat.icon}
+            label={stat.label}
+            subheader={stat.subheader}
+            linktext={stat.linktext}
+            linkpath={stat?.linkpath}
           />
         ))}
       </section>
       <section className="dashboard_summery">
-        {summery?.map((sum) => (
+        {dashboard_summery?.map((sum) => (
           <Summery
             key={sum.state}
             href={sum.href}

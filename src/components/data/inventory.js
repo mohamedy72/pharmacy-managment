@@ -9,7 +9,7 @@ export const inventory = [
     label: "298",
     subheader: "Medicines Available",
     linktext: "View full list",
-    href: "inventory/list-of-medicines",
+    linkpath: "inventory/list-of-medicines",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const inventory = [
     label: "02",
     subheader: "Medicines Groups",
     linktext: "View Groups",
-    href: "inventory/medicines-group",
+    linkpath: "inventory/medicines-group",
   },
   {
     id: 3,
@@ -25,6 +25,6 @@ export const inventory = [
     label: "01",
     subheader: "Medicine Shortage",
     linktext: "Resolve Now",
-    href: "inventory/medicines-shortage",
+    linkpath: "inventory/medicines-shortage",
   },
 ];

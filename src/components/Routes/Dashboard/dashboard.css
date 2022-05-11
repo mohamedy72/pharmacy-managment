@@ -55,6 +55,17 @@
   background-color: rgba(240, 72, 62, 0.3);
 }
 
+.download_btn .btn_data {
+  display: flex;
+  align-items: center;
+  gap: 0 0.7rem;
+}
+
+.download_btn .btn_data > svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
 /* ==================================================== */
 
 .dashboard_summery {
@@ -73,8 +84,14 @@
   }
 }
 
-@media screen and (max-width: 26.875rem) {
+@media screen and (max-width: 31.25rem) {
   .dashboard_statistics {
     justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 21.25rem) {
+  .dashboard_summery {
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   }
 }

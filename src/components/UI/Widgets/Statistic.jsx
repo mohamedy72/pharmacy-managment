@@ -1,19 +1,22 @@
 import "./widgets.css";
 
 import { ArrowRight } from "react-bootstrap-icons";
+import { Link } from "react-router-dom";
 
-const Statistic = ({ label, icon, subheader, linktext, href }) => {
+const Statistic = ({ label, icon, subheader, linktext, linkpath }) => {
+  console.log(linkpath);
   return (
     <div className="statisticbox">
       <img src={icon} alt={subheader} />
       <h3 className="stat_header">{label}</h3>
       <h4 className="stat_subheader">{subheader}</h4>
-      <a href={href} className="stat_details">
-        {linktext}
-        <i>
+      {/* TODO: Getting undefined so fix it */}
+      {linkpath && (
+        <Link to={linkpath} className="stat_details">
+          {linktext}
           <ArrowRight />
-        </i>
-      </a>
+        </Link>
+      )}
     </div>
   );
 };

@@ -6,7 +6,7 @@ import { pages } from "../../data/pages";
 
 const Configuration = () => {
   return (
-    <section className="config">
+    <section className="configuration">
       <LayoutHeader
         layoutClass="config_header"
         textClass="config_header_text"

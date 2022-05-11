@@ -1,4 +1,4 @@
-export const summery = [
+export const dashboard_summery = [
   {
     header: "Inventory",
     linktext: "Configuration Page",
@@ -24,7 +24,7 @@ export const summery = [
     state2: "05",
     label: "Total no of Suppliers",
     label2: "Total no of Users",
-    href: "#",
+    href: "/users",
   },
   {
     header: "Customers",
@@ -33,6 +33,6 @@ export const summery = [
     state2: "Adalimumab",
     label: "Total no of Customers",
     label2: "Frequently bought Item",
-    href: "#",
+    href: "/customers",
   },
 ];

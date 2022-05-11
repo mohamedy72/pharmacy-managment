@@ -7,38 +7,38 @@
   {
     "title": "Inventory",
     "icon": "Archive",
-    "path": "/inventory",
+    "path": "inventory",
     "chevron": "ChevronDown",
     "submenus": [
       {
         "title": "List of medicines",
-        "path": "/medicineslist"
+        "path": "/inventory/medicineslist"
       },
       {
         "title": "Medicines group",
-        "path": "/medicinesgroup"
+        "path": "/inventory/medicinesgroup"
       }
     ]
   },
   {
     "title": "Reports",
     "icon": "EnvelopePaper",
-    "path": "/reports",
+    "path": "reports",
     "chevron": "ChevronDown",
     "submenus": [
       {
         "title": "Sales reports",
-        "path": "/sales"
+        "path": "reports/sales"
       },
       {
         "title": "payments reports",
-        "path": "/payments"
+        "path": "reports/payments"
       }
     ]
   },
   {
     "title": "Configurations",
     "icon": "Gear",
-    "path": "/config"
+    "path": "config"
   }
 ]

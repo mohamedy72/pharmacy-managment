@@ -1,21 +1,22 @@
 import LayoutHeader from "../../Layouts/LayoutHeader/LayoutHeader";
-import classes from "./reports.module.css";
+import "./reports.css";
 
 import { reports } from "../../data/reports";
 import { Statistic } from "../../UI/Widgets";
+import { Outlet } from "react-router-dom";
 
 const Reports = () => {
   return (
-    <section className={classes.reports}>
+    <section className="reports">
       <LayoutHeader
-        layoutClass={classes.reports_header}
-        textClass={classes.reports_header_text}
-        btnClass={classes.reports_btn}
+        layoutClass="reports_header"
+        textClass="reports_header_text"
+        btnClass="reports_btn"
         iconDir="left"
         text="Reports"
         paragraph="Overall reports related to the pharmacy."
       />
-      <section className={classes.reports_stats}>
+      <section className="reports_stats">
         {reports?.map((report) => (
           <Statistic
             key={report.id}
@@ -24,8 +25,10 @@ const Reports = () => {
             label={report.label}
             subheader={report.subheader}
             linktext={report.linktext}
+            linkpath={report.linkpath}
           />
         ))}
+        <Outlet />
       </section>
     </section>
   );

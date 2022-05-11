@@ -5,6 +5,7 @@ import { Dropdown } from "../Widgets";
 
 import menuItems from "../../data/navitem.json";
 
+import { useState, useEffect, useRef } from "react";
 import {
   ThreeDotsVertical,
   X,
@@ -14,8 +15,27 @@ import {
 
 import logo from "../../../assets/images/logo.png";
 import user from "../../../assets/images/avatar.jpg";
+import useBodyDismiss from "../../../hooks/useBodyDismiss";
 
-const Sidebar = ({ navOpen, handleNavClose, sidebarRef, handleDropDown }) => {
+const Sidebar = ({ navOpen, handleNavClose, sidebarRef }) => {
+  const [sidebarDropdown, setSidebarDropdown] = useState(false);
+  const [bottomPos, setBottomPos] = useState(0);
+
+  const ref = useRef(null);
+
+  useEffect(() => {
+    useBodyDismiss(ref, setSidebarDropdown);
+  }, [ref]);
+
+  const handleSidebarDropdown = () => {
+    setSidebarDropdown(!sidebarDropdown);
+  };
+
+  const getIconBounding = (e) => {
+    const bottomPos = e.target.getBoundingClientRect().bottom;
+    console.log(bottomPos);
+    setBottomPos(bottomPos);
+  };
   return (
     <>
       {navOpen && (
@@ -26,7 +46,6 @@ const Sidebar = ({ navOpen, handleNavClose, sidebarRef, handleDropDown }) => {
           <h1 className="logo">
             <img src={logo} alt="pharmaone logo" /> pharma one
           </h1>
-
           <div className="user">
             <div className="user_img">
               <img src={user} alt="User image" />
@@ -35,7 +54,27 @@ const Sidebar = ({ navOpen, handleNavClose, sidebarRef, handleDropDown }) => {
               <span className="user_name">Mohamed</span>
               <span className="user_role">super admin</span>
             </p>
-            <ThreeDotsVertical onClick={handleDropDown} />
+            <ThreeDotsVertical
+              onClick={(e) => {
+                handleSidebarDropdown(e);
+                getIconBounding(e);
+              }}
+            />
+            <div className="dropdown" ref={ref}>
+              {sidebarDropdown && (
+                <Dropdown bottomPos={bottomPos}>
+                  <p>
+                    <PersonCircle />
+                    <a href="$">my profile</a>
+                  </p>
+                  <hr />
+                  <p>
+                    <BoxArrowRight />
+                    <a href="$">Log out</a>
+                  </p>
+                </Dropdown>
+              )}
+            </div>
           </div>
           <ul className="navlist">
             {menuItems?.map((link, index) => (

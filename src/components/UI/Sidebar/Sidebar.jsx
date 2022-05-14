@@ -33,13 +33,15 @@ const Sidebar = ({ navOpen, handleNavClose, sidebarRef }) => {
 
   const getIconBounding = (e) => {
     const bottomPos = e.target.getBoundingClientRect().bottom;
-    console.log(bottomPos);
     setBottomPos(bottomPos);
   };
   return (
     <>
       {navOpen && (
-        <nav className="navmenu" ref={sidebarRef}>
+        <nav
+          className={navOpen ? "navmenu active" : "navmenu"}
+          ref={sidebarRef}
+        >
           <i className="navmenu_close" onClick={handleNavClose}>
             <X />
           </i>

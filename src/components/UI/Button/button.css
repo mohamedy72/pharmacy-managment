@@ -5,4 +5,13 @@
   cursor: pointer;
 }
 
+.btn .btn_data {
+  display: flex;
+  align-items: center;
+  gap: 0 0.7rem;
+}
 
+.btn .btn_data > svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}

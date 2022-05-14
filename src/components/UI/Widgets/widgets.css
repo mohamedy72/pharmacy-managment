@@ -2,6 +2,7 @@
 .searchbox {
   position: relative;
   border-radius: 0.3125rem;
+  flex: 0 1 min(24.5rem, 75vw);
 }
 input {
   width: 100%;

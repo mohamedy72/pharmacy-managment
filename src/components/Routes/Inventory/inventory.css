@@ -35,6 +35,9 @@
   background-color: rgba(240, 72, 62, 0.8);
 }
 
+.arrow {
+  margin-inline: .5rem;
+}
 @media screen and (max-width: 31.25rem) {
   .inventory_stats {
     justify-content: center;

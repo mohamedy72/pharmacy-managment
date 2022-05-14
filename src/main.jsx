@@ -1,12 +1,37 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
 import App from "./App";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import {
+  Configuration,
+  Dashboard,
+  Inventory,
+  Reports,
+} from "./components/Routes";
+import MedicinesList from "./components/SubRoutes/MedicinesList/MedicinesList";
+import MedicinesGroup from "./components/SubRoutes/MedicinesGroup/MedicinesGroup";
+import Payments from "./components/SubRoutes/Payments/Payments";
+import Sales from "./components/SubRoutes/Sales/Sales";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <Routes>
+        <Route path="/" element={<App />}>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="inventory" element={<Inventory />}>
+            <Route path="medicineslist" element={<MedicinesList />} />
+            <Route path="medicinesgroup" element={<MedicinesGroup />} />
+          </Route>
+          <Route path="reports" element={<Reports />}>
+            <Route path="sales" element={<Sales />} />
+            <Route path="payments" element={<Payments />} />
+          </Route>
+          <Route path="config" element={<Configuration />} />
+          <Route path="*" element={<h1>Coming Soon...</h1>} />
+        </Route>
+      </Routes>
     </BrowserRouter>
   </React.StrictMode>
 );

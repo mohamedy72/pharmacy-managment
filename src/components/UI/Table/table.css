@@ -1,0 +1,47 @@
+.table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid;
+  margin-block-start: 0.9375rem;
+  background-color: var(--white);
+  border-radius: 5px;
+}
+th {
+  padding-block: 0.8125rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: left;
+  text-transform: capitalize;
+}
+
+th,
+td {
+  border-bottom: 1px solid;
+}
+
+thead th:first-of-type,
+tbody th {
+  padding-inline: 1.875rem;
+}
+
+tbody th {
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+thead th:first-child {
+  width: 30%;
+}
+
+thead th:nth-child(2) {
+  width: 25%;
+}
+thead th:nth-child(3) {
+  width: 20%;
+}
+thead th:nth-child(4) {
+  width: 15%;
+}
+thead th:last-child {
+  width: 10%;
+}

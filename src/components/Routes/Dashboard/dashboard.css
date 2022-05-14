@@ -55,16 +55,6 @@
   background-color: rgba(240, 72, 62, 0.3);
 }
 
-.download_btn .btn_data {
-  display: flex;
-  align-items: center;
-  gap: 0 0.7rem;
-}
-
-.download_btn .btn_data > svg {
-  width: 1.5rem;
-  height: 1.5rem;
-}
 
 /* ==================================================== */
 

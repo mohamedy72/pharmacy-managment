@@ -1,21 +1,12 @@
-import { useRef, useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { useRef, useState, useEffect } from "react";
+import "./App.css";
+
 import { Layouts } from "./components/Layouts/Layouts";
-import {
-  Configuration,
-  Dashboard,
-  Inventory,
-  Reports,
-} from "./components/Routes";
 import Header from "./components/UI/Header/Header";
 import Sidebar from "./components/UI/Sidebar/Sidebar";
 
-import "./App.css";
-import { useEffect } from "react";
-import MedicinesList from "./components/SubRoutes/MedicinesList/MedicinesList";
-import MedicinesGroup from "./components/SubRoutes/MedicinesGroup/MedicinesGroup";
-import Payments from "./components/SubRoutes/Payments/Payments";
-import Sales from "./components/SubRoutes/Sales/Sales";
+import { Outlet } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 function App() {
   const [navOpen, setNavOpen] = useState(false);
@@ -35,11 +26,9 @@ function App() {
 
   const handleNavOpen = () => {
     setNavOpen(true);
-    sidebarRef.current?.classList.add("active");
   };
   const handleNavClose = () => {
     setNavOpen(false);
-    sidebarRef.current?.classList.remove("active");
   };
 
   return (
@@ -51,20 +40,7 @@ function App() {
       />
       <Layouts>
         <Header navOpen={navOpen} handleNavOpen={handleNavOpen} />
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          {/* TODO: Implement Dynamic route for subpages */}
-          <Route path="inventory" element={<Inventory />}>
-            <Route path="medicineslist" element={<MedicinesList />} />
-            <Route path="medicinesgroup" element={<MedicinesGroup />} />
-          </Route>
-          <Route path="reports" element={<Reports />}>
-            <Route path="sales" element={<Sales />} />
-            <Route path="payments" element={<Payments />} />
-          </Route>
-          <Route path="config" element={<Configuration />} />
-          <Route path="*" element={<h1>Coming Soon...</h1>} />
-        </Routes>
+        <Outlet />
       </Layouts>
     </div>
   );

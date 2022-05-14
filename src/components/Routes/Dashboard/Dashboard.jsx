@@ -5,6 +5,7 @@ import "./dashboard.css";
 import { dashboard_statistics } from "../../data/dashboard_statistics";
 import { dashboard_summery } from "../../data/dashboard_summery";
 import { Summery, Statistic } from "../../UI/Widgets";
+import { ArrowDownShort } from "react-bootstrap-icons";
 
 const Dashboard = () => {
   return (
@@ -15,6 +16,7 @@ const Dashboard = () => {
         label="Download layout"
         text="Dashboard"
         paragraph="A quick data overview of the inventory."
+        icon={<ArrowDownShort />}
         hasDropdown
       />
       <section className="dashboard_statistics">

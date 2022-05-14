@@ -85,7 +85,6 @@
   margin-block-start: 1.875rem;
 }
 
-
 /* [x] Subpage Styles */
 
 @media screen and (max-width: 56.25rem) {
@@ -93,10 +92,10 @@
     position: fixed;
     inset: 0;
     transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 
-  .active {
+  .navmenu.active {
     transform: translateX(0);
   }
 

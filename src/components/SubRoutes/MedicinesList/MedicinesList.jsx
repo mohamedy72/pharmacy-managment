@@ -1,39 +1,52 @@
 import "./medicineslist.css";
+import { Fragment, useContext } from "react";
+import { useLocation, Outlet, Link } from "react-router-dom";
+
 import { Searchbar, Selectbox } from "../../UI/Widgets";
 import Table from "../../UI/Table/Table";
 
 import { Funnel } from "react-bootstrap-icons";
-import { headers, medicines } from "../../data/medicineslist";
+import { headers } from "../../data/medicineslist";
 import {
   ArrowDownUp,
   ArrowLeftShort,
   ArrowRightShort,
 } from "react-bootstrap-icons";
+
+import { locationToArray } from "../../../utils/locationToArray";
+import { MedicinesContext } from "../../../context";
 const MedicinesList = () => {
+  const { medicines } = useContext(MedicinesContext);
+  const { pathname } = useLocation();
+  const pathnameArr = locationToArray(pathname);
+
   const tableHeaders = headers?.map((header, ind) => (
     <th key={header + ind}>
-      {header} <ArrowDownUp className="header_icon" />{" "}
+      {header} <ArrowDownUp className="header_icon" />
     </th>
   ));
-  const tableData = medicines.map((med, ind) => (
-    <>
-      <tr key={med.name + ind}>
-        {med.name && (
-          <th scope="row" className="med_name">
-            {med.name}
-          </th>
-        )}
-        <td> {med.id} </td>
-        <td> {med.group} </td>
-        <td> {med.qty} </td>
-        <td className="action">
-          <a href="#">{med.action}</a>
-        </td>
-      </tr>
-    </>
-  ));
-  console.log();
-  return (
+
+  const tableData = medicines.map((med, ind) => {
+    return (
+      <Fragment key={med + ind}>
+        <tr key={med.name + ind}>
+          {med.name && (
+            <th scope="row" className="med_name">
+              {med.name}
+            </th>
+          )}
+          <td> {med.id} </td>
+          <td> {med.group} </td>
+          <td> {med.qty} </td>
+          <td className="action">
+            <Link to={med.name}>Details</Link>
+          </td>
+        </tr>
+      </Fragment>
+    );
+  });
+
+  return pathnameArr.length <= 2 ? (
     <section className="medicines_list">
       <div className="list_header">
         <Searchbar
@@ -50,7 +63,7 @@ const MedicinesList = () => {
             </option>
             <option value="generic">Generic medicine</option>
             <option value="diabetes">Diabetes</option>
-            <option value="hypertension">Hypertension</option>
+            <option value="hypertension">Hypertens ion</option>
           </Selectbox>
         </div>
       </div>
@@ -83,11 +96,9 @@ const MedicinesList = () => {
         </div>
       </div>
     </section>
+  ) : (
+    <Outlet />
   );
 };
 
 export default MedicinesList;
-
-/** {medicineslist?.map((list, ind) => (
-          <th key={list.header + ind}> {list.header} </th>
-        ))} */

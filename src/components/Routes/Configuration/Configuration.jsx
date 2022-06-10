@@ -22,6 +22,7 @@ const Configuration = () => {
           property="pharmacist name"
           value_2="PH349TY228"
           property_2="pharmacy id"
+          hasIcon
         />
         <Config
           label="owner"
@@ -29,6 +30,7 @@ const Configuration = () => {
           property="owner name"
           value_2="user@email.com"
           property_2="owner email"
+          hasIcon
         />
         <Pages label="pages" action="Action">
           {pages?.map((page) => (

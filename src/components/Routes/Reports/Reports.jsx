@@ -15,6 +15,7 @@ const Reports = () => {
         iconDir="left"
         text="Reports"
         paragraph="Overall reports related to the pharmacy."
+        path=""
       />
       <section className="reports_stats">
         {reports?.map((report) => (

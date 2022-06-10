@@ -1,11 +1,20 @@
+import { Link } from "react-router-dom";
 import "./button.css";
-const Button = ({ iconDir, label, icon, handleHeaderDropdown, btnClass }) => {
+const Button = ({
+  iconDir,
+  label,
+  icon,
+  handleHeaderDropdown,
+  btnClass,
+  path,
+}) => {
   return (
-    <button
+    <Link
       className={`
       btn ${btnClass}
     `}
       onClick={handleHeaderDropdown}
+      to={path}
     >
       {iconDir === "left" ? (
         <>
@@ -22,7 +31,7 @@ const Button = ({ iconDir, label, icon, handleHeaderDropdown, btnClass }) => {
       ) : (
         { label }
       )}
-    </button>
+    </Link>
   );
 };
 

@@ -6,13 +6,14 @@ import { inventory } from "../../data/inventory";
 
 import { Outlet, useLocation } from "react-router-dom";
 
+import { Fragment } from "react";
 import { Plus } from "react-bootstrap-icons";
 import { locationToArray } from "../../../utils/locationToArray";
 
 const Inventory = () => {
   let { pathname } = useLocation();
   const pathnameArr = locationToArray(pathname);
-  console.log();
+
   return (
     <section className="inventory">
       <LayoutHeader
@@ -29,8 +30,9 @@ const Inventory = () => {
         ))}
         paragraph="List of medicines available for sales."
         icon={<Plus />}
+        path="medicineslist/addmedicines"
       />
-      {pathnameArr.length <= 1 ? (
+      {pathnameArr.length === 1 ? (
         <section className="inventory_stats">
           {inventory?.map((inv) => (
             <Statistic

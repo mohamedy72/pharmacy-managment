@@ -7,13 +7,16 @@ import Sidebar from "./components/UI/Sidebar/Sidebar";
 
 import { Outlet } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import axios from "axios";
 
 function App() {
+  const [search, setSearch] = useState("");
   const [navOpen, setNavOpen] = useState(false);
   const sidebarRef = useRef(null);
   const [matches, setMatches] = useState(
     window.matchMedia("(min-width: 56.25rem)").matches
   );
+
 
   useEffect(() => {
     window

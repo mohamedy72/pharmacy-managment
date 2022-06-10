@@ -259,7 +259,7 @@ input::placeholder {
   color: var(--reddish);
 }
 
-.dropdown_menu .pointer {
+/* .dropdown_menu .pointer {
   background-color: inherit;
   width: 2rem;
   height: 1.5625rem;
@@ -268,7 +268,7 @@ input::placeholder {
   right: 0.9375rem;
   top: -5px;
   transform: rotate(45deg);
-}
+} */
 
 /* [x]: Config box */
 .config,
@@ -293,6 +293,11 @@ input::placeholder {
 .config_pages_header > small {
   font-size: 1rem;
   font-weight: 600;
+}
+
+.config_header a {
+  font-size: 0.75rem;
+  color: var(--darker-gray);
 }
 
 .config_header > svg,

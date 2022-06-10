@@ -11,12 +11,12 @@
   margin-block-end: 1.875rem;
 }
 
-.dashboard button {
+.dashboard .download_btn {
   background-color: var(--white);
   border: 1px solid var(--darker-gray);
   transition: background-color 0.3s ease-in-out;
 }
-.dashboard button:hover {
+.dashboard .download_btn:hover {
   background-color: var(--light-gray);
 }
 
@@ -54,7 +54,6 @@
 .dashboard_statistics div:last-child a {
   background-color: rgba(240, 72, 62, 0.3);
 }
-
 
 /* ==================================================== */
 

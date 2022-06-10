@@ -1,0 +1,11 @@
+.medicine_detail {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.medicine_detail .config:nth-child(3),
+.medicine_detail .config:last-child {
+  grid-column: 1 / -1;
+}
+

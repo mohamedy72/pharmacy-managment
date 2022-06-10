@@ -18,6 +18,7 @@ const Dashboard = () => {
         paragraph="A quick data overview of the inventory."
         icon={<ArrowDownShort />}
         hasDropdown
+        path=""
       />
       <section className="dashboard_statistics">
         {dashboard_statistics?.map((stat) => (

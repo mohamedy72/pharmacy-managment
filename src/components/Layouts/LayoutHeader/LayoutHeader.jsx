@@ -16,8 +16,8 @@ const LayoutHeader = ({
   paragraph,
   hasDropdown,
   icon,
+  path,
 }) => {
-  const location = useLocation();
   const [headerDropdown, setHeaderDropdown] = useState(false);
   const hRef = useRef(null);
   const handleHeaderDropdown = () => {
@@ -40,6 +40,7 @@ const LayoutHeader = ({
           label={label}
           icon={icon}
           handleHeaderDropdown={handleHeaderDropdown}
+          path={path}
         />
       ) : (
         <Button
@@ -47,6 +48,7 @@ const LayoutHeader = ({
           iconDir={iconDir}
           label={label}
           icon={icon}
+          path={path}
         />
       )}
       <div className="dropdown" ref={hRef}>

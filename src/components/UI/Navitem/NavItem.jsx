@@ -1,27 +1,33 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import * as Icons from "react-bootstrap-icons";
 import "./navitem.css";
 
-const NavItem = ({ link }) => {
+const NavItem = ({ link, handleNavClose }) => {
   const [open, setOpen] = useState(false);
   const { [link.icon]: Icon } = Icons;
+  const [mediaScreen, setMediaScreen] = useState(
+    window.matchMedia("(max-width: 45rem)").matches
+  );
+  useEffect(() => {
+    window
+      .matchMedia("(max-width: 45rem)")
+      .addEventListener("change", (e) => setMediaScreen(e.matches));
+  }, [mediaScreen]);
+
+  const handleClicks = () => {
+    setOpen(!open);
+    if (mediaScreen && !link.submenus) {
+      handleNavClose();
+    }
+  };
+
   if (link.submenus) {
     return (
       <div className={open ? "nav_item open" : "nav_item"}>
-        <NavLink
-          to={link.path}
-          className="nav_link"
-          onClick={() => setOpen(!open)}
-        >
+        <NavLink to={link.path} className="nav_link" onClick={handleClicks}>
           {link.icon && <Icon className="nav_icon" />}
           {link.title}
-          {/* <svg fill="#fff"  viewBox="0 0 16 16">
-            <path
-              fill-rule="evenodd"
-              d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
-            />
-          </svg> */}
           <Icons.ChevronDown className="nav_chevron" />
         </NavLink>
         <div className="submenu">
@@ -33,7 +39,11 @@ const NavItem = ({ link }) => {
     );
   } else {
     return (
-      <NavLink to={link.path} className="nav_link">
+      <NavLink
+        to={link.path}
+        className="nav_link"
+        onClick={() => mediaScreen && handleNavClose()}
+      >
         {link.icon && <Icon className="nav_icon" />}
         {link.title}
       </NavLink>

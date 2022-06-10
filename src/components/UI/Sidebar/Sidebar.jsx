@@ -1,3 +1,5 @@
+// [*] ======================= Imports =======================
+import { useState, useEffect, useRef } from "react";
 import "./sidebar.css";
 
 import NavItem from "../Navitem/NavItem";
@@ -5,7 +7,6 @@ import { Dropdown } from "../Widgets";
 
 import menuItems from "../../data/navitem.json";
 
-import { useState, useEffect, useRef } from "react";
 import {
   ThreeDotsVertical,
   X,
@@ -17,6 +18,7 @@ import logo from "../../../assets/images/logo.png";
 import user from "../../../assets/images/avatar.jpg";
 import useBodyDismiss from "../../../hooks/useBodyDismiss";
 
+// [*] ======================= Component =======================
 const Sidebar = ({ navOpen, handleNavClose, sidebarRef }) => {
   const [sidebarDropdown, setSidebarDropdown] = useState(false);
   const [bottomPos, setBottomPos] = useState(0);
@@ -80,7 +82,11 @@ const Sidebar = ({ navOpen, handleNavClose, sidebarRef }) => {
           </div>
           <ul className="navlist">
             {menuItems?.map((link, index) => (
-              <NavItem key={index} link={link} />
+              <NavItem
+                key={index}
+                link={link}
+                handleNavClose={handleNavClose}
+              />
             ))}
           </ul>
         </nav>

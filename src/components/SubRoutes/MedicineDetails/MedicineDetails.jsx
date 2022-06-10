@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import "./medicinedetails.css";
 import { Config } from "../../UI/Widgets";
-import { MedicinesContext } from "../../../context";
+import { MedicinesContext } from "../../../context/MedicinesContext";
 
 const MedicineDetails = () => {
   const { medName } = useParams();

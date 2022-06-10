@@ -14,7 +14,8 @@ import {
 } from "react-bootstrap-icons";
 
 import { locationToArray } from "../../../utils/locationToArray";
-import { MedicinesContext } from "../../../context";
+import { MedicinesContext } from "../../../context/MedicinesContext";
+
 const MedicinesList = () => {
   const { medicines } = useContext(MedicinesContext);
   const { pathname } = useLocation();

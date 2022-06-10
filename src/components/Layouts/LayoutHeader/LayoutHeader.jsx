@@ -6,8 +6,7 @@ import { FileEarmarkExcel, FileEarmarkPdf } from "react-bootstrap-icons";
 import { Dropdown } from "../../UI/Widgets";
 
 import useBodyDismiss from "../../../hooks/useBodyDismiss";
-import { useLocation } from "react-router-dom";
-import menuItems from "../../data/navitem.json";
+
 const LayoutHeader = ({
   btnClass,
   iconDir,

@@ -6,12 +6,14 @@ import { inventory } from "../../data/inventory";
 
 import { Outlet, useLocation } from "react-router-dom";
 
-import { Fragment } from "react";
 import { Plus } from "react-bootstrap-icons";
 import { locationToArray } from "../../../utils/locationToArray";
+import { useParams } from "react-router-dom";
 
 const Inventory = () => {
   let { pathname } = useLocation();
+  const { param } = useParams();
+  console.log(param);
   const pathnameArr = locationToArray(pathname);
 
   return (

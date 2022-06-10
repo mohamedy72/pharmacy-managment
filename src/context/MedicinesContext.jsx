@@ -12,4 +12,4 @@ function MedinicesProvider({ children }) {
   );
 }
 
-export { MedicinesContext, MedinicesProvider };
+export default { MedicinesContext, MedinicesProvider };

@@ -1,10 +1,11 @@
 import { Form, Formik } from "formik";
+import { useState } from "react";
 import * as Yup from "yup";
-import { Input } from "../../UI/Widgets/Input";
-import Selectbox from "../../UI/Widgets/Selectbox";
+import { Selectbox, Textarea, TextInput } from "../../UI/Widgets/FormElements";
 import "./addmedicines.css";
 
 const AddMedicines = () => {
+  const [newMedicine, setNewMedicine] = useState({});
   const initialValues = {
     med_name: "",
     med_id: "",
@@ -22,8 +23,15 @@ const AddMedicines = () => {
     side_effects: Yup.string().required("Required Field"),
   });
 
-  const onSubmit = (values) => {
-    console.log(values);
+  const onSubmit = (values, onSubmitProps) => {
+    setTimeout(() => {
+      setNewMedicine(values);
+      onSubmitProps.resetForm();
+      onSubmitProps.setSubmitting(false);
+    }, 400);
+
+    console.log(newMedicine);
+    console.log(onSubmitProps);
   };
 
   return (
@@ -32,17 +40,61 @@ const AddMedicines = () => {
       validationSchema={validationSchema}
       onSubmit={onSubmit}
     >
-      <Form>
-        <Input label="medicine name" type="text" name="med_name" />
-        <Input label="medicine id" type="text" name="med_id" />
-        <Selectbox name="med_group" label="medicine group">
-          <option value="generic">Generic Medicines</option>
-          <option value="diabetes">Diabetes</option>
-        </Selectbox>
-        <Input label="quantity in number" type="qty" name="med_qty" />
-        <Input.TextArea name="htu" />
-        <Input.TextArea name="side_effects" />
-      </Form>
+      {(formik) => {
+        return (
+          <Form className="form">
+            <div className="form_container" tabIndex="1">
+              <TextInput
+                label="medicine name"
+                name="med_name"
+                type="text"
+                placeholder="Augmentin 1gm"
+              />
+              <TextInput
+                label="medicine id"
+                name="med_id"
+                type="text"
+                placeholder="P156145456"
+              />
+            </div>
+            <div className="form_container">
+              <Selectbox name="med_group" label="medicine group">
+                <option value="*" defaultValue>
+                  Select a group
+                </option>
+                <option value="generic">
+                  Generic Medicines
+                </option>
+                <option value="diabetes">Diabetes</option>
+              </Selectbox>
+              <TextInput
+                label="quantity in number"
+                name="med_qty"
+                type="number"
+                placeholder="100"
+              />
+            </div>
+            <div className="form_container textarea ">
+              <Textarea label="how to use" cols="30" row="10" name="htu" />
+            </div>
+            <div className="form_container textarea">
+              <Textarea
+                label="side effects"
+                cols="30"
+                row="10"
+                name="side_effects"
+              />
+            </div>
+            <button
+              type="submit"
+              disabled={formik.isSubmitting || !formik.isValid}
+              className="btn btn-red"
+            >
+              save details
+            </button>
+          </Form>
+        );
+      }}
     </Formik>
   );
 };

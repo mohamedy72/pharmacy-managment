@@ -9,3 +9,6 @@
   grid-column: 1 / -1;
 }
 
+.remove-btn {
+  background-color: var(--reddish);
+}

@@ -13,7 +13,9 @@ const Button = ({
       className={`
       btn ${btnClass}
     `}
-      onClick={handleHeaderDropdown}
+      onClick={(e) => {
+        handleHeaderDropdown();
+      }}
       to={path}
     >
       {iconDir === "left" ? (

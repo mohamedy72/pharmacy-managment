@@ -9,7 +9,8 @@ specifiers:
   react: ^18.0.0
   react-bootstrap-icons: ^1.8.2
   react-dom: ^18.0.0
-  react-router-dom: ^6.3.0
+  react-router: 6.0.0
+  react-router-dom: 6.0.0
   use-react-router-breadcrumbs: ^3.2.1
   vite: ^2.9.5
   yup: ^0.32.11
@@ -20,8 +21,9 @@ dependencies:
   react: 18.0.0
   react-bootstrap-icons: 1.8.2_react@18.0.0
   react-dom: 18.0.0_react@18.0.0
-  react-router-dom: 6.3.0_zpnidt7m3osuk7shl3s4oenomq
-  use-react-router-breadcrumbs: 3.2.1_react@18.0.0
+  react-router: 6.0.0_react@18.0.0
+  react-router-dom: 6.0.0_zpnidt7m3osuk7shl3s4oenomq
+  use-react-router-breadcrumbs: 3.2.1_siglbqm4lkwitdif7bcgqtrf7m
   yup: 0.32.11
 
 devDependencies:
@@ -201,6 +203,8 @@ packages:
     resolution: {integrity: sha512-vqUSBLP8dQHFPdPi9bc5GK9vRkYHJ49fsZdtoJ8EQ8ibpwk5rPKfvNIwChB0KVXcIjcepEBBd2VHC5r9Gy8ueg==}
     engines: {node: '>=6.0.0'}
     hasBin: true
+    dependencies:
+      '@babel/types': 7.17.0
     dev: true
 
   /@babel/plugin-syntax-jsx/7.16.7_@babel+core@7.17.9:
@@ -902,20 +906,19 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /react-router-dom/6.3.0_zpnidt7m3osuk7shl3s4oenomq:
-    resolution: {integrity: sha512-uaJj7LKytRxZNQV8+RbzJWnJ8K2nPsOOEuX7aQstlMZKQT0164C+X2w6bnkqU3sjtLvpd5ojrezAyfZ1+0sStw==}
+  /react-router-dom/6.0.0_zpnidt7m3osuk7shl3s4oenomq:
+    resolution: {integrity: sha512-bPXyYipf0zu6K7mHSEmNO5YqLKq2q9N+Dsahw9Xh3oq1IirsI3vbnIYcVWin6A0zWyHmKhMGoV7Gr0j0kcuVFg==}
     peerDependencies:
       react: '>=16.8'
       react-dom: '>=16.8'
     dependencies:
-      history: 5.3.0
       react: 18.0.0
       react-dom: 18.0.0_react@18.0.0
-      react-router: 6.3.0_react@18.0.0
+      react-router: 6.0.0_react@18.0.0
     dev: false
 
-  /react-router/6.3.0_react@18.0.0:
-    resolution: {integrity: sha512-7Wh1DzVQ+tlFjkeo+ujvjSqSJmkt1+8JO+T5xklPlgrh70y7ogx75ODRW0ThWhY7S+6yEDks8TYrtQe/aoboBQ==}
+  /react-router/6.0.0_react@18.0.0:
+    resolution: {integrity: sha512-FcTRCihYZvERMNbG54D9+Wkv2cj/OtoxNlA/87D7vxKYlmSmbF9J9XChI9Is44j/behEiOhbovgVZBhKQn+wgA==}
     peerDependencies:
       react: '>=16.8'
     dependencies:
@@ -1005,13 +1008,14 @@ packages:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
     dev: false
 
-  /use-react-router-breadcrumbs/3.2.1_react@18.0.0:
+  /use-react-router-breadcrumbs/3.2.1_siglbqm4lkwitdif7bcgqtrf7m:
     resolution: {integrity: sha512-GpDhGo/A0I1ckGLER1/YZX/tgX+KOAyCGG2HgFIc0SVzQ30hTilufNdNRN3Gt+WXJW0zgn48CxxKvKSe+xA3TA==}
     peerDependencies:
       react: '>=16.8'
       react-router: '>=6.0.0'
     dependencies:
       react: 18.0.0
+      react-router: 6.0.0_react@18.0.0
     dev: false
 
   /vite/2.9.5:

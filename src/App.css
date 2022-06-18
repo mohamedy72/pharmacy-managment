@@ -61,6 +61,18 @@ h2 {
   font-size: 1.5rem;
 }
 
+input,
+textarea {
+  background-color: #e3ebf3;
+  border: 0.2px solid #1d242e69;
+  border-radius: 4px;
+  padding: 0.9375rem 1.25rem;
+}
+
+textarea {
+  resize: none;
+}
+
 .app {
   width: min(90rem, 100vw);
   height: 100vh;
@@ -73,8 +85,6 @@ h2 {
 .main_app > section:not(.dashboard) {
   padding-inline: var(--page-padding);
 }
-
-
 
 @media screen and (max-width: 56.25rem) {
   .app {

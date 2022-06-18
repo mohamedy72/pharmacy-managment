@@ -2,10 +2,13 @@ import { useState, useRef, useEffect } from "react";
 import Button from "../../UI/Button/Button";
 import "./layoutheader.css";
 
+import useBreadcrumbs from "use-react-router-breadcrumbs";
+
 import { FileEarmarkExcel, FileEarmarkPdf } from "react-bootstrap-icons";
 import { Dropdown } from "../../UI/Widgets";
 
 import useBodyDismiss from "../../../hooks/useBodyDismiss";
+import { Link } from "react-router-dom";
 
 const LayoutHeader = ({
   btnClass,
@@ -19,6 +22,8 @@ const LayoutHeader = ({
 }) => {
   const [headerDropdown, setHeaderDropdown] = useState(false);
   const hRef = useRef(null);
+  const breadcrumbs = useBreadcrumbs();
+
   const handleHeaderDropdown = () => {
     setHeaderDropdown(!headerDropdown);
   };
@@ -29,7 +34,7 @@ const LayoutHeader = ({
   return (
     <section className="layoutheader">
       <div className="layout_text">
-        <h2>{text}</h2>
+        <h2> {text} </h2>
         <p>{paragraph}</p>
       </div>
       {hasDropdown ? (
@@ -70,3 +75,17 @@ const LayoutHeader = ({
 };
 
 export default LayoutHeader;
+// {breadcrumbs.map(({ breadcrumb, key }, ind) => {
+//   console.log(breadcrumb);
+//   const notLast = ind < breadcrumbs.length - 1;
+//   if (notLast) {
+//     return (
+//       <>
+//         <Link to={key}>{breadcrumb}</Link>
+//         <span> {">"} </span>
+//       </>
+//     );
+//   } else {
+//     return <Link to={key}>{breadcrumb}</Link>;
+//   }
+// })}

@@ -10,7 +10,7 @@ const MedicineDetails = () => {
 
   return (
     <section className="medicine_detail">
-      {medicines.map((med, ind) => {
+      {medicines.medicines.map((med, ind) => {
         return (
           medName === med.name && (
             <>
@@ -55,6 +55,7 @@ const MedicineDetails = () => {
           )
         );
       })}
+      <button className="btn remove-btn">Remove</button>
     </section>
   );
 };

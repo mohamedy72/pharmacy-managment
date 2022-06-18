@@ -27,7 +27,8 @@ const MedicinesList = () => {
     </th>
   ));
 
-  const tableData = medicines.map((med, ind) => {
+  const tableData = medicines.medicines.map((med, ind) => {
+    console.log(med);
     return (
       <Fragment key={med + ind}>
         <tr key={med.name + ind}>
@@ -74,7 +75,7 @@ const MedicinesList = () => {
           <Table.Body>{tableData}</Table.Body>
         </Table>
         <div className="list_controls">
-          <p>Showing 1 - 8 results of {tableData.length}</p>
+          <p>Showing 1 - 8 results of {tableData?.length}</p>
           <div className="pagination">
             <i className="arrow left end">
               <ArrowLeftShort />

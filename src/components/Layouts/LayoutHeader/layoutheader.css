@@ -12,6 +12,14 @@
   color: rgba(29, 36, 46, 1);
 }
 
+.layout_text h2 > span {
+  color: var(--darker-gray);
+}
+
+.layout_text h2 > span:not(:last-child) {
+  opacity: 0.6;
+}
+
 .header_dropdown {
   position: absolute;
 }

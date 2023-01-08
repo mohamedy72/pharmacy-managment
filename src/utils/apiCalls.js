@@ -13,7 +13,7 @@ export async function getAllMedicines() {
 
 export async function addNewMedicine(post) {
   const addNewMedicine = await axios.post(
-    "http://localhost:4000/medidasdcines",
+    "http://localhost:4000/medicines",
     JSON.stringify(post),
     {
       headers: {

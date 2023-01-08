@@ -149,6 +149,21 @@
         "dose": "howl",
         "sideEffects": "Asdasf"
       }
+    },
+    {
+      "id": "P156422154",
+      "name": "Augmentin 1gm",
+      "group": "generic",
+      "qty": "150",
+      "info": {
+        "medID": null,
+        "medGroup": "Generic",
+        "lifetimeSupply": 150,
+        "lifetimeSales": 350,
+        "stock": 10,
+        "dose": "asdfa",
+        "sideEffects": "fsadf"
+      }
     }
   ]
 }

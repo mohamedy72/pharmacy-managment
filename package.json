@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "serve-json": "json-server --watch ./src/components/data/medicines.json --port 4000"
+    "serve-json": "json-server --watch ./src/data/medicines.json --port 4000"
   },
   "dependencies": {
     "axios": "^1.2.2",
@@ -15,7 +15,6 @@
     "react": "^18.2.0",
     "react-bootstrap-icons": "^1.10.2",
     "react-dom": "^18.2.0",
-    "react-router": "6.6.1",
     "react-router-dom": "6.6.1",
     "use-react-router-breadcrumbs": "^4.0.1",
     "yup": "^0.32.11"

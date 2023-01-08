@@ -2,7 +2,7 @@ import "./widgets.css";
 
 import { useEffect, useState } from "react";
 
-import { currentDate, currentTime } from "@/utils/currentDataAndTime";
+import { currentDate, currentTime } from "@Utils/currentDataAndTime";
 
 import { BrightnessHighFill, MoonFill } from "react-bootstrap-icons";
 

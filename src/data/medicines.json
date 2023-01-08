@@ -119,6 +119,36 @@
         "dose": "Take the medicine every 12 hours as a whole, Don't crush or chew",
         "sideEffects": "nausea, vomiting, diarrhea, rash, itching vaginal itching or discharge; or diaper rash"
       }
+    },
+    {
+      "id": "P156425154",
+      "name": "Augmentin 1gm",
+      "group": "generic",
+      "qty": "150",
+      "info": {
+        "medID": null,
+        "medGroup": "Generic",
+        "lifetimeSupply": 150,
+        "lifetimeSales": 350,
+        "stock": 10,
+        "dose": "One tablet every 12hr for 6 days",
+        "sideEffects": "Nausea , Vomiting "
+      }
+    },
+    {
+      "id": "P156422180",
+      "name": "Augmentin 1gm",
+      "group": "generic",
+      "qty": "10",
+      "info": {
+        "medID": null,
+        "medGroup": "Generic",
+        "lifetimeSupply": 150,
+        "lifetimeSales": 350,
+        "stock": 10,
+        "dose": "howl",
+        "sideEffects": "Asdasf"
+      }
     }
   ]
 }

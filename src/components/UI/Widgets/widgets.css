@@ -400,7 +400,7 @@
 .error {
   position: absolute;
   right: 0;
-  top: -5px;
+  bottom: -5px;
   padding: 0.25rem;
   font-size: 0.8rem;
   color: var(--white);

@@ -18,7 +18,7 @@ const Button = ({
       onClick={(e) => {
         handleHeaderDropdown();
       }}
-      to={path}
+      to={`${path}`}
     >
       {iconDir === "left" ? (
         <>

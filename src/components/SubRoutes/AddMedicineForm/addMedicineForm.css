@@ -3,7 +3,7 @@
   display: flex;
   flex-flow: column wrap;
   gap: 0.9375rem;
-  padding-block-end: 1.875rem;
+  padding-block: 1.875rem;
 }
 
 .form_container {
@@ -21,8 +21,6 @@
   width: 50%;
   display: flex;
   flex-flow: column wrap;
-}
-.form_container .selectbox {
 }
 
 .form_container label {

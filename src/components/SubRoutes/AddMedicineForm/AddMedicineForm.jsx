@@ -1,4 +1,4 @@
-import "./addmedicines.css";
+import "./addMedicineForm.css";
 import { useState } from "react";
 
 import {
@@ -8,7 +8,8 @@ import {
 } from "@Components/UI/Widgets/FormElements";
 
 import * as Yup from "yup";
-import { Form, Formik } from "formik";
+import { Formik } from "formik";
+import { Form } from "react-router-dom";
 
 const AddMedicines = () => {
   const [newMedicine, setNewMedicine] = useState({});
@@ -22,8 +23,8 @@ const AddMedicines = () => {
   };
   const validationSchema = Yup.object({
     med_name: Yup.string().required("Required Field"),
-    med_id: Yup.string().required("Required Field"),
-    med_qty: Yup.number().required("Required Field"),
+    med_id: Yup.string().required("Required Field").length(10),
+    med_qty: Yup.number().required("Required Field").min(1),
     med_group: Yup.string().required("Required Field"),
     htu: Yup.string().required("Required Field"),
     side_effects: Yup.string().required("Required Field"),
@@ -48,7 +49,7 @@ const AddMedicines = () => {
     >
       {(formik) => {
         return (
-          <Form className="form">
+          <Form method="post" action="/inventory/new" className="form">
             <div className="form_container" tabIndex="1">
               <TextInput
                 label="medicine name"
@@ -74,7 +75,7 @@ const AddMedicines = () => {
               <TextInput
                 label="quantity in number"
                 name="med_qty"
-                type="number"
+                type="text"
                 placeholder="100"
               />
             </div>

@@ -1,9 +1,7 @@
-import "./medicinedetails.css";
-
-import { useEffect, useState } from "react";
-
-import axios from "axios";
 import { useParams } from "react-router-dom";
+import "./medicinedetails.css";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const MedicineDetails = () => {
   const [singleMedicine, setSingleMedicine] = useState({});
@@ -12,7 +10,6 @@ const MedicineDetails = () => {
     const getSingleMedicine = async () => {
       const get = await axios.get(`http://localhost:4000/medicines/${medID}`);
       const data = await get.data;
-      console.log(data);
       setSingleMedicine(data);
     };
 

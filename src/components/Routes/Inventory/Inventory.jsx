@@ -38,7 +38,7 @@ const Inventory = () => {
         text={breadcrumbs.map((bread) => bread)}
         paragraph="List of medicines available for sales."
         icon={<Plus />}
-        path="medicineslist/addmedicines"
+        path="/inventory/new"
       />
       {pathnameArr.length === 1 ? (
         <section className="inventory_stats">

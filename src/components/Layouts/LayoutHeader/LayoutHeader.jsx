@@ -5,7 +5,6 @@ import { Dropdown } from "@Components/UI/Widgets";
 import useBodyDismiss from "@Hooks/useBodyDismiss";
 
 import { Link } from "react-router-dom";
-import useBreadcrumbs from "use-react-router-breadcrumbs";
 import { FileEarmarkExcel, FileEarmarkPdf } from "react-bootstrap-icons";
 
 const LayoutHeader = ({
@@ -20,7 +19,6 @@ const LayoutHeader = ({
 }) => {
   const [headerDropdown, setHeaderDropdown] = useState(false);
   const hRef = useRef(null);
-  const breadcrumbs = useBreadcrumbs();
 
   const handleHeaderDropdown = () => {
     setHeaderDropdown(!headerDropdown);
@@ -77,17 +75,3 @@ const LayoutHeader = ({
 };
 
 export default LayoutHeader;
-// {breadcrumbs.map(({ breadcrumb, key }, ind) => {
-//   console.log(breadcrumb);
-//   const notLast = ind < breadcrumbs.length - 1;
-//   if (notLast) {
-//     return (
-//       <>
-//         <Link to={key}>{breadcrumb}</Link>
-//         <span> {">"} </span>
-//       </>
-//     );
-//   } else {
-//     return <Link to={key}>{breadcrumb}</Link>;
-//   }
-// })}

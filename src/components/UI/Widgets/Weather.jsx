@@ -12,7 +12,6 @@ const Weather = ({ greet }) => {
   useEffect(() => {
     const timer = setInterval(() => {
       setTime(currentTime());
-      console.log(time);
     }, 1000);
 
     return () => {
@@ -30,14 +29,14 @@ const Weather = ({ greet }) => {
       </p>
       <p className="weather_cal">
         <div className="weather_date">
-          {currentDate().day < 10 ? (
-            <span>0{currentDate().day}</span>
+          {currentDate().month < 10 ? (
+            <span>0{currentDate().month}</span>
           ) : (
             <span>{currentDate().month}</span>
           )}
           :
-          {currentDate().month < 10 ? (
-            <span>0{currentDate().month}</span>
+          {currentDate().day < 10 ? (
+            <span>0{currentDate().day}</span>
           ) : (
             <span>{currentDate().month}</span>
           )}

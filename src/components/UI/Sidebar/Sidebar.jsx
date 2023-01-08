@@ -19,7 +19,7 @@ import user from "../../../assets/images/avatar.jpg";
 import useBodyDismiss from "../../../hooks/useBodyDismiss";
 
 // [*] ======================= Component =======================
-const Sidebar = ({ navOpen, handleNavClose, sidebarRef }) => {
+const Sidebar = ({ navOpen, handleNavClose }) => {
   const [sidebarDropdown, setSidebarDropdown] = useState(false);
   const [bottomPos, setBottomPos] = useState(0);
 
@@ -39,58 +39,49 @@ const Sidebar = ({ navOpen, handleNavClose, sidebarRef }) => {
   };
   return (
     <>
-      {navOpen && (
-        <nav
-          className={navOpen ? "navmenu active" : "navmenu"}
-          ref={sidebarRef}
-        >
-          <i className="navmenu_close" onClick={handleNavClose}>
-            <X />
-          </i>
-          <h1 className="logo">
-            <img src={logo} alt="pharmaone logo" /> pharma one
-          </h1>
-          <div className="user">
-            <div className="user_img">
-              <img src={user} alt="User image" />
-            </div>
-            <p className="user_info">
-              <span className="user_name">Mohamed</span>
-              <span className="user_role">super admin</span>
-            </p>
-            <ThreeDotsVertical
-              onClick={(e) => {
-                handleSidebarDropdown(e);
-                getIconBounding(e);
-              }}
-            />
-            <div className="dropdown" ref={ref}>
-              {sidebarDropdown && (
-                <Dropdown bottomPos={bottomPos}>
-                  <p>
-                    <PersonCircle />
-                    <a href="$">my profile</a>
-                  </p>
-                  <hr />
-                  <p>
-                    <BoxArrowRight />
-                    <a href="$">Log out</a>
-                  </p>
-                </Dropdown>
-              )}
-            </div>
+      <nav className={navOpen ? "navmenu active" : "navmenu"}>
+        <i className="navmenu_close" onClick={handleNavClose}>
+          <X />
+        </i>
+        <h1 className="logo">
+          <img src={logo} alt="pharmaone logo" /> pharma one
+        </h1>
+        <div className="user">
+          <div className="user_img">
+            <img src={user} alt="User image" />
           </div>
-          <ul className="navlist">
-            {menuItems?.map((link, index) => (
-              <NavItem
-                key={index}
-                link={link}
-                handleNavClose={handleNavClose}
-              />
-            ))}
-          </ul>
-        </nav>
-      )}
+          <p className="user_info">
+            <span className="user_name">Mohamed</span>
+            <span className="user_role">super admin</span>
+          </p>
+          <ThreeDotsVertical
+            onClick={(e) => {
+              handleSidebarDropdown(e);
+              getIconBounding(e);
+            }}
+          />
+          <div className="dropdown" ref={ref}>
+            {sidebarDropdown && (
+              <Dropdown bottomPos={bottomPos}>
+                <p>
+                  <PersonCircle />
+                  <a href="$">my profile</a>
+                </p>
+                <hr />
+                <p>
+                  <BoxArrowRight />
+                  <a href="$">Log out</a>
+                </p>
+              </Dropdown>
+            )}
+          </div>
+        </div>
+        <ul className="navlist">
+          {menuItems?.map((link, index) => (
+            <NavItem key={index} link={link} handleNavClose="" />
+          ))}
+        </ul>
+      </nav>
     </>
   );
 };

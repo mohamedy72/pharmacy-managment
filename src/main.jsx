@@ -15,7 +15,7 @@ import Payments from "./components/SubRoutes/Payments/Payments";
 import Sales from "./components/SubRoutes/Sales/Sales";
 import AddMedicines from "./components/SubRoutes/AddMedicines/AddMedicines";
 import MedicineDetails from "./components/SubRoutes/MedicineDetails/MedicineDetails";
-import { MedinicesProvider } from "./context/MedicinesContext";
+import MedinicesProvider from "./context/MedicinesContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -27,7 +27,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route path="inventory" element={<Inventory />}>
               <Route path="medicineslist" element={<MedicinesList />}>
                 <Route path="addmedicines" element={<AddMedicines />} />
-                <Route path=":medName" element={<MedicineDetails />} />
+                <Route path=":medID" element={<MedicineDetails />} />
               </Route>
               <Route path="medicinesgroup" element={<MedicinesGroup />} />
             </Route>

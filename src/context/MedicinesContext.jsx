@@ -1,25 +1,43 @@
-import { createContext, useReducer } from "react";
-import medicinesList from "../components/data/medicines.json";
-
+import {
+  createContext,
+  useReducer,
+  useEffect,
+  useState,
+  useContext,
+} from "react";
+import axios from "axios";
 const MedicinesContext = createContext();
-const medReducer = (state, action) => {
-  switch (action.type) {
-    case "DELETE_MED":
-      return state.filter((med) => med.name !== action.name);
-    default:
-      return state;
-  }
-};
+// const medReducer = (state, action) => {
+//   switch (action.type) {
+//     case "DELETE_MED":
+//       return state.filter((med) => med.name !== action.name);
+//     default:
+//       return state;
+//   }
+// };
 
 function MedinicesProvider({ children }) {
-  const [medicines, dispatch] = useReducer(medReducer, medicinesList);
-  // const [medicines, setMedicines] = useState(medicinesList);
-  console.log(medicines);
+  const [medicines, setMedicines] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const URL = "http://localhost:4000/medicines";
+      const res = await axios.get(URL);
+      const data = await res.data;
+      setMedicines(data);
+    };
+
+    fetchData();
+  }, []);
+
   return (
-    <MedicinesContext.Provider value={{ medicines, dispatch }}>
+    <MedicinesContext.Provider value={{ medicines }}>
       {children}
     </MedicinesContext.Provider>
   );
 }
+export default MedinicesProvider;
 
-export { MedicinesContext, MedinicesProvider };
+export const useMedData = () => {
+  const medicines = useContext(MedicinesContext);
+  return medicines;
+};

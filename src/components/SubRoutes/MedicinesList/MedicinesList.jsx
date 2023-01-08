@@ -14,10 +14,10 @@ import {
 } from "react-bootstrap-icons";
 
 import { locationToArray } from "../../../utils/locationToArray";
-import { MedicinesContext } from "../../../context/MedicinesContext";
+import { useMedData } from "../../../context/MedicinesContext";
 
 const MedicinesList = () => {
-  const { medicines } = useContext(MedicinesContext);
+  const { medicines } = useMedData();
   const { pathname } = useLocation();
   const pathnameArr = locationToArray(pathname);
 
@@ -27,8 +27,7 @@ const MedicinesList = () => {
     </th>
   ));
 
-  const tableData = medicines.medicines.map((med, ind) => {
-    console.log(med);
+  const tableData = medicines.map((med, ind) => {
     return (
       <Fragment key={med + ind}>
         <tr key={med.name + ind}>
@@ -41,7 +40,7 @@ const MedicinesList = () => {
           <td> {med.group} </td>
           <td> {med.qty} </td>
           <td className="action">
-            <Link to={med.name}>Details</Link>
+            <Link to={med.id}>Details</Link>
           </td>
         </tr>
       </Fragment>

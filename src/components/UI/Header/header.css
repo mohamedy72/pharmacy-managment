@@ -13,6 +13,10 @@
   height: 1.25rem;
   margin-inline-end: 0.625rem;
 }
+
+.header .weather {
+  max-width: 40%;
+}
 .select_lang {
   display: flex;
   align-items: center;

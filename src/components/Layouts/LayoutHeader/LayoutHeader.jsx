@@ -65,7 +65,9 @@ const LayoutHeader = ({
             <hr />
             <p>
               <FileEarmarkPdf />
-              <a href="$">PDF</a>
+              <a href="../../../assets/files/PDFSample.pdf" download>
+                PDF
+              </a>
             </p>
           </Dropdown>
         )}

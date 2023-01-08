@@ -1,10 +1,10 @@
-import LayoutHeader from "../../Layouts/LayoutHeader/LayoutHeader";
-
 import "./dashboard.css";
 
-import { dashboard_statistics } from "../../../data/dashboard_statistics";
-import { dashboard_summery } from "../../../data/dashboard_summery";
-import { Summery, Statistic } from "../../UI/Widgets";
+import LayoutHeader from "@Components/Layouts/LayoutHeader/LayoutHeader";
+import { Summery, Statistic } from "@Components/UI/Widgets";
+import { dashboard_statistics } from "@Data/dashboard_statistics";
+import { dashboard_summery } from "@Data/dashboard_summery";
+
 import { ArrowDownShort } from "react-bootstrap-icons";
 
 const Dashboard = () => {

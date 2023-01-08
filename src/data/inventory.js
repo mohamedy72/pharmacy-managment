@@ -1,6 +1,6 @@
-import medicines from "../../assets/icons/medicines.png";
-import medicines_green from "../../assets/icons/medicines_green.png";
-import warning from "../../assets/icons/warning.png";
+import medicines from "@Assets/icons/medicines.png";
+import medicines_green from "@Assets/icons/medicines_green.png";
+import warning from "@Assets/icons/warning.png";
 
 export const inventory = [
   {

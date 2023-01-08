@@ -1,8 +1,8 @@
 import "./configuration.css";
 import LayoutHeader from "../../Layouts/LayoutHeader/LayoutHeader";
-import { Config, Page, Pages } from "../../UI/Widgets";
+import { Config, Page, Pages } from "@Components/UI/Widgets";
 
-import { pages } from "../../../data/pages";
+import { pages } from "@Data/pages";
 
 const Configuration = () => {
   return (

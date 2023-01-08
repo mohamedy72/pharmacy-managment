@@ -1,8 +1,14 @@
-import { Form, Formik } from "formik";
-import { useState } from "react";
-import * as Yup from "yup";
-import { Selectbox, Textarea, TextInput } from "../../UI/Widgets/FormElements";
 import "./addmedicines.css";
+import { useState } from "react";
+
+import {
+  Selectbox,
+  Textarea,
+  TextInput,
+} from "@Components/UI/Widgets/FormElements";
+
+import * as Yup from "yup";
+import { Form, Formik } from "formik";
 
 const AddMedicines = () => {
   const [newMedicine, setNewMedicine] = useState({});
@@ -62,9 +68,7 @@ const AddMedicines = () => {
                 <option value="*" defaultValue>
                   Select a group
                 </option>
-                <option value="generic">
-                  Generic Medicines
-                </option>
+                <option value="generic">Generic Medicines</option>
                 <option value="diabetes">Diabetes</option>
               </Selectbox>
               <TextInput

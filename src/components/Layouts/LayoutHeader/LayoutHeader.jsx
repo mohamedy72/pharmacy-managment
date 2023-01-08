@@ -58,7 +58,7 @@ const LayoutHeader = ({
           <Dropdown>
             <p>
               <FileEarmarkExcel />
-              <a href="../../../assets/files/sampleExcel.xls" download>
+              <a href="@Assets/files/sampleExcel.xls" download>
                 Excel
               </a>
             </p>

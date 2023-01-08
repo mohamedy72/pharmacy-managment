@@ -1,5 +1,7 @@
-import { Link } from "react-router-dom";
 import "./button.css";
+
+import { Link } from "react-router-dom";
+
 const Button = ({
   iconDir,
   label,

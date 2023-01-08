@@ -1,5 +1,5 @@
-import money from "../../assets/icons/money.png";
-import health from "../../assets/icons/health.png";
+import money from "@Assets/icons/money.png";
+import health from "@Assets/icons/health.png";
 
 export const reports = [
   {

@@ -1,7 +1,9 @@
-import { useParams } from "react-router-dom";
 import "./medicinedetails.css";
+
 import { useEffect, useState } from "react";
+
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 const MedicineDetails = () => {
   const [singleMedicine, setSingleMedicine] = useState({});

@@ -1,7 +1,7 @@
-import inventory from "../../assets/icons/health.png";
-import money from "../../assets/icons/money.png";
-import medicines from "../../assets/icons/medicines.png";
-import warning from "../../assets/icons/warning.png";
+import inventory from "@Assets/icons/health.png";
+import money from "@Assets/icons/money.png";
+import medicines from "@Assets/icons/medicines.png";
+import warning from "@Assets/icons/warning.png";
 
 export const dashboard_statistics = [
   {

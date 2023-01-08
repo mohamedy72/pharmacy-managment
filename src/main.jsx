@@ -9,13 +9,13 @@ import {
   Inventory,
   Reports,
 } from "./components/Routes";
-import MedicinesList from "./components/SubRoutes/MedicinesList/MedicinesList";
-import MedicinesGroup from "./components/SubRoutes/MedicinesGroup/MedicinesGroup";
-import Payments from "./components/SubRoutes/Payments/Payments";
-import Sales from "./components/SubRoutes/Sales/Sales";
-import AddMedicines from "./components/SubRoutes/AddMedicines/AddMedicines";
-import MedicineDetails from "./components/SubRoutes/MedicineDetails/MedicineDetails";
-import MedinicesProvider from "./context/MedicinesContext";
+import MedicinesList from "@Components/SubRoutes/MedicinesList/MedicinesList";
+import MedicinesGroup from "@Components/SubRoutes/MedicinesGroup/MedicinesGroup";
+import Payments from "@Components/SubRoutes/Payments/Payments";
+import Sales from "@Components/SubRoutes/Sales/Sales";
+import AddMedicines from "@Components/SubRoutes/AddMedicines/AddMedicines";
+import MedicineDetails from "@Components/SubRoutes/MedicineDetails/MedicineDetails";
+import MedinicesProvider from "@Context/MedicinesContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

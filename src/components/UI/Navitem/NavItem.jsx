@@ -1,7 +1,9 @@
+import "./navitem.css";
+
 import { useState, useEffect } from "react";
+
 import { NavLink } from "react-router-dom";
 import * as Icons from "react-bootstrap-icons";
-import "./navitem.css";
 
 const NavItem = ({ link, handleNavClose }) => {
   const [open, setOpen] = useState(false);

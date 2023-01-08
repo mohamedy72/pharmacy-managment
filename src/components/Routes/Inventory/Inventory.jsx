@@ -1,15 +1,12 @@
 import "./inventory.css";
+import LayoutHeader from "@Components/Layouts/LayoutHeader/LayoutHeader";
+import { Statistic } from "@Components/UI/Widgets";
+import { inventory } from "@Data/inventory";
+import { locationToArray } from "@Utils/locationToArray";
 
 import useBreadcrumbs from "use-react-router-breadcrumbs";
-
-import LayoutHeader from "../../Layouts/LayoutHeader/LayoutHeader";
-import { Statistic } from "../../UI/Widgets";
-import { inventory } from "../../../data/inventory";
-
-import { Outlet, useLocation, useParams } from "react-router-dom";
-
 import { Plus } from "react-bootstrap-icons";
-import { locationToArray } from "../../../utils/locationToArray";
+import { Outlet, useLocation, useParams } from "react-router-dom";
 
 const Inventory = () => {
   let { pathname } = useLocation();

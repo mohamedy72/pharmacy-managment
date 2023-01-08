@@ -1,8 +1,9 @@
-import LayoutHeader from "../../Layouts/LayoutHeader/LayoutHeader";
 import "./reports.css";
 
-import { reports } from "../../../data/reports";
-import { Statistic } from "../../UI/Widgets";
+import LayoutHeader from "@Components/Layouts/LayoutHeader/LayoutHeader";
+import { Statistic } from "@Components/UI/Widgets";
+import { reports } from "@Data/reports";
+
 import { Outlet } from "react-router-dom";
 
 const Reports = () => {

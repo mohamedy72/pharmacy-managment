@@ -1,5 +1,10 @@
 import "./medicineslist.css";
+
 import { Fragment, useContext } from "react";
+
+import { locationToArray } from "@Utils/locationToArray";
+import { useMedData } from "@Context/MedicinesContext";
+
 import { useLocation, Outlet, Link } from "react-router-dom";
 
 import { Searchbar, Selectbox } from "../../UI/Widgets";
@@ -12,9 +17,6 @@ import {
   ArrowLeftShort,
   ArrowRightShort,
 } from "react-bootstrap-icons";
-
-import { locationToArray } from "../../../utils/locationToArray";
-import { useMedData } from "../../../context/MedicinesContext";
 
 const MedicinesList = () => {
   const { medicines } = useMedData();

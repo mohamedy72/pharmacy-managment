@@ -1,9 +1,9 @@
 import { useRef, useState, useEffect } from "react";
 import "./App.css";
 
-import { Layouts } from "./components/Layouts/Layouts";
-import Header from "./components/UI/Header/Header";
-import Sidebar from "./components/UI/Sidebar/Sidebar";
+import { Layouts } from "@Components/Layouts/Layouts";
+import Header from "@Components/UI/Header/Header";
+import Sidebar from "@Components/UI/Sidebar/Sidebar";
 
 import { Outlet } from "react-router-dom";
 

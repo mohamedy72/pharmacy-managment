@@ -2,7 +2,7 @@ import "./configuration.css";
 import LayoutHeader from "../../Layouts/LayoutHeader/LayoutHeader";
 import { Config, Page, Pages } from "../../UI/Widgets";
 
-import { pages } from "../../data/pages";
+import { pages } from "../../../data/pages";
 
 const Configuration = () => {
   return (

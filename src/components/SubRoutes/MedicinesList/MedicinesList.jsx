@@ -6,7 +6,7 @@ import { Searchbar, Selectbox } from "../../UI/Widgets";
 import Table from "../../UI/Table/Table";
 
 import { Funnel } from "react-bootstrap-icons";
-import { headers } from "../../data/medicineslist";
+import { headers } from "../../../data/medicineslist";
 import {
   ArrowDownUp,
   ArrowLeftShort,

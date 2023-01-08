@@ -5,7 +5,7 @@ import "./sidebar.css";
 import NavItem from "../Navitem/NavItem";
 import { Dropdown } from "../Widgets";
 
-import menuItems from "../../data/navitem.json";
+import menuItems from "@Data/navitem.json";
 
 import {
   ThreeDotsVertical,
@@ -14,9 +14,9 @@ import {
   BoxArrowRight,
 } from "react-bootstrap-icons";
 
-import logo from "../../../assets/images/logo.png";
-import user from "../../../assets/images/avatar.jpg";
-import useBodyDismiss from "../../../hooks/useBodyDismiss";
+import logo from "@Assets/images/logo.png";
+import user from "@Assets/images/avatar.jpg";
+import useBodyDismiss from "@Hooks/useBodyDismiss";
 
 // [*] ======================= Component =======================
 const Sidebar = ({ navOpen, handleNavClose }) => {
@@ -78,7 +78,7 @@ const Sidebar = ({ navOpen, handleNavClose }) => {
         </div>
         <ul className="navlist">
           {menuItems?.map((link, index) => (
-            <NavItem key={index} link={link} handleNavClose="" />
+            <NavItem key={index} link={link} handleNavClose={handleNavClose} />
           ))}
         </ul>
       </nav>

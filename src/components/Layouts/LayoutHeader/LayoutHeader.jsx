@@ -1,14 +1,12 @@
-import { useState, useRef, useEffect } from "react";
-import Button from "../../UI/Button/Button";
 import "./layoutheader.css";
+import { useState, useRef, useEffect } from "react";
+import Button from "@Components/UI/Button/Button";
+import { Dropdown } from "@Components/UI/Widgets";
+import useBodyDismiss from "@Hooks/useBodyDismiss";
 
-import useBreadcrumbs from "use-react-router-breadcrumbs";
-
-import { FileEarmarkExcel, FileEarmarkPdf } from "react-bootstrap-icons";
-import { Dropdown } from "../../UI/Widgets";
-
-import useBodyDismiss from "../../../hooks/useBodyDismiss";
 import { Link } from "react-router-dom";
+import useBreadcrumbs from "use-react-router-breadcrumbs";
+import { FileEarmarkExcel, FileEarmarkPdf } from "react-bootstrap-icons";
 
 const LayoutHeader = ({
   btnClass,
@@ -60,7 +58,9 @@ const LayoutHeader = ({
           <Dropdown>
             <p>
               <FileEarmarkExcel />
-              <a href="$">Excel</a>
+              <a href="../../../assets/files/sampleExcel.xls" download>
+                Excel
+              </a>
             </p>
             <hr />
             <p>

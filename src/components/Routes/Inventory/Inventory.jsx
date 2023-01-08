@@ -4,7 +4,7 @@ import useBreadcrumbs from "use-react-router-breadcrumbs";
 
 import LayoutHeader from "../../Layouts/LayoutHeader/LayoutHeader";
 import { Statistic } from "../../UI/Widgets";
-import { inventory } from "../../data/inventory";
+import { inventory } from "../../../data/inventory";
 
 import { Outlet, useLocation, useParams } from "react-router-dom";
 

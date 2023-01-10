@@ -1,9 +1,9 @@
 // 1- Get Current Date
 export function currentDate() {
-  const currentDate = new Date().toLocaleDateString();
-  const day = currentDate.substring(0, 1);
-  const month = currentDate.substring(2, 3);
-  const year = currentDate.substring(4, 8);
+  const currentDate = new Date().toLocaleDateString().split("/");
+  const day = currentDate[0];
+  const month = currentDate[1];
+  const year = currentDate[2];
   return { day, month, year };
 }
 

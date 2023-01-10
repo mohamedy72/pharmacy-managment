@@ -1,27 +1,41 @@
+import { lazy, Suspense } from "react";
+
 import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
+  Router,
 } from "react-router-dom";
 
-import RootLayout from "@Components/Layouts/RootLayout";
+const RootLayout = lazy(() => import("@Components/Layouts/RootLayout"));
+const Configuration = lazy(() =>
+  import("@Components/Routes/Configuration/Configuration")
+);
+const Dashboard = lazy(() => import("@Components/Routes/Dashboard/Dashboard"));
+const Inventory = lazy(() => import("@Components/Routes/Inventory/Inventory"));
+const Reports = lazy(() => import("@Components/Routes/Reports/Reports"));
 
-import {
-  Configuration,
-  Dashboard,
-  Inventory,
-  Reports,
-} from "@Components/Routes";
-import MedicinesList from "@Components/SubRoutes/MedicinesList/MedicinesList";
-import MedicineDetails from "@Components/SubRoutes/MedicineDetails/MedicineDetails";
-import MedicinesGroup from "@Components/SubRoutes/MedicinesGroup/MedicinesGroup";
-import Sales from "@Components/SubRoutes/Sales/Sales";
-import Payments from "@Components/SubRoutes/Payments/Payments";
+const MedicinesList = lazy(() =>
+  import("@Components/SubRoutes/MedicinesList/MedicinesList")
+);
+const MedicineDetails = lazy(() =>
+  import("@Components/SubRoutes/MedicineDetails/MedicineDetails")
+);
+const MedicinesGroup = lazy(() =>
+  import("@Components/SubRoutes/MedicinesGroup/MedicinesGroup")
+);
+const Sales = lazy(() => import("@Components/SubRoutes/Sales/Sales"));
+const Payments = lazy(() => import("@Components/SubRoutes/Payments/Payments"));
 
-import NewMedicinePage, {
-  action as newMedicineAction,
-} from "@Components/Routes/NewMedicinePage/NewMedicinePage";
-import AddMedicineForm from "@/components/SubRoutes/AddMedicineForm/AddMedicineForm";
+const NewMedicinePage = lazy(() =>
+  import("@Components/Routes/NewMedicinePage/NewMedicinePage")
+);
+
+const AddMedicineForm = lazy(() =>
+  import("@/components/SubRoutes/AddMedicineForm/AddMedicineForm")
+);
+
+import { action as newMedicineAction } from "@Components/Routes/NewMedicinePage/NewMedicinePage";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(

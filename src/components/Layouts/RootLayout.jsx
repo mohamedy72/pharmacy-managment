@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { Header, Sidebar } from "../UI";
 import { Layouts } from "./Layouts";
@@ -19,7 +19,9 @@ const RootLayout = () => {
       <Layouts>
         <Header handleNavOpen={handleNavOpen} />
         <main className="main_app">
-          <Outlet />
+          <Suspense fallback={<p>Loading..</p>}>
+            <Outlet />
+          </Suspense>
         </main>
       </Layouts>
     </div>

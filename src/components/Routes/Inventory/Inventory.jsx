@@ -26,7 +26,7 @@ const Inventory = () => {
       return <span className="name">{name}</span>;
     }
   });
-
+  console.log(`${pathname}/new`);
   return (
     <section className="inventory">
       <LayoutHeader
@@ -38,7 +38,7 @@ const Inventory = () => {
         text={breadcrumbs.map((bread) => bread)}
         paragraph="List of medicines available for sales."
         icon={<Plus />}
-        path="/inventory/new"
+        path={`new`}
       />
       {pathnameArr.length === 1 ? (
         <section className="inventory_stats">

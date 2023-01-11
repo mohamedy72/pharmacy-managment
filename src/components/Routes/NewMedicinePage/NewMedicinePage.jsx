@@ -1,7 +1,6 @@
 import AddMedicines from "@/components/SubRoutes/AddMedicineForm/AddMedicineForm";
 import { addNewMedicine } from "@Utils/apiCalls";
-import React from "react";
-import { redirect, useActionData } from "react-router-dom";
+import { redirect } from "react-router-dom";
 
 const NewMedicinePage = () => {
   return (

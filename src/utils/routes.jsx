@@ -54,7 +54,7 @@ export const router = createBrowserRouter(
       </Route>
       <Route path="config" element={<Configuration />} />
       <Route
-        path="/inventory/new"
+        path="inventory/new"
         element={<NewMedicinePage />}
         action={newMedicineAction}
       />

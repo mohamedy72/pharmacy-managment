@@ -12,26 +12,18 @@ const Button = ({
 }) => {
   return (
     <Link
-      className={`
-      btn ${btnClass}
-    `}
-      onClick={(e) => {
-        handleHeaderDropdown();
-      }}
+      className={`btn ${btnClass}`}
+      onClick={handleHeaderDropdown}
       to={path}
     >
       {iconDir === "left" ? (
-        <>
-          <span className="btn_data">
-            {icon} {label}
-          </span>
-        </>
+        <span className="btn_data">
+          {icon} {label}
+        </span>
       ) : iconDir === "right" ? (
-        <>
-          <span className="btn_data">
-            {label} {icon}
-          </span>
-        </>
+        <span className="btn_data">
+          {label} {icon}
+        </span>
       ) : (
         { label }
       )}

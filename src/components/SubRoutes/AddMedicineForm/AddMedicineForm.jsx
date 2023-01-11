@@ -36,9 +36,6 @@ const AddMedicines = () => {
       onSubmitProps.resetForm();
       onSubmitProps.setSubmitting(false);
     }, 400);
-
-    console.log(newMedicine);
-    console.log(onSubmitProps);
   };
 
   return (

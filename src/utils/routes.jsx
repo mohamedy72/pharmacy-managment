@@ -43,7 +43,6 @@ export const router = createBrowserRouter(
       <Route index element={<Dashboard />} />
       <Route path="inventory" element={<Inventory />}>
         <Route path="medicineslist" element={<MedicinesList />}>
-          <Route path="addmedicines" element={<AddMedicineForm />} />
           <Route path=":medID" element={<MedicineDetails />} />
         </Route>
         <Route path="medicinesgroup" element={<MedicinesGroup />} />

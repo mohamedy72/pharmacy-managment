@@ -6,17 +6,29 @@
   background-color: var(--dark-gray);
   color: var(--white);
   z-index: 2;
+  /* padding-inline: 1.5625rem; */
+}
+
+.navmenu > *:not(.navlist) {
+  padding-inline: 1.5625rem;
+}
+
+.nav_group {
+  position: relative;
+  padding-block: 1.125rem;
+  background-color: var(--darker-gray);
+  display: flex;
+  align-items: center;
+  gap: 0 1rem;
 }
 
 .navmenu_close {
   display: none;
   position: absolute;
-  right: 0;
-  top: 1.3rem;
-}
-
-.navmenu > *:not(.navlist) {
-  padding-inline: 1.5625rem;
+  right: 1.5625rem;
+  top: 1.5rem;
+  width: 2.1875rem;
+  height: 2.1875rem;
 }
 
 .control {
@@ -28,8 +40,6 @@
   font-size: 1.125rem;
   font-weight: 600;
   text-transform: capitalize;
-  padding-block: 1.125rem;
-  background-color: var(--darker-gray);
   display: flex;
   align-items: center;
   gap: 0 1rem;

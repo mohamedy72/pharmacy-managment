@@ -40,12 +40,13 @@ const Sidebar = ({ navOpen, handleNavClose }) => {
   return (
     <>
       <nav className={navOpen ? "navmenu active" : "navmenu"}>
-        <i className="navmenu_close" onClick={handleNavClose}>
-          <X />
-        </i>
-        <h1 className="logo">
-          <img src={logo} alt="pharmaone logo" /> pharma one
-        </h1>
+        <div className="nav_group">
+          <X fill="#fff" onClick={handleNavClose} className="navmenu_close" />
+
+          <h1 className="logo">
+            <img src={logo} alt="pharmaone logo" /> pharma one
+          </h1>
+        </div>
         <div className="user">
           <div className="user_img">
             <img src={user} alt="User image" />

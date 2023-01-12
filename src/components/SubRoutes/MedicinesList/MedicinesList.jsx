@@ -1,17 +1,17 @@
 import "./medicineslist.css";
 
-import { Fragment, useContext } from "react";
+import { Fragment } from "react";
 
+import { Searchbar, Selectbox } from "@Components/UI/Widgets";
+import Table from "@Components/UI/Table/Table";
 import { locationToArray } from "@Utils/locationToArray";
 import { useMedData } from "@Context/MedicinesContext";
+import { headers } from "@Data/medicineslist";
 
 import { useLocation, Outlet, Link } from "react-router-dom";
 
-import { Searchbar, Selectbox } from "../../UI/Widgets";
-import Table from "../../UI/Table/Table";
-
 import { Funnel } from "react-bootstrap-icons";
-import { headers } from "../../../data/medicineslist";
+
 import {
   ArrowDownUp,
   ArrowLeftShort,

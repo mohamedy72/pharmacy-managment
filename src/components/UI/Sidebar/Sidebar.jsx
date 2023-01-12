@@ -5,7 +5,7 @@ import "./sidebar.css";
 import NavItem from "../Navitem/NavItem";
 import { Dropdown } from "../Widgets";
 
-import menuItems from "@Data/navitem.json";
+import { menuItems } from "@Data/menuItems";
 
 import {
   ThreeDotsVertical,
@@ -54,22 +54,28 @@ const Sidebar = ({ navOpen, handleNavClose }) => {
             <span className="user_name">Mohamed</span>
             <span className="user_role">super admin</span>
           </p>
-          <ThreeDotsVertical
-            onClick={(e) => {
-              handleSidebarDropdown(e);
-              getIconBounding(e);
-            }}
-          />
+          <i>
+            <ThreeDotsVertical
+              onClick={(e) => {
+                handleSidebarDropdown(e);
+                getIconBounding(e);
+              }}
+            />
+          </i>
           <div className="dropdown" ref={ref}>
             {sidebarDropdown && (
               <Dropdown bottomPos={bottomPos}>
                 <p>
-                  <PersonCircle />
+                  <i>
+                    <PersonCircle />
+                  </i>
                   <a href="$">my profile</a>
                 </p>
                 <hr />
                 <p>
-                  <BoxArrowRight />
+                  <i>
+                    <BoxArrowRight />
+                  </i>
                   <a href="$">Log out</a>
                 </p>
               </Dropdown>

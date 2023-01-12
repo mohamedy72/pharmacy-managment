@@ -16,7 +16,11 @@
   font-weight: 500;
 }
 
-.nav_link.active {
+.nav_link.active:first-of-type {
+  background-color: #006d75;
+}
+
+.nav_link.active:last-of-type {
   background-color: #009099;
 }
 

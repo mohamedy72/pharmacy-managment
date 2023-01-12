@@ -26,6 +26,9 @@
   fill: rgba(29, 36, 46, 1);
 }
 
+@media screen and (max-width: 21.875rem) {
+}
+
 /* [x]: Selectbox */
 .selectbox {
   width: 100%;
@@ -46,12 +49,6 @@
 
 .selectbox select option {
   margin-inline-end: 0.5rem;
-}
-
-@media screen and (max-width: 20.3125rem) {
-  .searchbox {
-    width: 70vw;
-  }
 }
 
 /* [x]: Weather */
@@ -100,10 +97,16 @@
   margin-inline: 0.4rem;
 }
 
-@media screen and (max-width: 20.3125rem) {
+@media screen and (max-width: 26.25rem) {
+  .weather_header {
+    font-size: 0.9rem;
+  }
   .weather {
     display: none;
   }
+}
+
+@media screen and (max-width: 20.3125rem) {
 }
 
 /* [x]: Statistic box */
@@ -223,10 +226,11 @@
 
 /* [x]: Dropdown */
 .dropdown {
-  width: 10rem;
+  width: 10.8125rem;
   position: absolute;
-  top: 75%;
-  right: 30px;
+  top: calc(100% - 1.3rem);
+  right: 50%;
+  transform: translateX(50%);
 }
 
 .dropdown_menu {

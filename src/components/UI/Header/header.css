@@ -8,6 +8,12 @@
   padding-block: 0.6875rem;
   background-color: var(--white);
 }
+
+.header_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .header_icon > svg {
   width: 1.25rem;
   height: 1.25rem;
@@ -27,6 +33,8 @@
 .hamburger {
   display: none;
   flex-basis: 10%;
+  width: 2.1875rem;
+  height: 2.1875rem;
 }
 
 .hamburger > span {
@@ -47,6 +55,22 @@
   .select_lang {
     flex-grow: 5;
     flex-basis: 50%;
+  }
+}
+
+@media screen and (max-width: 26.25rem) {
+  .header {
+    justify-content: flex-start;
+    gap: 1rem 0.7rem;
+  }
+
+  .header .weather {
+    margin-inline-start: auto;
+    max-width: 45%;
+  }
+
+  .header .select_lang {
+    margin: 0 auto;
   }
 }
 

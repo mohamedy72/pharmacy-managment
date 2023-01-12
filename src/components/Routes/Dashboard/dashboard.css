@@ -79,6 +79,13 @@
     align-items: center;
   }
 }
+
+@media screen and (max-width: 26.25rem) {
+  .layoutheader > section {
+    padding: none;
+  }
+}
+
 @media screen and (max-width: 21.25rem) {
   .dashboard_summery {
     grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));

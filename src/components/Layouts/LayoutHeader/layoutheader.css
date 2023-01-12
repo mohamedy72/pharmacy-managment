@@ -7,6 +7,10 @@
   padding-block: 1.875rem;
 }
 
+.layoutheader_cta {
+  position: relative;
+}
+
 .layout_text > p {
   font-size: 0.875rem;
   color: rgba(29, 36, 46, 1);
@@ -18,10 +22,6 @@
 
 .layout_text h2 > span:not(:last-child) {
   opacity: 0.6;
-}
-
-.header_dropdown {
-  position: absolute;
 }
 
 @media screen and (max-width: 31.25rem) {

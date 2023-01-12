@@ -1,10 +1,10 @@
 import "./layoutheader.css";
-import { useState, useRef, useEffect, Fragment } from "react";
-import Button from "@Components/UI/Button/Button";
+import { useState, useRef, useEffect } from "react";
 import { Dropdown } from "@Components/UI/Widgets";
 import useBodyDismiss from "@Hooks/useBodyDismiss";
 
 import { FileEarmarkExcel, FileEarmarkPdf } from "react-bootstrap-icons";
+import { ActionButton } from "@/components/UI/Button/Button";
 
 const LayoutHeader = ({
   btnClass,
@@ -35,13 +35,12 @@ const LayoutHeader = ({
       </div>
       {hasDropdown ? (
         <div className="layoutheader_cta">
-          <Button
-            btnClass={btnClass}
+          <ActionButton
             iconDir={iconDir}
-            label={label}
             icon={icon}
-            handleHeaderDropdown={handleHeaderDropdown}
-            path={path}
+            label={label}
+            btnClass={btnClass}
+            handleClick={handleHeaderDropdown}
           />
           <div className="dropdown" ref={hRef}>
             {headerDropdown && (
@@ -64,7 +63,7 @@ const LayoutHeader = ({
           </div>
         </div>
       ) : (
-        <Button
+        <ActionButton
           btnClass={btnClass}
           iconDir={iconDir}
           label={label}

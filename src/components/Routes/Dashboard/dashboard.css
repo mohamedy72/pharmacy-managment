@@ -84,10 +84,29 @@
   .layoutheader > section {
     padding: none;
   }
+  .dashboard :is(.state_header, .state_body) {
+    padding-inline: 0.7rem;
+  }
 }
 
 @media screen and (max-width: 21.25rem) {
   .dashboard_summery {
     grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  }
+
+  .dashboard .statebox h3 {
+    font-size: 0.9rem;
+  }
+
+  .dashboard .state_body {
+    gap: 1.5rem;
+  }
+
+  .dashboard .state_body .state p {
+    font-size: 0.8rem;
+  }
+
+  .dashboard .state_body .state h4 {
+    font-size: 1rem;
   }
 }

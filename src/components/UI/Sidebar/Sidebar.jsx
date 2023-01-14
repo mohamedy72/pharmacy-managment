@@ -19,15 +19,15 @@ import user from "@Assets/images/avatar.jpg";
 import useBodyDismiss from "@Hooks/useBodyDismiss";
 
 // [*] ======================= Component =======================
-const Sidebar = ({ navOpen, handleNavClose }) => {
+const Sidebar = ({ navOpen, handleNavClose, sideBarRef }) => {
   const [sidebarDropdown, setSidebarDropdown] = useState(false);
   const [bottomPos, setBottomPos] = useState(0);
 
-  const ref = useRef(null);
+  const dropDownRef = useRef(null);
 
   useEffect(() => {
-    useBodyDismiss(ref, setSidebarDropdown);
-  }, [ref]);
+    useBodyDismiss(dropDownRef, setSidebarDropdown);
+  }, [dropDownRef]);
 
   const handleSidebarDropdown = () => {
     setSidebarDropdown(!sidebarDropdown);
@@ -39,7 +39,7 @@ const Sidebar = ({ navOpen, handleNavClose }) => {
   };
   return (
     <>
-      <nav className={navOpen ? "navmenu active" : "navmenu"}>
+      <nav className={navOpen ? "navmenu active" : "navmenu"} ref={sideBarRef}>
         <div className="nav_group">
           <X fill="#fff" onClick={handleNavClose} className="navmenu_close" />
 
@@ -63,7 +63,7 @@ const Sidebar = ({ navOpen, handleNavClose }) => {
               }}
             />
           </i>
-          <div className="dropdown" ref={ref}>
+          <div className="dropdown" ref={dropDownRef}>
             {sidebarDropdown && (
               <Dropdown bottomPos={bottomPos}>
                 <p>

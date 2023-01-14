@@ -1,4 +1,5 @@
-import { Suspense, useState } from "react";
+import useBodyDismiss from "@/hooks/useBodyDismiss";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { Header, Sidebar } from "../UI";
 import { Layouts } from "./Layouts";
@@ -6,6 +7,11 @@ import { Layouts } from "./Layouts";
 const RootLayout = () => {
   const [search, setSearch] = useState("");
   const [navOpen, setNavOpen] = useState(false);
+  const sideBarRef = useRef(null);
+
+  useEffect(() => {
+    useBodyDismiss(sideBarRef, setNavOpen);
+  }, [sideBarRef]);
 
   const handleNavOpen = () => {
     setNavOpen(true);
@@ -13,12 +19,14 @@ const RootLayout = () => {
   const handleNavClose = () => {
     setNavOpen(false);
   };
+
   return (
     <div className="app">
       <Sidebar
         navOpen={navOpen}
         handleNavClose={handleNavClose}
         handleNavOpen={handleNavOpen}
+        sideBarRef={sideBarRef}
       />
       <Layouts>
         <Header handleNavOpen={handleNavOpen} />

@@ -8,7 +8,6 @@ export function Breadcrumbs() {
     .map((match) => match.handle.crumb(match.data));
 
   const breadcrumbs = crumbs.map((crumb, ind) => {
-    console.log(crumb);
     const notLast = ind < crumbs.length - 1;
     if (notLast) {
       return (

@@ -61,7 +61,6 @@ export const router = createBrowserRouter(
             element={<MedicineDetails />}
             handle={{
               crumb: (data) => {
-                console.log(data);
                 return <Link to=":medID">{data}</Link>;
               },
             }}

@@ -1,13 +1,25 @@
 .list_header {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+}
+
+@media screen and (max-width: 480px) {
+  .list_header {
+    gap: 1rem 0;
+    justify-content: center;
+  }
+
+  .list_header > .select_group {
+    width: max-content;
+  }
 }
 
 .medicines_list .select_group {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.8rem;
 }
 
 .list_header .select_group > svg {

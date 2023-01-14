@@ -29,6 +29,7 @@ const MedicinesList = () => {
     </th>
   ));
 
+  //  TODO: Refactor this into its own component
   const tableData = medicines.map((med, ind) => {
     return (
       <Fragment key={med + ind}>

@@ -3,6 +3,7 @@
   display: grid;
   grid-template-columns: 40% repeat(auto-fit, minmax(9rem, 1fr));
   align-items: center;
+  justify-items: center;
   gap: 1rem;
   padding-inline: var(--page-padding);
   padding-block: 0.6875rem;
@@ -61,6 +62,7 @@
     position: relative;
     opacity: 1;
     visibility: visible;
+    justify-self: start;
   }
 }
 
@@ -112,6 +114,9 @@
   .header {
     grid-template-columns: 3rem 1fr;
   }
+  .header .select_lang {
+    margin-inline-start: 5rem;
+  }
 }
 
 @media screen and (max-width: 24.0625rem) {
@@ -121,7 +126,7 @@
 
   .header .select_lang {
     grid-column: 1 / -1;
-    margin-inline-end: 3rem;
+    margin-inline: 0;
     justify-self: center;
   }
 }

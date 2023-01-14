@@ -27,8 +27,8 @@ const Weather = ({ greet }) => {
         </span>
         {greet}
       </p>
-      <p className="weather_cal">
-        <div className="weather_date">
+      <div className="weather_cal">
+        <p className="weather_date">
           {currentDate().month < 10 ? (
             <span>0{currentDate().month}</span>
           ) : (
@@ -41,9 +41,9 @@ const Weather = ({ greet }) => {
             <span>{currentDate().month}</span>
           )}
           :<span>{currentDate().year}</span>
-        </div>
-        <span className="weather_time">{time}</span>
-      </p>
+        </p>
+        <p className="weather_time">{time}</p>
+      </div>
     </div>
   );
 };

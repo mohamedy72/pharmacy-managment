@@ -15,7 +15,11 @@ const RootLayout = () => {
   };
   return (
     <div className="app">
-      <Sidebar navOpen={navOpen} handleNavClose={handleNavClose} />
+      <Sidebar
+        navOpen={navOpen}
+        handleNavClose={handleNavClose}
+        handleNavOpen={handleNavOpen}
+      />
       <Layouts>
         <Header handleNavOpen={handleNavOpen} />
         <main className="main_app">

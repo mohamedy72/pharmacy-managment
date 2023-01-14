@@ -26,9 +26,6 @@
   fill: rgba(29, 36, 46, 1);
 }
 
-@media screen and (max-width: 21.875rem) {
-}
-
 /* [x]: Selectbox */
 .selectbox {
   width: 100%;

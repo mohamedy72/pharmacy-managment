@@ -4,29 +4,14 @@ import { Statistic } from "@Components/UI/Widgets";
 import { inventory } from "@Data/inventory";
 import { locationToArray } from "@Utils/locationToArray";
 
-import useBreadcrumbs from "use-react-router-breadcrumbs";
 import { Plus } from "react-bootstrap-icons";
-import { Outlet, useLocation, useParams } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 const Inventory = () => {
   let { pathname } = useLocation();
-  const { param } = useParams();
   const pathnameArr = locationToArray(pathname);
 
-  const breadcrumbs = pathnameArr?.map((name, ind) => {
-    const notLast = ind < pathnameArr.length - 1;
-    if (notLast) {
-      return (
-        <>
-          <span className="name">{name}</span>
-          <span className="arrow">&gt;</span>
-        </>
-      );
-    } else {
-      return <span className="name">{name}</span>;
-    }
-  });
-  console.log(`${pathname}/new`);
   return (
     <section className="inventory">
       <LayoutHeader
@@ -35,7 +20,7 @@ const Inventory = () => {
         btnClass="inventory_btn"
         iconDir="left"
         label="Add new item"
-        text={breadcrumbs.map((bread) => bread)}
+        text={<Breadcrumbs />}
         paragraph="List of medicines available for sales."
         icon={<Plus />}
         path={`new`}

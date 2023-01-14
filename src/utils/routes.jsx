@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react";
 import {
   createBrowserRouter,
   createRoutesFromElements,
+  Link,
   Route,
   Router,
 } from "react-router-dom";
@@ -41,11 +42,38 @@ export const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<Dashboard />} />
-      <Route path="inventory" element={<Inventory />}>
-        <Route path="medicineslist" element={<MedicinesList />}>
-          <Route path=":medID" element={<MedicineDetails />} />
+      <Route
+        path="inventory"
+        element={<Inventory />}
+        handle={{
+          crumb: () => <Link to="/inventory">Inventory</Link>,
+        }}
+      >
+        <Route
+          path="medicineslist"
+          element={<MedicinesList />}
+          handle={{
+            crumb: () => <Link to="medicineslist">Medicines List</Link>,
+          }}
+        >
+          <Route
+            path=":medID"
+            element={<MedicineDetails />}
+            handle={{
+              crumb: (data) => {
+                console.log(data);
+                return <Link to=":medID">{data}</Link>;
+              },
+            }}
+          />
         </Route>
-        <Route path="medicinesgroup" element={<MedicinesGroup />} />
+        <Route
+          path="medicinesgroup"
+          element={<MedicinesGroup />}
+          handle={{
+            crumb: () => <Link to="medicinesgroup">Medicines Group</Link>,
+          }}
+        />
       </Route>
       <Route path="reports" element={<Reports />}>
         <Route path="sales" element={<Sales />} />

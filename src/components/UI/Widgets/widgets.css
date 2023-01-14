@@ -42,6 +42,11 @@
   background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
 }
 
+.selectbox:focus-within {
+  outline: 1px solid rgb(80, 80, 80);
+  outline-offset: 5px;
+}
+
 .selectbox::after {
   content: "";
   width: 0.8em;
@@ -237,9 +242,8 @@
 .dropdown {
   width: 10.8125rem;
   position: absolute;
-  top: calc(100% - 1.3rem);
-  right: 50%;
-  transform: translateX(50%);
+  top: calc(100% + 0.8rem);
+  right: 1.6rem;
 }
 
 .dropdown_menu {
@@ -249,6 +253,7 @@
   align-items: center;
   flex-direction: column;
   border-radius: 5px;
+  border: 1px solid rgb(150, 150, 150);
 }
 
 .dropdown_menu > hr {

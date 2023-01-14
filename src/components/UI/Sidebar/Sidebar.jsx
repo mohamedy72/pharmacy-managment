@@ -21,7 +21,6 @@ import useBodyDismiss from "@Hooks/useBodyDismiss";
 // [*] ======================= Component =======================
 const Sidebar = ({ navOpen, handleNavClose, sideBarRef }) => {
   const [sidebarDropdown, setSidebarDropdown] = useState(false);
-  const [bottomPos, setBottomPos] = useState(0);
 
   const dropDownRef = useRef(null);
 
@@ -33,10 +32,6 @@ const Sidebar = ({ navOpen, handleNavClose, sideBarRef }) => {
     setSidebarDropdown(!sidebarDropdown);
   };
 
-  const getIconBounding = (e) => {
-    const bottomPos = e.target.getBoundingClientRect().bottom;
-    setBottomPos(bottomPos);
-  };
   return (
     <>
       <nav className={navOpen ? "navmenu active" : "navmenu"} ref={sideBarRef}>
@@ -65,7 +60,7 @@ const Sidebar = ({ navOpen, handleNavClose, sideBarRef }) => {
           </i>
           <div className="dropdown" ref={dropDownRef}>
             {sidebarDropdown && (
-              <Dropdown bottomPos={bottomPos}>
+              <Dropdown>
                 <p>
                   <i>
                     <PersonCircle />

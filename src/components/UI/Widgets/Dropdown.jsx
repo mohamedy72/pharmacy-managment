@@ -3,12 +3,7 @@ import "./widgets.css";
 const Dropdown = ({ children, bottomPos }) => {
   return (
     <div className="dropdown_menu">
-      <span
-        className="pointer"
-        style={{
-          bottom: bottomPos,
-        }}
-      ></span>
+      <span className="pointer"></span>
       {children}
     </div>
   );

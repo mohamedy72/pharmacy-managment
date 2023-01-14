@@ -1,12 +1,16 @@
 .header {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
+  position: relative;
+  display: grid;
+  grid-template-columns: 40% repeat(auto-fit, minmax(9rem, 1fr));
   align-items: center;
   gap: 1rem;
   padding-inline: var(--page-padding);
   padding-block: 0.6875rem;
   background-color: var(--white);
+}
+
+.header .searchbox {
+  width: 100%;
 }
 
 .header_icon {
@@ -21,8 +25,10 @@
 }
 
 .header .weather {
-  max-width: 40%;
+  justify-self: flex-end;
+  align-self: flex-end;
 }
+
 .select_lang {
   display: flex;
   align-items: center;
@@ -30,53 +36,92 @@
   font-size: 0.75rem;
 }
 
-.hamburger {
-  display: none;
-  flex-basis: 10%;
+.header .hamburger {
+  position: absolute;
+  inset: 0;
   width: 2.1875rem;
   height: 2.1875rem;
+  opacity: 0;
+  visibility: hidden;
 }
 
-.hamburger > span {
-  width: 100%;
-  height: 5px;
-  background-color: red;
-}
+/*-----------------------------------* 
+ * Media Queries 
+ *-----------------------------------*/
+
+/* 
+  * 900px
+*/
 
 @media screen and (max-width: 56.25rem) {
-  .hamburger {
+  .header {
+    grid-template-columns: 3rem 40vw repeat(auto-fit, minmax(0, 1fr));
+  }
+  .header .hamburger {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* 
+  * 800px - 691px
+*/
+
+@media screen and (min-width: 43.1875rem) and (max-width: 50rem) {
+  .header .weather {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header .weather_header {
+    font-size: 0.85rem;
+  }
+
+  .header .weather > .weather_cal {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    align-items: center;
   }
 }
 
-@media screen and (max-width: 34.375rem) {
-  .select_lang {
-    flex-grow: 5;
-    flex-basis: 50%;
-  }
-}
+/* 
+  *  690px : 486px
+*/
 
-@media screen and (max-width: 26.25rem) {
+@media screen and (min-width: 30.375rem) and (max-width: 43.125rem) {
   .header {
-    justify-content: flex-start;
-    gap: 1rem 0.7rem;
-  }
-
-  .header .weather {
-    margin-inline-start: auto;
-    max-width: 45%;
+    grid-template-columns: 3rem 13.4375rem 1fr;
   }
 
   .header .select_lang {
-    margin: 0 auto;
+    justify-self: center;
+  }
+
+  .header .weather {
+    grid-column: 1 / -1;
+    justify-self: center;
   }
 }
 
-@media screen and (max-width: 20.3125rem) {
-  .select_lang {
-    margin-inline: auto;
-    flex: 1;
+/* 
+  * 485px
+*/
+
+@media screen and (max-width: 30.3125rem) {
+  .header {
+    grid-template-columns: 3rem 1fr;
+  }
+}
+
+@media screen and (max-width: 24.0625rem) {
+  .header .weather {
+    display: none;
+  }
+
+  .header .select_lang {
+    grid-column: 1 / -1;
+    margin-inline-end: 3rem;
+    justify-self: center;
   }
 }

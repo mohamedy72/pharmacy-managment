@@ -12,7 +12,7 @@
   --blueish: #03a9f5;
 
   /* Spaces */
-  --page-padding: 2.5rem;
+  --page-padding: 2rem;
 }
 
 *,
@@ -98,7 +98,8 @@ select::-ms-expand {
 }
 
 .app {
-  width: min(90rem, 100vw);
+  /* width: min(90rem, 100vw); */
+  max-width: 87.5rem;
   height: 100vh;
   margin-inline: auto;
   background-color: var(--light-gray);

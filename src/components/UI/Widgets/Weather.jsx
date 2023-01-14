@@ -34,13 +34,13 @@ const Weather = ({ greet }) => {
           ) : (
             <span>{currentDate().month}</span>
           )}
-          :
+          /
           {currentDate().day < 10 ? (
             <span>0{currentDate().day}</span>
           ) : (
             <span>{currentDate().month}</span>
           )}
-          :<span>{currentDate().year}</span>
+          / <span>{currentDate().year}</span>
         </p>
         <p className="weather_time">{time}</p>
       </div>

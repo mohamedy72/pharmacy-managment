@@ -16,14 +16,6 @@
   color: rgba(29, 36, 46, 1);
 }
 
-.layout_text h2 > span {
-  color: var(--darker-gray);
-}
-
-.layout_text h2 > span:not(:last-child) {
-  opacity: 0.6;
-}
-
 @media screen and (max-width: 31.25rem) {
   .layoutheader {
     flex-direction: column;
@@ -31,3 +23,7 @@
     text-align: center;
   }
 }
+
+/* 
+  * 340px
+*/

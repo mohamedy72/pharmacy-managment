@@ -1,4 +1,4 @@
-import "./table.css";
+import "./tables.css";
 
 const Table = ({ children }) => {
   return <table className="table">{children}</table>;

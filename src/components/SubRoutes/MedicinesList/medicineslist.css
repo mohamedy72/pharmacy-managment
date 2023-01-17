@@ -5,17 +5,6 @@
   align-items: center;
 }
 
-@media screen and (max-width: 480px) {
-  .list_header {
-    gap: 1rem 0;
-    justify-content: center;
-  }
-
-  .list_header > .select_group {
-    width: max-content;
-  }
-}
-
 .medicines_list .select_group {
   display: flex;
   align-items: center;
@@ -77,4 +66,46 @@
 .medicines_list .list_controls .arrow svg {
   width: 1.2rem;
   height: 1.2rem;
+}
+
+/*-----------------------------------* 
+ * Media Queries 
+ *-----------------------------------*/
+
+/* 600px */
+@media screen and (max-width: 37.5rem) {
+  .medicines_list .table_header {
+    font-size: 0.9rem;
+  }
+
+  .medicines_list .table_header tr th:is(:nth-child(2), :nth-child(3)) {
+    display: none;
+  }
+  .medicines_list .table_body .hide_on_mobile {
+    display: none;
+  }
+
+  .medicines_list .table_header tr {
+    display: grid;
+  }
+  .medicines_list .table_header tr > th:not(:first-child) {
+    width: calc(100% / 2);
+  }
+}
+
+/* 480px */
+
+@media screen and (max-width: 30rem) {
+  .list_header {
+    gap: 1rem 0;
+    justify-content: center;
+  }
+
+  .list_header > .select_group {
+    width: max-content;
+  }
+}
+
+/* 340px */
+@media screen and (max-width: 21.25rem) {
 }

@@ -1,4 +1,7 @@
+import "./breadcrumbs.css";
+
 import { useMatches } from "react-router-dom";
+import { Fragment } from "react";
 
 export function Breadcrumbs() {
   let matches = useMatches();
@@ -9,17 +12,20 @@ export function Breadcrumbs() {
 
   const breadcrumbs = crumbs.map((crumb, ind) => {
     const notLast = ind < crumbs.length - 1;
-    if (notLast) {
-      return (
-        <>
+
+    return (
+      <Fragment key={ind * 1.2}>
+        {notLast ? (
+          <>
+            <span className="name">{crumb}</span>
+            <span className="arrow">&gt;</span>
+          </>
+        ) : (
           <span className="name">{crumb}</span>
-          <span className="arrow">&gt;</span>
-        </>
-      );
-    } else {
-      return <span className="name">{crumb}</span>;
-    }
+        )}
+      </Fragment>
+    );
   });
 
-  return <div>{breadcrumbs}</div>;
+  return breadcrumbs;
 }

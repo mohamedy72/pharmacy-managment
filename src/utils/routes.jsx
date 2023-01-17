@@ -3,7 +3,7 @@ import { lazy, Suspense } from "react";
 import {
   createBrowserRouter,
   createRoutesFromElements,
-  Link,
+  NavLink,
   Route,
   Router,
 } from "react-router-dom";
@@ -46,14 +46,14 @@ export const router = createBrowserRouter(
         path="inventory"
         element={<Inventory />}
         handle={{
-          crumb: () => <Link to="/inventory">Inventory</Link>,
+          crumb: () => <NavLink to="/inventory">Inventory</NavLink>,
         }}
       >
         <Route
           path="medicineslist"
           element={<MedicinesList />}
           handle={{
-            crumb: () => <Link to="medicineslist">Medicines List</Link>,
+            crumb: () => <NavLink to="medicineslist">Medicines List</NavLink>,
           }}
         >
           <Route
@@ -61,7 +61,7 @@ export const router = createBrowserRouter(
             element={<MedicineDetails />}
             handle={{
               crumb: (data) => {
-                return <Link to=":medID">{data}</Link>;
+                return <NavLink to=":medID">{data}</NavLink>;
               },
             }}
           />
@@ -70,7 +70,7 @@ export const router = createBrowserRouter(
           path="medicinesgroup"
           element={<MedicinesGroup />}
           handle={{
-            crumb: () => <Link to="medicinesgroup">Medicines Group</Link>,
+            crumb: () => <NavLink to="medicinesgroup">Medicines Group</NavLink>,
           }}
         />
       </Route>

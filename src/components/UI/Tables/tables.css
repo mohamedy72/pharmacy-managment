@@ -1,15 +1,24 @@
 .table {
-  table-layout: fixed;
+  display: grid;
+  grid-template-columns: 1.5fr repeat(2, minmax(9.375rem, 1.45fr)) 9.375rem 9.375rem;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  border-collapse: collapse;
   border: 1px solid;
   margin-block-start: 0.9375rem;
   background-color: var(--white);
   border-radius: 5px;
 }
+thead,
+tbody,
+tr {
+  display: contents;
+}
+
 th {
-  padding-block: 0.8125rem;
-  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
   font-weight: 500;
   text-align: left;
   text-transform: capitalize;
@@ -17,19 +26,22 @@ th {
 
 th,
 td {
-  border-bottom: 1px solid;
+  border-bottom: 1px solid #333;
+  padding-block: 0.8125rem;
+  font-size: 0.9rem;
 }
 
 thead th:first-of-type,
 tbody th {
-  padding-inline: 1.875rem;
+  padding-inline: 1rem;
 }
 
-tbody th {
+/* tbody th {
   font-size: 0.875rem;
   font-weight: 400;
-}
-thead th:first-child {
+} */
+
+/* thead thead th:first-child {
   width: 30%;
 }
 
@@ -44,4 +56,4 @@ thead th:nth-child(4) {
 }
 thead th:last-child {
   width: 10%;
-}
+} */

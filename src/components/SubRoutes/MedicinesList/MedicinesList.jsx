@@ -1,12 +1,10 @@
 import "./medicineslist.css";
 
-import { Fragment } from "react";
-
 import { Searchbar, Selectbox } from "@Components/UI/Widgets";
-import Table from "@Components/UI/Table/Table";
+import Table from "@/components/UI/Tables/Table";
 import { locationToArray } from "@Utils/locationToArray";
 import { useMedData } from "@Context/MedicinesContext";
-import { headers } from "@Data/medicineslist";
+import { headers } from "@/data/tableHeaders";
 
 import { useLocation, Outlet, Link } from "react-router-dom";
 
@@ -17,9 +15,9 @@ import {
   ArrowLeftShort,
   ArrowRightShort,
 } from "react-bootstrap-icons";
+import MedicinesTableData from "@/components/UI/Tables/MedicinesTableData";
 
 const MedicinesList = () => {
-  const { medicines } = useMedData();
   const { pathname } = useLocation();
   const pathnameArr = locationToArray(pathname);
 
@@ -28,27 +26,6 @@ const MedicinesList = () => {
       {header} <ArrowDownUp className="header_icon" />
     </th>
   ));
-
-  //  TODO: Refactor this into its own component
-  const tableData = medicines.map((med, ind) => {
-    return (
-      <Fragment key={med + ind}>
-        <tr key={med.name + ind}>
-          {med.name && (
-            <th scope="row" className="med_name">
-              {med.name}
-            </th>
-          )}
-          <td> {med.id} </td>
-          <td> {med.group} </td>
-          <td> {med.qty} </td>
-          <td className="action">
-            <Link to={med.id}>Details</Link>
-          </td>
-        </tr>
-      </Fragment>
-    );
-  });
 
   return pathnameArr.length <= 2 ? (
     <section className="medicines_list">
@@ -73,11 +50,15 @@ const MedicinesList = () => {
       </div>
       <div className="list_table">
         <Table>
-          <Table.Header>{tableHeaders}</Table.Header>
-          <Table.Body>{tableData}</Table.Body>
+          <Table.Header>
+            <tr>{tableHeaders}</tr>
+          </Table.Header>
+          <Table.Body>
+            <MedicinesTableData />
+          </Table.Body>
         </Table>
         <div className="list_controls">
-          <p>Showing 1 - 8 results of {tableData?.length}</p>
+          <p>Showing 1 - 8 results of {MedicinesTableData?.length}</p>
           <div className="pagination">
             <i className="arrow left end">
               <ArrowLeftShort />

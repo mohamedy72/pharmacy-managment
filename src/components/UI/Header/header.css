@@ -11,7 +11,8 @@
 }
 
 .header .searchbox {
-  width: 100%;
+  width: 15rem;
+  justify-self: start;
 }
 
 .header_icon {
@@ -33,7 +34,6 @@
 .select_lang {
   display: flex;
   align-items: center;
-  max-width: 7.5rem;
   font-size: 0.75rem;
 }
 
@@ -115,7 +115,7 @@
     grid-template-columns: 3rem 1fr;
   }
   .header .select_lang {
-    margin-inline-start: 5rem;
+    margin-inline-start: 6.5rem;
   }
 }
 
@@ -126,7 +126,7 @@
 
   .header .select_lang {
     grid-column: 1 / -1;
-    margin-inline: 0;
+    margin-inline: 0 3.5rem;
     justify-self: center;
   }
 }

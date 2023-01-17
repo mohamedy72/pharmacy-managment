@@ -6,7 +6,7 @@ import { locationToArray } from "@Utils/locationToArray";
 
 import { Plus } from "react-bootstrap-icons";
 import { Outlet, useLocation } from "react-router-dom";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { Breadcrumbs } from "@/components/UI/Breadcrumbs/Breadcrumbs";
 
 const Inventory = () => {
   let { pathname } = useLocation();

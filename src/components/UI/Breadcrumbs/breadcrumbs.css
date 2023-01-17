@@ -1,0 +1,11 @@
+.multi-bread {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.name > a {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--dark-gray);
+}

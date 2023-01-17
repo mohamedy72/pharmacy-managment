@@ -119,6 +119,6 @@ select::-ms-expand {
 
 @media screen and (max-width: 34.375rem) {
   :root {
-    --page-padding: 1.3rem;
+    --page-padding: 1rem;
   }
 }

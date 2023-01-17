@@ -33,6 +33,14 @@
   height: 0.75rem;
 }
 
+.medicines_list .table {
+  grid-template-columns: 2fr repeat(4, minmax(9.375rem, 1.45fr));
+}
+
+.medicines_list .data_row:last-child > * {
+  border-bottom: none;
+}
+
 .medicines_list .list_controls {
   display: flex;
   justify-content: space-between;
@@ -72,24 +80,24 @@
  * Media Queries 
  *-----------------------------------*/
 
-/* 600px */
-@media screen and (max-width: 37.5rem) {
-  .medicines_list .table_header {
-    font-size: 0.9rem;
-  }
+/* 840px */
 
+@media screen and (max-width: 52.5rem) {
+  .medicines_list .table .med_name {
+    font-size: 0.825rem;
+  }
+}
+
+/* 700px */
+@media screen and (max-width: 43.75rem) {
   .medicines_list .table_header tr th:is(:nth-child(2), :nth-child(3)) {
     display: none;
   }
   .medicines_list .table_body .hide_on_mobile {
     display: none;
   }
-
-  .medicines_list .table_header tr {
-    display: grid;
-  }
-  .medicines_list .table_header tr > th:not(:first-child) {
-    width: calc(100% / 2);
+  .medicines_list .table {
+    grid-template-columns: 2fr 0.8fr 0.8fr;
   }
 }
 
@@ -108,4 +116,7 @@
 
 /* 340px */
 @media screen and (max-width: 21.25rem) {
+  .medicines_list .med_name {
+    font-size: 0.8rem;
+  }
 }

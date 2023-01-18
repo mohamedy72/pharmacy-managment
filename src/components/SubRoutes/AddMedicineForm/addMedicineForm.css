@@ -4,6 +4,7 @@
   flex-flow: column wrap;
   gap: 0.9375rem;
   padding-block: 1.875rem;
+  padding-inline-start: var(--page-padding);
 }
 
 .form_container {

@@ -29,7 +29,7 @@ const Sales = lazy(() => import("@Components/SubRoutes/Sales/Sales"));
 const Payments = lazy(() => import("@Components/SubRoutes/Payments/Payments"));
 
 const NewMedicinePage = lazy(() =>
-  import("@Components/Routes/NewMedicinePage/NewMedicinePage")
+  import("@Components/SubRoutes/AddMedicineForm/AddMedicineForm")
 );
 
 const AddMedicineForm = lazy(() =>

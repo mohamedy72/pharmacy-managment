@@ -4,7 +4,7 @@ import { Dropdown } from "@Components/UI/Widgets";
 import useBodyDismiss from "@Hooks/useBodyDismiss";
 
 import { FileEarmarkExcel, FileEarmarkPdf } from "react-bootstrap-icons";
-import { ActionButton } from "@/components/UI/Button/Button";
+import { ActionButton, LinkButton } from "@/components/UI/Button/Button";
 
 const LayoutHeader = ({
   btnClass,
@@ -63,7 +63,7 @@ const LayoutHeader = ({
           </div>
         </div>
       ) : (
-        <ActionButton
+        <LinkButton
           btnClass={btnClass}
           iconDir={iconDir}
           label={label}

@@ -34,7 +34,7 @@
 }
 
 .medicines_list .table {
-  grid-template-columns: 2fr repeat(4, minmax(9.375rem, 1.45fr));
+  grid-template-columns: 2fr repeat(4, minmax(8.375rem, 1.45fr));
 }
 
 .medicines_list .data_row:last-child > * {
@@ -45,6 +45,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
   padding-block: 1.25rem;
 }
 
@@ -98,6 +100,14 @@
   }
   .medicines_list .table {
     grid-template-columns: 2fr 0.8fr 0.8fr;
+  }
+}
+
+/* 510px */
+
+@media screen and (max-width: 31.875rem) {
+  .medicines_list .list_controls {
+    justify-content: center;
   }
 }
 

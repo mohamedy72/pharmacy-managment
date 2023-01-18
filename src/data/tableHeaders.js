@@ -1,7 +1,1 @@
-export const headers = [
-  "medicine name",
-  "medicine id",
-  "group name",
-  "stock",
-  "action",
-];
+export const headers = ["med name", "med id", "group name", "stock", "action"];

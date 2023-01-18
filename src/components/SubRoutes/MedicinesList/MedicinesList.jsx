@@ -8,7 +8,7 @@ import { headers } from "@/data/tableHeaders";
 
 import { useLocation, Outlet, Link } from "react-router-dom";
 
-import { Funnel } from "react-bootstrap-icons";
+import { Funnel, Plus } from "react-bootstrap-icons";
 
 import {
   ArrowDownUp,
@@ -16,6 +16,8 @@ import {
   ArrowRightShort,
 } from "react-bootstrap-icons";
 import MedicinesTableData from "@/components/UI/Tables/MedicinesTableData";
+import { Breadcrumbs } from "@/components/UI/Breadcrumbs/Breadcrumbs";
+import LayoutHeader from "@/components/Layouts/LayoutHeader/LayoutHeader";
 
 const MedicinesList = () => {
   const { pathname } = useLocation();
@@ -29,6 +31,17 @@ const MedicinesList = () => {
 
   return pathnameArr.length <= 2 ? (
     <section className="medicines_list">
+      <LayoutHeader
+        layoutClass="inventory_header"
+        textClass="inventory_header_text"
+        btnClass="inventory_btn"
+        iconDir="left"
+        label="Add new item"
+        text={<Breadcrumbs />}
+        paragraph="List of medicines available for sales."
+        icon={<Plus />}
+        path={`new`}
+      />
       <div className="list_header">
         <Searchbar
           label="Search Medicine Inventory.."

@@ -3,8 +3,7 @@ import "./medicineslist.css";
 import { Searchbar, Selectbox } from "@Components/UI/Widgets";
 import Table from "@/components/UI/Tables/Table";
 import { locationToArray } from "@Utils/locationToArray";
-import { useMedData } from "@Context/MedicinesContext";
-import { headers } from "@/data/tableHeaders";
+import { medicinesTableHeaders } from "@/data/medicinesTableHeaders";
 
 import { useLocation, Outlet, Link } from "react-router-dom";
 
@@ -23,7 +22,7 @@ const MedicinesList = () => {
   const { pathname } = useLocation();
   const pathnameArr = locationToArray(pathname);
 
-  const tableHeaders = headers?.map((header, ind) => (
+  const tableHeaders = medicinesTableHeaders?.map((header, ind) => (
     <th key={header + ind}>
       {header} <ArrowDownUp className="header_icon" />
     </th>

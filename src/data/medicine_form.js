@@ -1,32 +1,26 @@
 export const medicine_form = [
   {
     id: 21,
-    label: 'medicine name',
-
+    label: "medicine name",
   },
   {
     id: 546,
-    label: 'medicine ID',
-
+    label: "medicine ID",
   },
   {
     id: 2542,
-    label: 'medicine group',
-
+    label: "medicine group",
   },
   {
     id: 134,
-    label: 'Qty in numbre',
-
+    label: "Qty in numbre",
   },
   {
-    id:445,
-    label: '',
-
+    id: 445,
+    label: "",
   },
   {
-    id:654 ,
-    label: '',
-
+    id: 654,
+    label: "",
   },
-]
+];

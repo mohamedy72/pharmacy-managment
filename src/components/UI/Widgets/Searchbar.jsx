@@ -1,7 +1,7 @@
 import { Search } from "react-bootstrap-icons";
 import "./widgets.css";
 
-const Searchbar = ({ name, label, type, placeholder }) => {
+const Searchbar = ({ name, label, type = "text", placeholder }) => {
   return (
     <p className="searchbox">
       <input

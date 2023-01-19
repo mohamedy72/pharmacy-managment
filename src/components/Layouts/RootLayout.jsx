@@ -1,6 +1,6 @@
 import useBodyDismiss from "@/hooks/useBodyDismiss";
 import { Suspense, useEffect, useRef, useState } from "react";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { Header, Sidebar } from "../UI";
 import { Layouts } from "./Layouts";
 
@@ -9,9 +9,10 @@ const RootLayout = () => {
   const [navOpen, setNavOpen] = useState(false);
   const sideBarRef = useRef(null);
   const navigate = useNavigate();
-
+  const { pathname } = useLocation();
+  console.log(pathname);
   useEffect(() => {
-    navigate("/dashboard");
+    if (pathname === "/") navigate("/dashboard");
     useBodyDismiss(sideBarRef, setNavOpen);
   }, [sideBarRef]);
 

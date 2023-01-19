@@ -6,7 +6,7 @@
       "@Assets/*": ["/src/assets/*"],
       "@Components/*": ["src/components/*"],
       "@Hooks/*": ["src/hooks/*"],
-      "@Context/*": ["src/context/*"],
+      "@Context/*": ["src/contexts/*"],
       "@Utils/*": ["src/utils/*"],
       "@Data/*": ["src/data/*"]
     }

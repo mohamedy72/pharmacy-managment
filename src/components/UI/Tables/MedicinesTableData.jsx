@@ -1,7 +1,7 @@
 import "./tables.css";
 
 import { Fragment } from "react";
-import { useMedData } from "@/context/MedicinesContext";
+import { useMedData } from "@/contexts/MedicinesContext";
 import { Link } from "react-router-dom";
 
 const MedicinesTableData = () => {

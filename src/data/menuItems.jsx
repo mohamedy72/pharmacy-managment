@@ -10,7 +10,7 @@ export const menuItems = [
   {
     title: "Dashboard",
     icon: <Kanban />,
-    path: "/",
+    path: "dashboard",
   },
   {
     title: "Inventory",

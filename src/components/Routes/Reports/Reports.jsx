@@ -5,6 +5,7 @@ import { Statistic } from "@Components/UI/Widgets";
 import { reports } from "@Data/reports";
 
 import { Outlet } from "react-router-dom";
+import { Breadcrumbs } from "@/components/UI/Breadcrumbs/Breadcrumbs";
 
 const Reports = () => {
   return (
@@ -14,7 +15,7 @@ const Reports = () => {
         textClass="reports_header_text"
         btnClass="reports_btn"
         iconDir="left"
-        text="Reports"
+        text={<Breadcrumbs />}
         paragraph="Overall reports related to the pharmacy."
         path=""
       />

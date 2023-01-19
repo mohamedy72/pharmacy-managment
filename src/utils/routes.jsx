@@ -3,9 +3,7 @@ import { lazy, Suspense } from "react";
 import {
   createBrowserRouter,
   createRoutesFromElements,
-  NavLink,
   Route,
-  Router,
 } from "react-router-dom";
 
 const RootLayout = lazy(() => import("@Components/Layouts/RootLayout"));
@@ -41,27 +39,34 @@ import { action as newMedicineAction } from "@Components/Routes/NewMedicinePage/
 export const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
-      <Route index element={<Dashboard />} />
+      <Route
+        path="dashboard"
+        element={<Dashboard />}
+        handle={{
+          crumb: () => <span>Dashboard</span>,
+        }}
+      />
       <Route
         path="inventory"
         element={<Inventory />}
         handle={{
-          crumb: () => <NavLink to="/inventory">Inventory</NavLink>,
+          crumb: () => <span>Inventory</span>,
         }}
       >
         <Route
           path="medicineslist"
           element={<MedicinesList />}
           handle={{
-            crumb: () => <NavLink to="medicineslist">Medicines List</NavLink>,
+            crumb: () => <span>Medicines List</span>,
           }}
         >
           <Route
             path=":medID"
             element={<MedicineDetails />}
+            loader=""
             handle={{
               crumb: (data) => {
-                return <NavLink to=":medID">{data}</NavLink>;
+                return <span>{data}</span>;
               },
             }}
           />
@@ -70,15 +75,39 @@ export const router = createBrowserRouter(
           path="medicinesgroup"
           element={<MedicinesGroup />}
           handle={{
-            crumb: () => <NavLink to="medicinesgroup">Medicines Group</NavLink>,
+            crumb: () => <span>Medicines Group</span>,
           }}
         />
       </Route>
-      <Route path="reports" element={<Reports />}>
-        <Route path="sales" element={<Sales />} />
-        <Route path="payments" element={<Payments />} />
+      <Route
+        path="reports"
+        element={<Reports />}
+        handle={{
+          crumb: () => <span>Reports</span>,
+        }}
+      >
+        <Route
+          path="sales"
+          element={<Sales />}
+          handle={{
+            crumb: () => <span>Sales</span>,
+          }}
+        />
+        <Route
+          path="payments"
+          element={<Payments />}
+          handle={{
+            crumb: () => <span>Payments</span>,
+          }}
+        />
       </Route>
-      <Route path="config" element={<Configuration />} />
+      <Route
+        path="config"
+        element={<Configuration />}
+        handle={{
+          crumb: () => <span>Configuration</span>,
+        }}
+      />
       <Route
         path="inventory/new"
         element={<NewMedicinePage />}

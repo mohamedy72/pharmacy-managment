@@ -30,7 +30,7 @@ const LayoutHeader = ({
   return (
     <section className="layoutheader">
       <div className="layout_text">
-        <div className="breadcrumbs"> {text} </div>
+        <div className="breadcrumbs">{text}</div>
         <p>{paragraph}</p>
       </div>
       {hasDropdown ? (

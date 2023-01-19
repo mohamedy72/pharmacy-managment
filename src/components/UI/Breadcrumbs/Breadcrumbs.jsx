@@ -1,6 +1,6 @@
 import "./breadcrumbs.css";
 
-import { useMatches } from "react-router-dom";
+import { Link, useMatches } from "react-router-dom";
 import { Fragment } from "react";
 
 export function Breadcrumbs() {
@@ -9,19 +9,24 @@ export function Breadcrumbs() {
     // first get rid of any matches that don't have handle and crumb
     .filter((match) => Boolean(match.handle?.crumb))
     .map((match) => match.handle.crumb(match.data));
+  // console.log(crumbs);
 
   const breadcrumbs = crumbs.map((crumb, ind) => {
     const notLast = ind < crumbs.length - 1;
-
+    console.log(crumb);
     return (
       <Fragment key={ind * 1.2}>
         {notLast ? (
           <>
-            <span className="name">{crumb}</span>
+            <Link to={crumb.props.to} className="name">
+              {crumb.props.children}
+            </Link>
             <span className="arrow">&gt;</span>
           </>
         ) : (
-          <span className="name">{crumb}</span>
+          <Link to={crumb.props.to} className="name">
+            {crumb.props.children}
+          </Link>
         )}
       </Fragment>
     );

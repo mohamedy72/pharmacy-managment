@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 
-import MedinicesProvider from "@Context/MedicinesContext";
+import MedinicesProvider from "@/contexts/MedicinesContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

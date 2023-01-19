@@ -50,7 +50,7 @@ const MedicinesGroup = () => {
               </td>
             </tr>
             <tr>
-              <th>generic</th>
+              <th>diabetes</th>
               <td>02</td>
               <td>
                 <Link href="#">

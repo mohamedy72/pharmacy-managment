@@ -6,6 +6,7 @@ import { dashboard_statistics } from "@Data/dashboard_statistics";
 import { dashboard_summery } from "@Data/dashboard_summery";
 
 import { ArrowDownShort } from "react-bootstrap-icons";
+import { Breadcrumbs } from "@/components/UI/Breadcrumbs/Breadcrumbs";
 
 const Dashboard = () => {
   return (
@@ -14,7 +15,7 @@ const Dashboard = () => {
         btnClass="download_btn"
         iconDir="right"
         label="Download layout"
-        text="Dashboard"
+        text={<Breadcrumbs />}
         paragraph="A quick data overview of the inventory."
         icon={<ArrowDownShort />}
         hasDropdown

@@ -1,3 +1,10 @@
+/**
+ * This context should hold all related medicines calls (getALlMedicines, SubmitNewMedicine, DeleteMedicine ... etc)
+ *
+ * Reducer function should contain the logic
+ *
+ */
+
 import {
   createContext,
   useReducer,
@@ -7,14 +14,6 @@ import {
 } from "react";
 import axios from "axios";
 const MedicinesContext = createContext();
-// const medReducer = (state, action) => {
-//   switch (action.type) {
-//     case "DELETE_MED":
-//       return state.filter((med) => med.name !== action.name);
-//     default:
-//       return state;
-//   }
-// };
 
 function MedinicesProvider({ children }) {
   const [medicines, setMedicines] = useState([]);
@@ -41,3 +40,14 @@ export const useMedData = () => {
   const medicines = useContext(MedicinesContext);
   return medicines;
 };
+
+/**
+ *
+ * Context => is where i want whatever shared state to be encapsulated
+ *
+ * Reducer => is a function that
+ *
+ *
+ *
+ *
+ * */

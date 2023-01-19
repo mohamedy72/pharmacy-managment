@@ -10,7 +10,7 @@ const RootLayout = () => {
   const sideBarRef = useRef(null);
   const navigate = useNavigate();
   const { pathname } = useLocation();
-  console.log(pathname);
+
   useEffect(() => {
     if (pathname === "/") navigate("/dashboard");
     useBodyDismiss(sideBarRef, setNavOpen);
@@ -33,11 +33,11 @@ const RootLayout = () => {
       />
       <Layouts>
         <Header handleNavOpen={handleNavOpen} />
-        <main className="main_app">
-          <Suspense fallback={<p>Loading..</p>}>
+        <Suspense fallback={<p>Loading..</p>}>
+          <section>
             <Outlet />
-          </Suspense>
-        </main>
+          </section>
+        </Suspense>
       </Layouts>
     </div>
   );

@@ -2,10 +2,6 @@
   overflow: hidden;
 }
 
-.dashboard > section {
-  padding-inline: var(--page-padding);
-}
-
 .dashboard_header,
 .dashboard_statistics {
   margin-block-end: 1.875rem;

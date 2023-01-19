@@ -1,27 +1,13 @@
 .form {
-  max-width: 43.75rem;
-  display: flex;
-  flex-flow: column wrap;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 0.9375rem;
   padding-block: 1.875rem;
-  padding-inline-start: var(--page-padding);
 }
 
 .form_container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1.5625rem;
-}
-
-.form_container .form_control {
-  width: 50%;
-}
-
-.form_container .select_group {
-  width: 50%;
-  display: flex;
-  flex-flow: column wrap;
+  width: 100%;
 }
 
 .form_container label {
@@ -29,15 +15,10 @@
   text-transform: capitalize;
 }
 
-.form .btn {
-  width: max-content;
-}
-
 .selectbox_control {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 50%;
 }
 
 .selectbox_control select {
@@ -48,7 +29,6 @@
 }
 
 .textarea_control {
-  width: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -58,4 +38,20 @@
 
 .btn:disabled {
   opacity: 0.5;
+}
+
+/* 500px */
+
+@media screen and (max-width: 31.25rem) {
+  .form {
+    grid-template-columns: 1fr;
+  }
+  .form_container {
+    width: 80%;
+    margin-inline: auto;
+  }
+
+  .form_container .btn {
+    width: 100%;
+  }
 }

@@ -30,10 +30,6 @@ const NewMedicinePage = lazy(() =>
   import("@Components/SubRoutes/AddMedicineForm/AddMedicineForm")
 );
 
-const AddMedicineForm = lazy(() =>
-  import("@/components/SubRoutes/AddMedicineForm/AddMedicineForm")
-);
-
 import { action as newMedicineAction } from "@Components/Routes/NewMedicinePage/NewMedicinePage";
 
 export const router = createBrowserRouter(

@@ -10,6 +10,7 @@ import {
 import * as Yup from "yup";
 import { Formik } from "formik";
 import { Form } from "react-router-dom";
+import { ActionButton } from "@/components/UI/Button/Button";
 
 const AddMedicines = () => {
   const [newMedicine, setNewMedicine] = useState({});
@@ -54,6 +55,8 @@ const AddMedicines = () => {
                 type="text"
                 placeholder="Augmentin 1gm"
               />
+            </div>
+            <div className="form_container" tabIndex="2">
               <TextInput
                 label="medicine id"
                 name="med_id"
@@ -69,6 +72,8 @@ const AddMedicines = () => {
                 <option value="generic">Generic Medicines</option>
                 <option value="diabetes">Diabetes</option>
               </Selectbox>
+            </div>
+            <div className="form_container" tabIndex="1">
               <TextInput
                 label="quantity in number"
                 name="med_qty"
@@ -87,13 +92,15 @@ const AddMedicines = () => {
                 name="side_effects"
               />
             </div>
-            <button
-              type="submit"
-              disabled={formik.isSubmitting || !formik.isValid}
-              className="btn btn-red"
-            >
-              save details
-            </button>
+            <div className="form_container">
+              <ActionButton
+                type="submit"
+                btnClass="btn-red"
+                disabled={formik.isSubmitting || !formik.isValid}
+                label="Submit medicine"
+                handleClick=""
+              />
+            </div>
           </Form>
         );
       }}

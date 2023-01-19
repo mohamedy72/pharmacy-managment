@@ -9,11 +9,9 @@ export function Breadcrumbs() {
     // first get rid of any matches that don't have handle and crumb
     .filter((match) => Boolean(match.handle?.crumb))
     .map((match) => match.handle.crumb(match.data));
-  // console.log(crumbs);
 
   const breadcrumbs = crumbs.map((crumb, ind) => {
     const notLast = ind < crumbs.length - 1;
-    console.log(crumb);
     return (
       <Fragment key={ind * 1.2}>
         {notLast ? (

@@ -38,20 +38,36 @@ export const ActionButton = ({
   btnClass,
   handleClick,
   type,
+  disabled,
 }) => {
+  const renderCustomButtons = () => {
+    if (icon && iconDir) {
+      if (iconDir === "left") {
+        return (
+          <span className="btn_data">
+            {icon} {label}
+          </span>
+        );
+      } else {
+        return (
+          <span className="btn_data">
+            {label} {icon}
+          </span>
+        );
+      }
+    } else {
+      return label;
+    }
+  };
+
   return (
-    <button type={type} className={`btn ${btnClass}`} onClick={handleClick}>
-      {iconDir === "left" ? (
-        <span className="btn_data">
-          {icon} {label}
-        </span>
-      ) : iconDir === "right" ? (
-        <span className="btn_data">
-          {label} {icon}
-        </span>
-      ) : (
-        { label }
-      )}
+    <button
+      type={type}
+      className={`btn ${btnClass}`}
+      onClick={handleClick}
+      disabled={disabled}
+    >
+      {renderCustomButtons()}
     </button>
   );
 };

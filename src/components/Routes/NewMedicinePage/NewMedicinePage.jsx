@@ -4,9 +4,9 @@ import { redirect } from "react-router-dom";
 
 const NewMedicinePage = () => {
   return (
-    <section>
+    <div>
       <AddMedicines />
-    </section>
+    </div>
   );
 };
 

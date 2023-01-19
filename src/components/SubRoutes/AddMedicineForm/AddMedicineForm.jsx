@@ -98,7 +98,6 @@ const AddMedicines = () => {
                 btnClass="btn-red"
                 disabled={formik.isSubmitting || !formik.isValid}
                 label="Submit medicine"
-                handleClick=""
               />
             </div>
           </Form>

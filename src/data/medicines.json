@@ -127,6 +127,21 @@
         "dose": "Take the medicine every 12 hours as a whole, Don't crush or chew",
         "sideEffects": "nausea, vomiting, diarrhea, rash, itching vaginal itching or discharge; or diaper rash"
       }
+    },
+    {
+      "id": "P156422154",
+      "name": "Augmentin 1gm",
+      "group": "generic",
+      "qty": "120",
+      "info": {
+        "medID": null,
+        "medGroup": "Generic",
+        "lifetimeSupply": 150,
+        "lifetimeSales": 350,
+        "stock": 10,
+        "dose": "lorem",
+        "sideEffects": "lorem"
+      }
     }
   ]
 }

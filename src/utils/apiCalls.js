@@ -18,7 +18,7 @@ export async function getAllMedicines() {
 }
 
 export async function addNewMedicine(post) {
-  const addNewMedicine = await axios.post(ENDPOINT, JSON.stringify(post), {
+  const addNewMedicine = await URL.post(ENDPOINT, JSON.stringify(post), {
     headers: {
       "Content-Type": "application/json",
     },
@@ -26,7 +26,7 @@ export async function addNewMedicine(post) {
 }
 
 export async function getSingleMedicine(id) {
-  const getSingleMedicine = await axios.get(`${ENDPOINT}/${id}`);
+  const getSingleMedicine = await URL.get(`${ENDPOINT}/${id}`);
 
   if (!getSingleMedicine.request.response) {
     throw {

@@ -32,9 +32,8 @@ export async function action({ request }) {
 
   try {
     await addNewMedicine(medicine);
+    return redirect("/inventory/medicineslist");
   } catch (error) {
     return error;
   }
-
-  return redirect("/inventory/medicineslist");
 }

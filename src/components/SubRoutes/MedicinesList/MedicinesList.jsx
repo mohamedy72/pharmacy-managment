@@ -39,7 +39,7 @@ const MedicinesList = () => {
         text={<Breadcrumbs />}
         paragraph="List of medicines available for sales."
         icon={<Plus />}
-        path={`new`}
+        path={`/inventory/new`}
       />
       <div className="list_header">
         <Searchbar

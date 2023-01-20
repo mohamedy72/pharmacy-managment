@@ -56,16 +56,7 @@ export const router = createBrowserRouter(
             crumb: () => <span>Medicines List</span>,
           }}
         >
-          <Route
-            path=":medID"
-            element={<MedicineDetails />}
-            loader=""
-            handle={{
-              crumb: (data) => {
-                return <span>{data}</span>;
-              },
-            }}
-          />
+          <Route path=":medID" element={<MedicineDetails />} />
         </Route>
         <Route
           path="medicinesgroup"

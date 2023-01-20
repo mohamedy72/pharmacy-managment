@@ -12,12 +12,23 @@
   gap: 0 0.7rem;
 }
 
-.btn .btn_data > svg {
+.btn svg {
   width: 1.5rem;
   height: 1.5rem;
+}
+
+.btn .btn_data .btn_edit svg {
+  width: 0.5rem;
+  height: 0.5rem;
 }
 
 .btn-red {
   color: var(--white);
   background-color: var(--reddish);
+}
+
+.btn_edit {
+  background: #03a9f5;
+  border-radius: 4px;
+  color: var(--white);
 }

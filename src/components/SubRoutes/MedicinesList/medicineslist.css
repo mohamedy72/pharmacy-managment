@@ -30,6 +30,13 @@
   border-bottom: none;
 }
 
+.medicines_list .action > a {
+  text-decoration: underline;
+}
+.medicines_list .action > a:is(:hover, :focus) {
+  color: hsl(0, 0%, 18%);
+}
+
 .medicines_list .list_controls {
   display: flex;
   justify-content: space-between;

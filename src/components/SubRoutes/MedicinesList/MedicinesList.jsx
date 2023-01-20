@@ -6,7 +6,6 @@ import { locationToArray } from "@Utils/locationToArray";
 import { medicinesTableHeaders } from "@/data/medicinesTableHeaders";
 
 import { useLocation, Outlet, Link } from "react-router-dom";
-
 import { Funnel, Plus } from "react-bootstrap-icons";
 
 import {

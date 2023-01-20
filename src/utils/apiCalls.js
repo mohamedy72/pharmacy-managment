@@ -17,8 +17,8 @@ export async function getAllMedicines() {
   return fetchMedicines.data;
 }
 
-export async function addNewMedicine(post) {
-  const addNewMedicine = await URL.post(ENDPOINT, JSON.stringify(post), {
+export async function addNewMedicine(medicine) {
+  const addNewMedicine = await URL.post(ENDPOINT, JSON.stringify(medicine), {
     headers: {
       "Content-Type": "application/json",
     },

@@ -1,11 +1,13 @@
 import "./tables.css";
 
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import { useMedData } from "@/contexts/MedicinesContext";
 import { Link } from "react-router-dom";
+// import { medicinesList } from "@Data/medicinesList";
 
 const MedicinesTableData = () => {
   const { medicines } = useMedData();
+  // const [medicines, setMedicines] = useState(medicinesList);
 
   return (
     <>

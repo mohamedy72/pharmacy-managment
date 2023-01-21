@@ -1,6 +1,5 @@
 /* [x]: Searchbar */
 .searchbox {
-  max-width: 23rem;
   position: relative;
   border-radius: 0.3125rem;
   flex: 0 1 min(24.5rem, 75vw);

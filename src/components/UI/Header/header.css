@@ -11,7 +11,7 @@
 }
 
 .header .searchbox {
-  width: 15rem;
+  width: 100%;
   justify-self: start;
 }
 
@@ -35,6 +35,7 @@
   display: flex;
   align-items: center;
   font-size: 0.75rem;
+  justify-self: center;
 }
 
 .header .hamburger {
@@ -96,10 +97,6 @@
     grid-template-columns: 3rem 13.4375rem 1fr;
   }
 
-  .header .select_lang {
-    justify-self: center;
-  }
-
   .header .weather {
     grid-column: 1 / -1;
     justify-self: center;
@@ -114,8 +111,9 @@
   .header {
     grid-template-columns: 3rem 1fr;
   }
+
   .header .select_lang {
-    margin-inline-start: 6.5rem;
+    justify-self: start;
   }
 }
 
@@ -126,7 +124,5 @@
 
   .header .select_lang {
     grid-column: 1 / -1;
-    margin-inline: 0 3.5rem;
-    justify-self: center;
   }
 }

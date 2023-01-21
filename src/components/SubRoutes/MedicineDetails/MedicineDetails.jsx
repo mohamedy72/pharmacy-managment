@@ -26,7 +26,7 @@ const MedicineDetails = () => {
   }, [medID]);
 
   return (
-    <section>
+    <section className="medicine_detail">
       <LayoutHeader
         btnClass="btn_edit"
         iconDir="left"
@@ -48,7 +48,7 @@ const MedicineDetails = () => {
               <p>{med.body}</p>
             ) : (
               med.body.map((data) => (
-                <div>
+                <div key={data.identifer}>
                   <h4>{data.stat}</h4>
                   <small>{data.identifer}</small>
                 </div>

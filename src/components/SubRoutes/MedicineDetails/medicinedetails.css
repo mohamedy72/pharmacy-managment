@@ -1,16 +1,8 @@
-.medicine_detail {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-}
-
-.medicine_detail .config:nth-child(3),
-.medicine_detail .config:last-child {
-  grid-column: 1 / -1;
-}
-
 .remove-btn {
   background-color: var(--reddish);
+}
+.medicine_detail .searchbox {
+  max-width: 25rem;
 }
 
 .info_page {
@@ -21,4 +13,14 @@
 
 .info_page .info_card:is(:nth-child(3), :nth-child(4)) {
   grid-column: 1 / -1;
+}
+
+/*-----------------------------------* 
+ * Media Queries 
+ *-----------------------------------*/
+
+@media screen and (max-width: 24.0625rem) {
+  .info_page {
+    grid-template-columns: 1fr;
+  }
 }

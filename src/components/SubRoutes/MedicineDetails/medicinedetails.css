@@ -15,6 +15,11 @@
   grid-column: 1 / -1;
 }
 
+.info_page .info_page_item {
+  display: flex;
+  flex-direction: column;
+}
+
 /*-----------------------------------* 
  * Media Queries 
  *-----------------------------------*/

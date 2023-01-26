@@ -113,7 +113,6 @@ export default MedicinesList;
 
 export async function medicinesLoader() {
   const res = await getAllMedicines();
-  console.log(res);
   if (res.status !== 200) {
     throw new Response("Not found", { status: 404 });
   }

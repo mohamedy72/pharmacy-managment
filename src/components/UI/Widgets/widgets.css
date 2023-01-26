@@ -431,12 +431,12 @@
   justify-content: space-between;
   gap: 15px;
 }
-.info_card .info_body h4 {
+.info_card .info_body .info_body_value {
   font-size: 1.25rem;
   font-weight: 600;
 }
 
-.info_card .info_body small {
+.info_card .info_body .info_body_label {
   font-size: 0.875rem;
   font-weight: 500;
   text-transform: capitalize;

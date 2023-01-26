@@ -1,5 +1,5 @@
 import useBodyDismiss from "@/hooks/useBodyDismiss";
-import { Suspense, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { Header, Sidebar } from "../UI";
 import { Layouts } from "./Layouts";
@@ -33,11 +33,9 @@ const RootLayout = () => {
       />
       <Layouts>
         <Header handleNavOpen={handleNavOpen} />
-        <Suspense fallback={<p>Loading..</p>}>
-          <section>
-            <Outlet />
-          </section>
-        </Suspense>
+        <section>
+          <Outlet />
+        </section>
       </Layouts>
     </div>
   );

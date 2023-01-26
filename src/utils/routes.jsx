@@ -1,19 +1,20 @@
 import { lazy, Suspense } from "react";
-
 import {
   createBrowserRouter,
   createRoutesFromElements,
+  Link,
   Route,
 } from "react-router-dom";
 
-const RootLayout = lazy(() => import("@Components/Layouts/RootLayout"));
-const Configuration = lazy(() =>
-  import("@Components/Routes/Configuration/Configuration")
-);
-const Dashboard = lazy(() => import("@Components/Routes/Dashboard/Dashboard"));
-const Inventory = lazy(() => import("@Components/Routes/Inventory/Inventory"));
-const Reports = lazy(() => import("@Components/Routes/Reports/Reports"));
+import RootLayout from "@/components/Layouts/RootLayout";
+import Dashboard from "@/components/Routes/Dashboard/Dashboard";
+import Inventory from "@/components/Routes/Inventory/Inventory";
+import Reports from "@/components/Routes/Reports/Reports";
+import Sales from "@/components/SubRoutes/Sales/Sales";
+import Payments from "@/components/SubRoutes/Payments/Payments";
+import Configuration from "@/components/Routes/Configuration/Configuration";
 
+// Lazy Loaded components
 const MedicinesList = lazy(() =>
   import("@Components/SubRoutes/MedicinesList/MedicinesList")
 );
@@ -23,14 +24,13 @@ const MedicineDetails = lazy(() =>
 const MedicinesGroup = lazy(() =>
   import("@Components/SubRoutes/MedicinesGroup/MedicinesGroup")
 );
-const Sales = lazy(() => import("@Components/SubRoutes/Sales/Sales"));
-const Payments = lazy(() => import("@Components/SubRoutes/Payments/Payments"));
 
-const NewMedicinePage = lazy(() =>
-  import("@Components/SubRoutes/AddMedicineForm/AddMedicineForm")
-);
-
-import { action as newMedicineAction } from "@Components/Routes/NewMedicinePage/NewMedicinePage";
+// Loaders and Actions
+import NewMedicinePage, {
+  action as newMedicineAction,
+} from "@Components/Routes/NewMedicinePage/NewMedicinePage";
+import { detailsLoader } from "@/components/SubRoutes/MedicineDetails/MedicineDetails";
+import { medicinesLoader } from "@/components/SubRoutes/MedicinesList/MedicinesList";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -39,30 +39,54 @@ export const router = createBrowserRouter(
         path="dashboard"
         element={<Dashboard />}
         handle={{
-          crumb: () => <span>Dashboard</span>,
+          crumb: () => <Link to="/dashboard">Dashboard</Link>,
         }}
       />
       <Route
         path="inventory"
         element={<Inventory />}
         handle={{
-          crumb: () => <span>Inventory</span>,
+          crumb: () => <Link to="/inventory">Inventory</Link>,
         }}
       >
         <Route
           path="medicineslist"
-          element={<MedicinesList />}
+          element={
+            <Suspense fallback={<h1>Loading...</h1>}>
+              <MedicinesList />
+            </Suspense>
+          }
+          loader={medicinesLoader}
           handle={{
-            crumb: () => <span>Medicines List</span>,
+            crumb: () => (
+              <Link to="/inventory/medicineslist">Medicines List</Link>
+            ),
           }}
+          // NOTE: Add a custom error boundry Component
+          errorElement={<h1>An error has happend while fetching!</h1>}
         >
-          <Route path=":medID" element={<MedicineDetails />} />
+          <Route
+            path=":medID"
+            element={
+              <Suspense fallback={<h1>Loading...</h1>}>
+                <MedicineDetails />
+              </Suspense>
+            }
+            loader={detailsLoader}
+            handle={{
+              crumb: (data) => <span>{data.name}</span>,
+            }}
+          />
         </Route>
         <Route
           path="medicinesgroup"
-          element={<MedicinesGroup />}
+          element={
+            <Suspense fallback={<h1>Loading...</h1>}>
+              <MedicinesGroup />
+            </Suspense>
+          }
           handle={{
-            crumb: () => <span>Medicines Group</span>,
+            crumb: () => <Link to="/medicinesgroup">Medicines Group</Link>,
           }}
         />
       </Route>
@@ -70,21 +94,21 @@ export const router = createBrowserRouter(
         path="reports"
         element={<Reports />}
         handle={{
-          crumb: () => <span>Reports</span>,
+          crumb: () => <Link to="/reports">Reports</Link>,
         }}
       >
         <Route
           path="sales"
           element={<Sales />}
           handle={{
-            crumb: () => <span>Sales</span>,
+            crumb: () => <Link to="/reports/sales">Sales</Link>,
           }}
         />
         <Route
           path="payments"
           element={<Payments />}
           handle={{
-            crumb: () => <span>Payments</span>,
+            crumb: () => <Link to="/reports/payments">Payments</Link>,
           }}
         />
       </Route>
@@ -92,7 +116,7 @@ export const router = createBrowserRouter(
         path="config"
         element={<Configuration />}
         handle={{
-          crumb: () => <span>Configuration</span>,
+          crumb: () => <Link to="/config">Configuration</Link>,
         }}
       />
       <Route

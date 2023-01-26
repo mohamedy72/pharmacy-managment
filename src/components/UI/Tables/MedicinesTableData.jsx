@@ -1,14 +1,11 @@
+import { Fragment } from "react";
+import { Link } from "react-router-dom";
 import "./tables.css";
 
-import { Fragment, useState } from "react";
-import { useMedData } from "@/contexts/MedicinesContext";
-import { Link } from "react-router-dom";
-// import { medicinesList } from "@Data/medicinesList";
-
-const MedicinesTableData = () => {
-  const { medicines } = useMedData();
-  // const [medicines, setMedicines] = useState(medicinesList);
-
+const MedicinesTableData = ({ medicines }) => {
+  if (!medicines) {
+    return <h1>An error has happened</h1>;
+  }
   return (
     <>
       {medicines?.map((med, ind) => (

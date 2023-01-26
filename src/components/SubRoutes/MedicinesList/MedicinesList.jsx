@@ -5,7 +5,13 @@ import Table from "@/components/UI/Tables/Table";
 import { locationToArray } from "@Utils/locationToArray";
 import { medicinesTableHeaders } from "@/data/medicinesTableHeaders";
 
-import { useLocation, Outlet, Link } from "react-router-dom";
+import {
+  useLocation,
+  Outlet,
+  Link,
+  useLoaderData,
+  useRouteError,
+} from "react-router-dom";
 import { Funnel, Plus } from "react-bootstrap-icons";
 
 import {
@@ -16,8 +22,12 @@ import {
 import MedicinesTableData from "@/components/UI/Tables/MedicinesTableData";
 import { Breadcrumbs } from "@/components/UI/Breadcrumbs/Breadcrumbs";
 import LayoutHeader from "@/components/Layouts/LayoutHeader/LayoutHeader";
+import { getAllMedicines } from "@/utils/apiCalls";
+import { Suspense } from "react";
 
 const MedicinesList = () => {
+  const medicines = useLoaderData();
+  const error = useRouteError();
   const { pathname } = useLocation();
   const pathnameArr = locationToArray(pathname);
 
@@ -65,7 +75,9 @@ const MedicinesList = () => {
             <tr>{tableHeaders}</tr>
           </Table.Header>
           <Table.Body>
-            <MedicinesTableData />
+            <Suspense fallback={<h1>Loading...</h1>}>
+              <MedicinesTableData medicines={medicines} />
+            </Suspense>
           </Table.Body>
         </Table>
         <div className="list_controls">
@@ -98,3 +110,12 @@ const MedicinesList = () => {
 };
 
 export default MedicinesList;
+
+export async function medicinesLoader() {
+  const res = await getAllMedicines();
+  console.log(res);
+  if (res.status !== 200) {
+    throw new Response("Not found", { status: 404 });
+  }
+  return res.data;
+}

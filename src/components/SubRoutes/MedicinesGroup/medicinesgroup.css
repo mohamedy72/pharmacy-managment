@@ -3,6 +3,7 @@
 }
 
 .group_list .searchbox {
+  width: 40%;
   margin-block-end: 1.2rem;
 }
 

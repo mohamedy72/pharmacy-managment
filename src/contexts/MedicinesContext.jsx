@@ -1,53 +1,34 @@
-/**
- * This context should hold all related medicines calls (getALlMedicines, SubmitNewMedicine, DeleteMedicine ... etc)
- *
- * Reducer function should contain the logic
- *
- */
+// import { createContext, useEffect, useState } from "react";
+// import { getAllMedicines } from "@/utils/apiCalls";
+// import { useLoaderData } from "react-router-dom";
 
-import {
-  createContext,
-  useReducer,
-  useEffect,
-  useState,
-  useContext,
-} from "react";
-import axios from "axios";
-const MedicinesContext = createContext();
+// export const MedicinesContext = createContext();
 
-function MedinicesProvider({ children }) {
-  const [medicines, setMedicines] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      const URL = "http://localhost:4000/medicines";
-      const res = await axios.get(URL);
-      const data = await res.data;
-      setMedicines(data);
-    };
+// export function MedinicesProvider({ children }) {
 
-    fetchData();
-  }, []);
+//   // const [medicines, setMedicines] = useState([]);
+//   // const [isLoading, setIsLoading] = useState(false);
+//   // const [error, setError] = useState(null);
 
-  return (
-    <MedicinesContext.Provider value={{ medicines }}>
-      {children}
-    </MedicinesContext.Provider>
-  );
-}
-export default MedinicesProvider;
+//   // useEffect(() => {
+//   //   setIsLoading(true);
+//   //   const fetchData = async () => {
+//   //     try {
+//   //       const data = await getAllMedicines();
+//   //       setMedicines(data);
+//   //       setIsLoading(false);
+//   //     } catch (error) {
+//   //       setIsLoading(false);
+//   //       setError(error);
+//   //       console.log(error);
+//   //     }
+//   //   };
+//   //   fetchData();
+//   // }, []);
 
-export const useMedData = () => {
-  const medicines = useContext(MedicinesContext);
-  return medicines;
-};
-
-/**
- *
- * Context => is where i want whatever shared state to be encapsulated
- *
- * Reducer => is a function that
- *
- *
- *
- *
- * */
+//   return (
+//     <MedicinesContext.Provider value={data}>
+//       {children}
+//     </MedicinesContext.Provider>
+//   );
+// }

@@ -54,7 +54,6 @@ const Sidebar = ({ navOpen, handleNavClose, sideBarRef }) => {
             <ThreeDotsVertical
               onClick={(e) => {
                 handleSidebarDropdown(e);
-                getIconBounding(e);
               }}
             />
           </i>

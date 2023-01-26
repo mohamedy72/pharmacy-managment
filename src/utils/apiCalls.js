@@ -7,14 +7,13 @@ const URL = axios.create({
 const ENDPOINT = "/medicines";
 
 export async function getAllMedicines() {
-  const fetchMedicines = await URL.get(ENDPOINT);
-  if (!fetchMedicines.request.response) {
-    throw {
-      message: "Cannot retrieve list of medicines",
-      status: fetchMedicines.request.status,
-    };
+  const response = await URL.get(ENDPOINT);
+  if (response.status !== 200) {
+    throw new Response("Cannot retireve a list of medicines", {
+      status: response.status,
+    });
   }
-  return fetchMedicines.data;
+  return response;
 }
 
 export async function addNewMedicine(medicine) {
@@ -34,5 +33,5 @@ export async function getSingleMedicine(id) {
       status: getSingleMedicine.request.status,
     };
   }
-  return getSingleMedicine.data;
+  return getSingleMedicine;
 }

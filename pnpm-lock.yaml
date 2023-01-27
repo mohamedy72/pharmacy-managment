@@ -11,7 +11,6 @@ specifiers:
   react-bootstrap-icons: ^1.10.2
   react-dom: ^18.2.0
   react-router-dom: 6.6.1
-  use-react-router-breadcrumbs: ^4.0.1
   vite: ^4.0.4
   yup: ^0.32.11
 
@@ -23,7 +22,6 @@ dependencies:
   react-bootstrap-icons: 1.10.2_react@18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-router-dom: 6.6.1_biqbaboplfbrettd7655fr4n2y
-  use-react-router-breadcrumbs: 4.0.1_fiwfcxtgbhkffeqoqbb5vb35pi
   yup: 0.32.11
 
 devDependencies:
@@ -1681,16 +1679,6 @@ packages:
       escalade: 3.1.1
       picocolors: 1.0.0
     dev: true
-
-  /use-react-router-breadcrumbs/4.0.1_fiwfcxtgbhkffeqoqbb5vb35pi:
-    resolution: {integrity: sha512-Zbcy0KvWt1JePFcUHJAnTr7Z+AeO9WxmPs6A5Q/xqOVoi8edPKzpqHF87WB2opXwie/QjCxrEyTB7kFg7fgXvQ==}
-    peerDependencies:
-      react: '>=16.8'
-      react-router-dom: '>=6.0.0'
-    dependencies:
-      react: 18.2.0
-      react-router-dom: 6.6.1_biqbaboplfbrettd7655fr4n2y
-    dev: false
 
   /utils-merge/1.0.1:
     resolution: {integrity: sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA==}

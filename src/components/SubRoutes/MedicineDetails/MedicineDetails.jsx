@@ -9,6 +9,7 @@ import { FlagFill, PenFill } from "react-bootstrap-icons";
 import { Breadcrumbs } from "@/components/UI/Breadcrumbs/Breadcrumbs";
 import { Searchbar } from "@/components/UI/Widgets";
 import { Suspense } from "react";
+import { getSingleMedicine } from "@/utils/apiCalls";
 
 const MedicineDetails = () => {
   const drug = useLoaderData();
@@ -83,6 +84,6 @@ export default MedicineDetails;
 
 export const detailsLoader = async ({ params }) => {
   const { medID } = params;
-  const res = await axios(`http://localhost:4000/medicines/${medID}`);
+  const res = await getSingleMedicine(medID)
   return res.data;
 };

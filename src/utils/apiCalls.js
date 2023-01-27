@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const URL = axios.create({
-  baseURL: "http://localhost:4000",
+  baseURL: "https://pharma-one-server.onrender.com",
 });
 
 const ENDPOINT = "/medicines";

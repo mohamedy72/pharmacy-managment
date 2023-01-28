@@ -11,6 +11,8 @@ import {
   Link,
   useLoaderData,
   useRouteError,
+  defer,
+  Await,
 } from "react-router-dom";
 import { Funnel, Plus } from "react-bootstrap-icons";
 
@@ -75,8 +77,13 @@ const MedicinesList = () => {
             <tr>{tableHeaders}</tr>
           </Table.Header>
           <Table.Body>
-            <Suspense fallback={<h1>Loading...</h1>}>
-              <MedicinesTableData medicines={medicines} />
+            <Suspense fallback={<p>Loading Med data...</p>}>
+              <Await
+                resolve={medicines.medData}
+                errorElement={<p>Error loading medicines data!</p>}
+              >
+                {(medData) => <MedicinesTableData medicines={medData} />}
+              </Await>
             </Suspense>
           </Table.Body>
         </Table>
@@ -116,5 +123,7 @@ export async function medicinesLoader() {
   if (res.status !== 200) {
     throw new Response("Not found", { status: 404 });
   }
-  return res.data;
+  return defer({
+    medData: res.data,
+  });
 }

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const URL = axios.create({
-  baseURL: "https://pharma-one-server.onrender.com",
+  baseURL: "https://pharma-one-server.cyclic.app",
 });
 
 const ENDPOINT = "/medicines";
@@ -17,11 +17,15 @@ export async function getAllMedicines() {
 }
 
 export async function addNewMedicine(medicine) {
-  const addNewMedicine = await URL.post(ENDPOINT, JSON.stringify(medicine), {
+  const response = await URL.post(ENDPOINT, JSON.stringify(medicine), {
     headers: {
       "Content-Type": "application/json",
     },
   });
+
+  if (response.statusText !== "OK") {
+    throw { message: "Could not save new medicine.", status: 500 };
+  }
 }
 
 export async function getSingleMedicine(id) {

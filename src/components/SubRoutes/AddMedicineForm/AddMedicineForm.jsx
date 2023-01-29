@@ -12,7 +12,7 @@ import { Formik } from "formik";
 import { Form } from "react-router-dom";
 import { ActionButton } from "@/components/UI/Button/Button";
 
-const AddMedicines = () => {
+const AddMedicines = ({ isSubmitting }) => {
   const [newMedicine, setNewMedicine] = useState({});
   const initialValues = {
     med_name: "",
@@ -31,20 +31,19 @@ const AddMedicines = () => {
     side_effects: Yup.string().required("Required Field"),
   });
 
-  const onSubmit = (values, onSubmitProps) => {
-    setTimeout(() => {
-      setNewMedicine(values);
-      onSubmitProps.resetForm();
-      onSubmitProps.setSubmitting(false);
-    }, 400);
-  };
+  // Redundant as React Router now handles submitting
+  // const onSubmit = (values, onSubmitProps) => {
+  //   console.log(onSubmitProps);
+  //   setTimeout(() => {
+  //     setNewMedicine(values);
+  //     onSubmitProps.resetForm();
+  //     onSubmitProps.setSubmitting(false);
+  //     console.log("Submitting");
+  //   }, 400);
+  // };
 
   return (
-    <Formik
-      initialValues={initialValues}
-      validationSchema={validationSchema}
-      onSubmit={onSubmit}
-    >
+    <Formik initialValues={initialValues} validationSchema={validationSchema}>
       {(formik) => {
         return (
           <Form method="post" action="/inventory/new" className="form">
@@ -96,7 +95,7 @@ const AddMedicines = () => {
               <ActionButton
                 type="submit"
                 btnClass="btn-red"
-                disabled={formik.isSubmitting || !formik.isValid}
+                disabled={isSubmitting || !formik.isValid}
                 label="Submit medicine"
               />
             </div>

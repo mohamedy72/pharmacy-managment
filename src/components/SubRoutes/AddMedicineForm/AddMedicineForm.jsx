@@ -12,6 +12,7 @@ import { Formik, Form } from "formik";
 import { ActionButton } from "@/components/UI/Button/Button";
 
 import { addNewMedicine } from "@/utils/apiCalls";
+import { ErrorElement } from "@/components/UI/Widgets/ErrorElement";
 
 const AddMedicines = () => {
   const selectboxOptions = [
@@ -21,7 +22,8 @@ const AddMedicines = () => {
   ];
 
   const [newMedicine, setNewMedicine] = useState({});
-  const [error, setError] = useState("");
+  const [error, setError] = useState(null);
+  console.log(error);
   const initialValues = {
     med_name: "",
     med_id: "",
@@ -41,17 +43,20 @@ const AddMedicines = () => {
 
   const onSubmit = async (values, onSubmitProps) => {
     try {
-      const res = await addNewMedicine(values);
-      console.log(res);
+      setError({});
+      await addNewMedicine(values);
       console.log("Submitting");
       setNewMedicine(values);
       onSubmitProps.resetForm();
       onSubmitProps.setSubmitting(false);
     } catch (error) {
-      console.log(error);
-      setError(error);
+      return setError(error);
     }
   };
+
+  if (error) {
+    return <ErrorElement label={error.message} customClass="animate_in" />;
+  }
 
   return (
     <Formik

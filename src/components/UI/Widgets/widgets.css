@@ -441,3 +441,47 @@
   font-weight: 500;
   text-transform: capitalize;
 }
+
+/*-----------------------------------* 
+ * Error Component 
+ *-----------------------------------*/
+
+.error_container {
+  width: 40vw;
+  height: 3.125rem;
+  background-color: rgba(243, 84, 48, 0.894);
+  color: #f9f9f9;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  opacity: 0;
+  visibility: hidden;
+  display: grid;
+  place-items: center;
+  transition: transform 0.5s ease-in-out, opacity 0.8s ease-in-out,
+    visibility 0.5s ease-in-out;
+}
+
+.error_container.animate_in {
+  animation: bounceUp 0.8s ease-in-out 1 both;
+}
+
+@keyframes bounceUp {
+  0% {
+    transform: translate(-50%, 100%);
+    opacity: 0;
+    visibility: visible;
+  }
+  50% {
+    transform: translate(-50%, -102%);
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    visibility: visible;
+  }
+}

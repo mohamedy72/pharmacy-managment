@@ -13,6 +13,12 @@ import { Form } from "react-router-dom";
 import { ActionButton } from "@/components/UI/Button/Button";
 
 const AddMedicines = ({ isSubmitting }) => {
+  const selectboxOptions = [
+    { key: "Select an option", value: "" },
+    { key: "General Medicines", value: "generalMedicine" },
+    { key: "Diabetes", value: "diabetes" },
+  ];
+
   const [newMedicine, setNewMedicine] = useState({});
   const initialValues = {
     med_name: "",
@@ -55,7 +61,7 @@ const AddMedicines = ({ isSubmitting }) => {
                 placeholder="Augmentin 1gm"
               />
             </div>
-            <div className="form_container" tabIndex="2">
+            <div className="form_container">
               <TextInput
                 label="medicine id"
                 name="med_id"
@@ -64,15 +70,13 @@ const AddMedicines = ({ isSubmitting }) => {
               />
             </div>
             <div className="form_container">
-              <Selectbox name="med_group" label="medicine group">
-                <option value="*" defaultValue>
-                  Select a group
-                </option>
-                <option value="generic">Generic Medicines</option>
-                <option value="diabetes">Diabetes</option>
-              </Selectbox>
+              <Selectbox
+                name="med_group"
+                label="medicine group"
+                options={selectboxOptions}
+              />
             </div>
-            <div className="form_container" tabIndex="1">
+            <div className="form_container">
               <TextInput
                 label="quantity in number"
                 name="med_qty"
@@ -80,7 +84,7 @@ const AddMedicines = ({ isSubmitting }) => {
                 placeholder="100"
               />
             </div>
-            <div className="form_container textarea ">
+            <div className="form_container textarea">
               <Textarea label="how to use" cols="30" row="10" name="htu" />
             </div>
             <div className="form_container textarea">

@@ -8,11 +8,12 @@ import {
 } from "@Components/UI/Widgets/FormElements";
 
 import * as Yup from "yup";
-import { Formik } from "formik";
-import { Form } from "react-router-dom";
+import { Formik, Form } from "formik";
 import { ActionButton } from "@/components/UI/Button/Button";
 
-const AddMedicines = ({ isSubmitting }) => {
+import { addNewMedicine } from "@/utils/apiCalls";
+
+const AddMedicines = () => {
   const selectboxOptions = [
     { key: "Select an option", value: "" },
     { key: "General Medicines", value: "generalMedicine" },
@@ -20,6 +21,7 @@ const AddMedicines = ({ isSubmitting }) => {
   ];
 
   const [newMedicine, setNewMedicine] = useState({});
+  const [error, setError] = useState("");
   const initialValues = {
     med_name: "",
     med_id: "",
@@ -37,22 +39,29 @@ const AddMedicines = ({ isSubmitting }) => {
     side_effects: Yup.string().required("Required Field"),
   });
 
-  // Redundant as React Router now handles submitting
-  // const onSubmit = (values, onSubmitProps) => {
-  //   console.log(onSubmitProps);
-  //   setTimeout(() => {
-  //     setNewMedicine(values);
-  //     onSubmitProps.resetForm();
-  //     onSubmitProps.setSubmitting(false);
-  //     console.log("Submitting");
-  //   }, 400);
-  // };
+  const onSubmit = async (values, onSubmitProps) => {
+    try {
+      const res = await addNewMedicine(values);
+      console.log(res);
+      console.log("Submitting");
+      setNewMedicine(values);
+      onSubmitProps.resetForm();
+      onSubmitProps.setSubmitting(false);
+    } catch (error) {
+      console.log(error);
+      setError(error);
+    }
+  };
 
   return (
-    <Formik initialValues={initialValues} validationSchema={validationSchema}>
+    <Formik
+      initialValues={initialValues}
+      validationSchema={validationSchema}
+      onSubmit={onSubmit}
+    >
       {(formik) => {
         return (
-          <Form method="post" action="/inventory/new" className="form">
+          <Form className="form">
             <div className="form_container" tabIndex="1">
               <TextInput
                 label="medicine name"
@@ -99,7 +108,7 @@ const AddMedicines = ({ isSubmitting }) => {
               <ActionButton
                 type="submit"
                 btnClass="btn-red"
-                disabled={isSubmitting || !formik.isValid}
+                disabled={formik.isSubmitting || !formik.isValid}
                 label="Submit medicine"
               />
             </div>

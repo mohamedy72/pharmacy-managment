@@ -1,14 +1,11 @@
 import AddMedicines from "@/components/SubRoutes/AddMedicineForm/AddMedicineForm";
 import { addNewMedicine } from "@Utils/apiCalls";
-import { redirect, useNavigation } from "react-router-dom";
+import { redirect } from "react-router-dom";
 
 const NewMedicinePage = () => {
-  const navigate = useNavigation();
-  const isSubmitting = navigate.state === "submitting";
-
   return (
     <div>
-      <AddMedicines isSubmitting={isSubmitting} />
+      <AddMedicines />
     </div>
   );
 };

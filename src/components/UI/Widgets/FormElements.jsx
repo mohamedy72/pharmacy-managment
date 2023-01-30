@@ -36,7 +36,6 @@ export const Textarea = ({ label, ...props }) => {
 
 export const Selectbox = ({ label, options, ...props }) => {
   const [field, meta] = useField(props);
-
   return (
     <p className="selectbox_control">
       <label htmlFor={field.name}>{label}</label>

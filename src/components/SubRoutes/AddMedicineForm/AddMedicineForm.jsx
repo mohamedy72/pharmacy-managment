@@ -1,5 +1,5 @@
 import "./addMedicineForm.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import {
   Selectbox,
@@ -7,48 +7,28 @@ import {
   TextInput,
 } from "@Components/UI/Widgets/FormElements";
 
-import * as Yup from "yup";
 import { Formik, Form } from "formik";
 import { ActionButton } from "@/components/UI/Button/Button";
 
-import { addNewMedicine } from "@/utils/apiCalls";
 import { Error } from "@/components/UI/Widgets/Error";
+import { addNewMedicine } from "@/utils/apiCalls";
+import {
+  initialValues,
+  selectGroupOptions,
+  validationSchema,
+} from "./addMedicineForm";
 
 const AddMedicines = () => {
   const [error, setError] = useState(null);
 
-  const selectboxOptions = [
-    { key: "Select an option", value: "" },
-    { key: "General Medicines", value: "generalMedicine" },
-    { key: "Diabetes", value: "diabetes" },
-  ];
-
-  const initialValues = {
-    med_name: "",
-    med_id: "",
-    med_qty: "",
-    med_group: "",
-    htu: "",
-    side_effects: "",
-  };
-
-  const validationSchema = Yup.object({
-    med_name: Yup.string().required("Required Field"),
-    med_id: Yup.string().required("Required Field").length(10),
-    med_qty: Yup.number().required("Required Field").min(1),
-    med_group: Yup.string().required("Required Field"),
-    htu: Yup.string().required("Required Field"),
-    side_effects: Yup.string().required("Required Field"),
-  });
-
   const onSubmit = async (values, onSubmitProps) => {
     try {
-      await addNewMedicine(values);
       console.log("Submitting");
+      await addNewMedicine(values);
       // onSubmitProps.resetForm();
       onSubmitProps.setSubmitting(false);
-    } catch (error) {
-      return setError(error);
+    } catch (err) {
+      return setError(err);
     }
   };
 
@@ -82,7 +62,7 @@ const AddMedicines = () => {
               <Selectbox
                 name="med_group"
                 label="medicine group"
-                options={selectboxOptions}
+                options={selectGroupOptions}
               />
             </div>
             <div className="form_container">

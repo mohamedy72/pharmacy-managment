@@ -447,8 +447,9 @@
  *-----------------------------------*/
 
 .error_container {
-  width: 40vw;
+  max-width: 40vw;
   height: 3.125rem;
+  padding-inline: 1.2rem;
   background-color: rgba(243, 84, 48, 0.894);
   color: #f9f9f9;
   position: absolute;
@@ -465,7 +466,7 @@
 }
 
 .error_container.animate_in {
-  animation: bounceUp 0.8s ease-in-out 1 both;
+  animation: bounceUp 0.5s ease-in-out 1 both;
 }
 
 @keyframes bounceUp {

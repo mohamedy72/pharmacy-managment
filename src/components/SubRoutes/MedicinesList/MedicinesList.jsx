@@ -25,11 +25,26 @@ import MedicinesTableData from "@/components/UI/Tables/MedicinesTableData";
 import { Breadcrumbs } from "@/components/UI/Breadcrumbs/Breadcrumbs";
 import LayoutHeader from "@/components/Layouts/LayoutHeader/LayoutHeader";
 import { getAllMedicines } from "@/utils/apiCalls";
-import { Suspense } from "react";
+import { useEffect, useState } from "react";
 
 const MedicinesList = () => {
   const medicines = useLoaderData();
-  const error = useRouteError();
+  // const [medicines, setMedicines] = useState([]);
+  const [error, setError] = useState(null);
+
+  // useEffect(() => {
+  //   const fetchMedicines = async () => {
+  //     try {
+  //       const data = await getAllMedicines();
+  //       setMedicines(data);
+  //     } catch (error) {
+  //       setError(error);
+  //     }
+  //   };
+
+  //   fetchMedicines();
+  // }, []);
+
   const { pathname } = useLocation();
   const pathnameArr = locationToArray(pathname);
 
@@ -77,18 +92,11 @@ const MedicinesList = () => {
             <tr>{tableHeaders}</tr>
           </Table.Header>
           <Table.Body>
-            <Suspense fallback={<p>Loading Med data...</p>}>
-              <Await
-                resolve={medicines.medData}
-                errorElement={<p>Error loading medicines data!</p>}
-              >
-                {(medData) => <MedicinesTableData medicines={medData} />}
-              </Await>
-            </Suspense>
+            <MedicinesTableData medicines={medicines} />
           </Table.Body>
         </Table>
         <div className="list_controls">
-          <p>Showing 1 - 8 results of {MedicinesTableData?.length}</p>
+          <p>Showing 1 - 8 results of {medicines?.length}</p>
           <div className="pagination">
             <i className="arrow left end">
               <ArrowLeftShort />
@@ -118,12 +126,7 @@ const MedicinesList = () => {
 
 export default MedicinesList;
 
-export async function medicinesLoader() {
+export const medicinesListLoader = async () => {
   const res = await getAllMedicines();
-  if (res.status !== 200) {
-    throw new Response("Not found", { status: 404 });
-  }
-  return defer({
-    medData: res.data,
-  });
-}
+  return res;
+};

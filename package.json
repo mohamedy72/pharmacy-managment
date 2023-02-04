@@ -9,6 +9,7 @@
     "serve-json": "json-server --watch ./src/data/medicines.json --port 4000"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.7.0",
     "axios": "^1.2.2",
     "formik": "^2.2.9",
     "json-server": "^0.17.1",

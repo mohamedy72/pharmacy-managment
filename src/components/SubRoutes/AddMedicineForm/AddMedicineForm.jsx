@@ -17,16 +17,18 @@ import {
   selectGroupOptions,
   validationSchema,
 } from "./addMedicineForm";
+import { useNavigate } from "react-router-dom";
 
 const AddMedicines = () => {
+  const navigate = useNavigate();
   const [error, setError] = useState(null);
-
   const onSubmit = async (values, onSubmitProps) => {
+    setError(null);
     try {
-      console.log("Submitting");
       await addNewMedicine(values);
-      // onSubmitProps.resetForm();
+      onSubmitProps.resetForm();
       onSubmitProps.setSubmitting(false);
+      navigate("/inventory/medicineslist");
     } catch (err) {
       return setError(err);
     }
@@ -52,8 +54,16 @@ const AddMedicines = () => {
             </div>
             <div className="form_container">
               <TextInput
+                label="dosage form"
+                name="dosage_form"
+                type="text"
+                placeholder="Tablet"
+              />
+            </div>
+            <div className="form_container">
+              <TextInput
                 label="medicine id"
-                name="med_id"
+                name="med_ID"
                 type="text"
                 placeholder="P156145456"
               />
@@ -65,16 +75,9 @@ const AddMedicines = () => {
                 options={selectGroupOptions}
               />
             </div>
-            <div className="form_container">
-              <TextInput
-                label="quantity in number"
-                name="med_qty"
-                type="text"
-                placeholder="100"
-              />
-            </div>
+
             <div className="form_container textarea">
-              <Textarea label="how to use" cols="30" row="10" name="htu" />
+              <Textarea label="how to use" cols="30" row="10" name="dose" />
             </div>
             <div className="form_container textarea">
               <Textarea
@@ -85,6 +88,14 @@ const AddMedicines = () => {
               />
             </div>
             <div className="form_container">
+              <TextInput
+                label="quantity in number"
+                name="med_stock"
+                type="text"
+                placeholder="100"
+              />
+            </div>
+            <div className="form_container btn_form">
               <ActionButton
                 type="submit"
                 btnClass="btn-red"

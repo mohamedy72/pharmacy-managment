@@ -1,41 +1,38 @@
-import axios from "axios";
-
-const URL = axios.create({
-  baseURL: "https://pharma-one-server.cyclic.app",
-});
-
-const ENDPOINT = "/medicines";
+import supabase from "@/config/supabaseClient";
 
 export async function getAllMedicines() {
-  const response = await URL.get(ENDPOINT);
-  if (response.status !== 200) {
-    throw new Response("Cannot retireve a list of medicines", {
-      status: response.status,
-    });
+  const { data, error, status } = await supabase.from("medicines").select();
+  if (error) {
+    throw new Error(`Cannot retrieve a list of medicines: ${status}`);
   }
-  return response;
+  return data;
 }
 
 export async function addNewMedicine(medicine) {
-  const response = await URL.post(ENDPOINT, JSON.stringify(medicine), {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  const { _, error, status } = await supabase
+    .from("medicines")
+    .insert([medicine])
+    .select();
 
-  if (response.statusText !== "OK") {
-    throw { message: "Could not save new medicine.", status: 500 };
+  if (error) {
+    throw {
+      message: error.message,
+      status,
+    };
   }
 }
 
-export async function getSingleMedicine(id) {
-  const getSingleMedicine = await URL.get(`${ENDPOINT}/${id}`);
+export async function getSingleMedicine(medID) {
+  const { data, error, status } = await supabase
+    .from("medicines")
+    .select()
+    .eq("med_ID", medID);
 
-  if (!getSingleMedicine.request.response) {
+  if (error) {
     throw {
       message: `Cannot retrieve medicine with ID: ${id}`,
-      status: getSingleMedicine.request.status,
+      status,
     };
   }
-  return getSingleMedicine;
+  return data;
 }

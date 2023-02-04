@@ -1,18 +1,24 @@
-import { defer, useLoaderData, Await } from "react-router-dom";
+import {
+  defer,
+  useLoaderData,
+  Await,
+  useLocation,
+  useParams,
+} from "react-router-dom";
 import "./medicinedetails.css";
 import axios from "axios";
 import { Info } from "@/components/UI/Widgets/Info";
-import { medicineDetails } from "@/data/medicineDetails";
 import { GridLayout } from "@/components/Layouts/Layouts";
 import LayoutHeader from "@/components/Layouts/LayoutHeader/LayoutHeader";
 import { FlagFill, PenFill } from "react-bootstrap-icons";
 import { Breadcrumbs } from "@/components/UI/Breadcrumbs/Breadcrumbs";
 import { Searchbar } from "@/components/UI/Widgets";
-import { Suspense } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { getSingleMedicine } from "@/utils/apiCalls";
 
 const MedicineDetails = () => {
-  const drug = useLoaderData();
+  const [medicine] = useLoaderData();
+
   return (
     <Suspense fallback={<h1>Hello</h1>}>
       <section className="medicine_detail">
@@ -38,11 +44,11 @@ const MedicineDetails = () => {
             stats={[
               {
                 label: "Medicine ID",
-                value: drug?.id.slice(-3),
+                value: medicine.med_ID.slice(-3),
               },
               {
                 label: "Medicine Group",
-                value: drug?.group,
+                value: medicine?.med_group,
               },
             ]}
           />
@@ -52,27 +58,27 @@ const MedicineDetails = () => {
             stats={[
               {
                 label: "Lifetime Supply",
-                value: drug?.qty,
+                value: medicine?.lifetime_supply,
               },
               {
                 label: "Lifetime Sales",
-                value: 120,
+                value: medicine?.lifetime_sales,
               },
               {
                 label: "Stock Left",
-                value: drug?.info.stock,
+                value: medicine?.med_stock,
               },
             ]}
           />
           <Info
             title="How to use"
             withSingleParagraph
-            paragraph={drug?.info.dose}
+            paragraph={medicine?.dose}
           />
           <Info
             title="Side Effects"
             withSingleParagraph
-            paragraph={drug?.info.sideEffects}
+            paragraph={medicine?.side_effects}
           />
         </GridLayout>
       </section>
@@ -84,6 +90,6 @@ export default MedicineDetails;
 
 export const detailsLoader = async ({ params }) => {
   const { medID } = params;
-  const res = await getSingleMedicine(medID)
-  return res.data;
+  const res = await getSingleMedicine(medID);
+  return res;
 };

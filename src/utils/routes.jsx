@@ -30,7 +30,7 @@ import NewMedicinePage, {
   action as newMedicineAction,
 } from "@Components/Routes/NewMedicinePage/NewMedicinePage";
 import { detailsLoader } from "@/components/SubRoutes/MedicineDetails/MedicineDetails";
-import { medicinesLoader } from "@/components/SubRoutes/MedicinesList/MedicinesList";
+import { medicinesListLoader } from "@/components/SubRoutes/MedicinesList/MedicinesList";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -56,14 +56,12 @@ export const router = createBrowserRouter(
               <MedicinesList />
             </Suspense>
           }
-          loader={medicinesLoader}
+          loader={medicinesListLoader}
           handle={{
             crumb: () => (
               <Link to="/inventory/medicineslist">Medicines List</Link>
             ),
           }}
-          // NOTE: Add a custom error boundry Component
-          errorElement={<h1>An error has happend while fetching!</h1>}
         >
           <Route
             path=":medID"
@@ -74,7 +72,7 @@ export const router = createBrowserRouter(
             }
             loader={detailsLoader}
             handle={{
-              crumb: (data) => <span>{data.name}</span>,
+              crumb: (data) => <span>{data.med_name}</span>,
             }}
           />
         </Route>

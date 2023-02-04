@@ -1,19 +1,12 @@
-import {
-  defer,
-  useLoaderData,
-  Await,
-  useLocation,
-  useParams,
-} from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import "./medicinedetails.css";
-import axios from "axios";
 import { Info } from "@/components/UI/Widgets/Info";
 import { GridLayout } from "@/components/Layouts/Layouts";
 import LayoutHeader from "@/components/Layouts/LayoutHeader/LayoutHeader";
-import { FlagFill, PenFill } from "react-bootstrap-icons";
+import { PenFill } from "react-bootstrap-icons";
 import { Breadcrumbs } from "@/components/UI/Breadcrumbs/Breadcrumbs";
 import { Searchbar } from "@/components/UI/Widgets";
-import { Suspense, useEffect, useState } from "react";
+import { Suspense } from "react";
 import { getSingleMedicine } from "@/utils/apiCalls";
 
 const MedicineDetails = () => {

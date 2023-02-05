@@ -1,7 +1,7 @@
 import "./dashboard.css";
 
 import LayoutHeader from "@Components/Layouts/LayoutHeader/LayoutHeader";
-import { Summery, Statistic } from "@Components/UI/Widgets";
+import { Summery, Statistic } from "@/components/Widgets";
 import { dashboard_statistics } from "@Data/dashboard_statistics";
 import { dashboard_summery } from "@Data/dashboard_summery";
 

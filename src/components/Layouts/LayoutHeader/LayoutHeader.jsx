@@ -1,6 +1,6 @@
 import "./layoutheader.css";
 import { useState, useRef, useEffect } from "react";
-import { Dropdown } from "@Components/UI/Widgets";
+import { Dropdown } from "@/components/Widgets";
 import useBodyDismiss from "@Hooks/useBodyDismiss";
 
 import { FileEarmarkExcel, FileEarmarkPdf } from "react-bootstrap-icons";

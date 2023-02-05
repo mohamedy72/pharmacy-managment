@@ -1,4 +1,4 @@
-import "./widgets.css";
+import "./formelements.css";
 import { useField } from "formik";
 
 export const TextInput = ({ label, ...props }) => {
@@ -34,7 +34,7 @@ export const Textarea = ({ label, ...props }) => {
   );
 };
 
-export const Selectbox = ({ label, options, ...props }) => {
+export const FormSelectbox = ({ label, options, ...props }) => {
   const [field, meta] = useField(props);
   return (
     <p className="selectbox_control">

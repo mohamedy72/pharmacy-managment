@@ -1,0 +1,21 @@
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.page > h4 {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.page > a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-inline-end: 3.125rem;
+  text-align: center;
+}
+
+.page > svg:first-child {
+  margin-inline-end: 1.6875rem;
+}

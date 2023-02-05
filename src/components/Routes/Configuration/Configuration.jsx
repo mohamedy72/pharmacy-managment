@@ -1,6 +1,6 @@
 import "./configuration.css";
 import LayoutHeader from "../../Layouts/LayoutHeader/LayoutHeader";
-import { Config, Page, Pages } from "@Components/UI/Widgets";
+import { Config, Page, Pages } from "@/components/Widgets";
 
 import { pages } from "@Data/pages";
 import { Breadcrumbs } from "@/components/UI/Breadcrumbs/Breadcrumbs";

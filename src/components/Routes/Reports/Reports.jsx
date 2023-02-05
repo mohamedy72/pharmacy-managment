@@ -1,7 +1,7 @@
 import "./reports.css";
 
 import LayoutHeader from "@Components/Layouts/LayoutHeader/LayoutHeader";
-import { Statistic } from "@Components/UI/Widgets";
+import { Statistic } from "@/components/Widgets";
 import { reports } from "@Data/reports";
 
 import { Outlet } from "react-router-dom";

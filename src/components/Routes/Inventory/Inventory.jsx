@@ -1,6 +1,6 @@
 import "./inventory.css";
 import LayoutHeader from "@Components/Layouts/LayoutHeader/LayoutHeader";
-import { Statistic } from "@Components/UI/Widgets";
+import { Statistic } from "@/components/Widgets";
 import { inventory } from "@Data/inventory";
 import { locationToArray } from "@Utils/locationToArray";
 

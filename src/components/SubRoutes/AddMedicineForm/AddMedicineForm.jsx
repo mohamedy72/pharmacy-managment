@@ -1,16 +1,10 @@
 import "./addMedicineForm.css";
 import { useState } from "react";
 
-import {
-  Selectbox,
-  Textarea,
-  TextInput,
-} from "@Components/UI/Widgets/FormElements";
-
 import { Formik, Form } from "formik";
 import { ActionButton } from "@/components/UI/Button/Button";
 
-import { Error } from "@/components/UI/Widgets/Error";
+import { Error, Selectbox, Textarea, TextInput } from "@/components/Widgets";
 import { addNewMedicine } from "@/utils/apiCalls";
 import {
   initialValues,

@@ -1,11 +1,10 @@
-import { useLoaderData } from "react-router-dom";
 import "./medicinedetails.css";
-import { Info } from "@/components/UI/Widgets/Info";
+import { useLoaderData } from "react-router-dom";
 import { GridLayout } from "@/components/Layouts/Layouts";
 import LayoutHeader from "@/components/Layouts/LayoutHeader/LayoutHeader";
 import { PenFill } from "react-bootstrap-icons";
 import { Breadcrumbs } from "@/components/UI/Breadcrumbs/Breadcrumbs";
-import { Searchbar } from "@/components/UI/Widgets";
+import { Info, Searchbar } from "@/components/Widgets";
 import { Suspense } from "react";
 import { getSingleMedicine } from "@/utils/apiCalls";
 

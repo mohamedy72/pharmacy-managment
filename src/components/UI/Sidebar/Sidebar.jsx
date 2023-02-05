@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import "./sidebar.css";
 
 import NavItem from "../Navitem/NavItem";
-import { Dropdown } from "../Widgets";
+import { Dropdown } from "../../Widgets";
 
 import { menuItems } from "@Data/menuItems";
 

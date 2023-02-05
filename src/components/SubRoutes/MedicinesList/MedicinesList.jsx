@@ -1,6 +1,6 @@
 import "./medicineslist.css";
 
-import { Searchbar, Selectbox } from "@Components/UI/Widgets";
+import { Searchbar, Selectbox } from "@/components/Widgets";
 import Table from "@/components/UI/Tables/Table";
 import { locationToArray } from "@Utils/locationToArray";
 import { medicinesTableHeaders } from "@/data/medicinesTableHeaders";

@@ -2,7 +2,7 @@ import "./medicinesgroup.css";
 import LayoutHeader from "@/components/Layouts/LayoutHeader/LayoutHeader";
 import { Breadcrumbs } from "@/components/UI/Breadcrumbs/Breadcrumbs";
 import Table from "@/components/UI/Tables/Table";
-import { Searchbar } from "@/components/UI/Widgets";
+import { Searchbar } from "@/components/Widgets";
 import { groupTableHeader } from "@/data/groupTableHeader";
 import { ArrowDownUp, ArrowRightShort, Plus } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";

@@ -1,6 +1,6 @@
 import "./info.css";
 
-export const Info = ({
+const Info = ({
   title,
   withSingleParagraph,
   withMultipleStats,
@@ -31,3 +31,5 @@ const RenderMultipleStats = ({ statsData }) => {
     </p>
   ));
 };
+
+export default Info;

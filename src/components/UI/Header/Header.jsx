@@ -1,6 +1,6 @@
 import "./header.css";
 
-import { Searchbar, Selectbox, Weather } from "../Widgets";
+import { Searchbar, Selectbox, Weather } from "../../Widgets";
 
 import { Translate, List } from "react-bootstrap-icons";
 

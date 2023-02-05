@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./error.css";
 
-export const Error = ({ duration, error }) => {
+const Error = ({ duration, error }) => {
   const [showError, setShowError] = useState(true);
 
   useEffect(() => {
@@ -22,3 +22,5 @@ export const Error = ({ duration, error }) => {
     </div>
   ) : null;
 };
+
+export default Error;

@@ -1,4 +1,4 @@
-import "./widgets.css";
+import "./statistic.css";
 
 import { ArrowRight } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";

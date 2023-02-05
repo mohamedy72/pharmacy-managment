@@ -1,4 +1,4 @@
-import "./widgets.css";
+import "./page.css";
 import { Pencil, Trash, Plus } from "react-bootstrap-icons";
 
 const Page = ({ page_name }) => {

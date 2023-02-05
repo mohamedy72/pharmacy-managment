@@ -1,5 +1,5 @@
 import { Search } from "react-bootstrap-icons";
-import "./widgets.css";
+import "./searchbar.css";
 
 const Searchbar = ({ name, label, type = "text", placeholder }) => {
   return (

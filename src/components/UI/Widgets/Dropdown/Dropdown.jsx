@@ -1,4 +1,4 @@
-import "./widgets.css";
+import "./dropdown.css";
 
 const Dropdown = ({ children, bottomPos }) => {
   return (

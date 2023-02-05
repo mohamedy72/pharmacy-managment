@@ -1,4 +1,4 @@
-import "./widgets.css";
+import "./config.css";
 import { Pencil } from "react-bootstrap-icons";
 
 const Config = ({

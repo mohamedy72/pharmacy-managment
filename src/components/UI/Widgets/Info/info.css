@@ -1,0 +1,38 @@
+.info_card {
+  background-color: var(--white);
+  padding-block: 0.9375rem;
+  border-radius: 4px;
+  border: 1px solid #1d242e;
+}
+
+.info_card :is(.info_title, .info_body) {
+  padding-inline: 1.875rem;
+}
+
+.info_card hr {
+  margin-block: 0.75rem 1.25rem;
+  background-color: #1d242e;
+}
+
+.info_card .info_title {
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.info_card .info_body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 15px;
+}
+.info_card .info_body .info_body_value {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.info_card .info_body .info_body_label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}

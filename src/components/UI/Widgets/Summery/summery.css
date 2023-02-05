@@ -1,0 +1,56 @@
+.statebox {
+  display: flex;
+  flex-direction: column;
+  padding-block: 0.9375rem;
+  border: 1px solid rgba(29, 36, 46, 0.3);
+}
+
+.state_header,
+.state_body {
+  padding-inline: 1.5625rem;
+}
+
+.state_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.state_header > h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.state_header > a {
+  display: flex;
+  align-items: center;
+  font-size: 0.75rem;
+  color: var(--darker-gray);
+}
+
+.state_icon {
+  margin-inline-start: 0.625rem;
+  width: 12px;
+  height: 12px;
+}
+
+.state_body {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.state > h4 {
+  font-size: 1.25rem;
+}
+
+.state > p {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.statebox hr {
+  margin-block: 1.0625rem 1.25rem;
+  border: 1px solid rgba(29, 36, 46, 0.3);
+}

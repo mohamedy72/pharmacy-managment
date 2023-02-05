@@ -1,0 +1,43 @@
+.weather {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.weather_header {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  font-weight: 500;
+  margin-block-end: 0.4rem;
+}
+
+.weather_icon {
+  margin-inline-end: 0.6875rem;
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.weather_icon > svg {
+  width: inherit;
+  height: inherit;
+}
+
+.weather_cal {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.weather_cal .weather_date {
+  display: flex;
+  gap: 0.1rem;
+}
+
+.weather_divider {
+  width: 5px;
+  height: 5px;
+  margin-inline: 0.4rem;
+}

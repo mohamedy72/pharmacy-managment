@@ -1,4 +1,4 @@
-import "./widgets.css";
+import "./weather.css";
 
 import { useEffect, useState } from "react";
 

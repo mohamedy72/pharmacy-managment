@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./widgets.css";
+import "./error.css";
 
 export const Error = ({ duration, error }) => {
   const [showError, setShowError] = useState(true);

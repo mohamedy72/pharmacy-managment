@@ -1,0 +1,93 @@
+.config,
+.config_pages {
+  padding-inline: 1.875rem;
+  padding-block: 0.8125rem;
+  display: flex;
+  flex-direction: column;
+  text-transform: capitalize;
+  background-color: var(--white);
+  border: 1px solid rgba(29, 36, 46, 0.3);
+}
+
+.config_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.config_header > h3,
+.config_pages_header > h3,
+.config_pages_header > small {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.config_header a {
+  font-size: 0.75rem;
+  color: var(--darker-gray);
+}
+
+.config_header > svg,
+.config_pages svg {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.config_header > svg {
+  fill: var(--blueish);
+}
+
+.config > hr {
+  margin-block: 0.75rem 1.25rem;
+}
+
+.config_pages > hr:first-of-type {
+  margin-block: 0.75rem 1.25rem;
+}
+
+.config_pages hr:last-of-type {
+  margin-block: 1.25rem 0.75rem;
+}
+
+.config_body {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem 0;
+}
+
+.config_body_box > h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.config_body_box > small {
+  font-size: 0.7rem;
+  font-weight: 300;
+}
+
+.config_pages_header tr {
+  display: flex;
+  gap: 0 min(8.75rem, 25vw);
+}
+
+.config_pages_body tr > td:first-child {
+  padding-inline-end: min(1.5rem, 5vw);
+}
+.config_pages_body tr > td:nth-child(2) {
+  color: var(--blueish);
+  padding-inline-end: 3.125rem;
+}
+.config_pages_body tr > td:nth-child(2) a {
+  font-size: 0.875rem;
+  text-decoration: underline;
+  color: var(--blueish);
+}
+.config_pages_body tr > td:nth-child(3) > svg:first-child {
+  margin-inline-end: 1.6875rem;
+}
+.config_pages_body tr > td:nth-child(3) > svg:first-child {
+  fill: var(--blueish);
+}
+.config_pages_body tr > td:nth-child(3) > svg:last-child {
+  fill: var(--reddish);
+}

@@ -1,5 +1,4 @@
-import { useState } from "react";
-import "./widgets.css";
+import "./info.css";
 
 export const Info = ({
   title,

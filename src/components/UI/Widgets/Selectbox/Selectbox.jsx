@@ -1,4 +1,4 @@
-import "./widgets.css";
+import "./selectbox.css";
 
 const Selectbox = ({ children, name, isLabel, label }) => {
   return (

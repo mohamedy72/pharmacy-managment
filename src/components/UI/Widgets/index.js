@@ -1,12 +1,15 @@
-import Searchbar from "./Searchbar";
-import Selectbox from "./Selectbox";
-import Weather from "./Weather";
-import Dropdown from "./Dropdown";
-import Summery from "./Summery";
-import Statistic from "./Statistic";
-import Config from "./Config";
-import Pages from "./Pages";
-import Page from "./Page";
+import Searchbar from "./Searchbar/Searchbar";
+import Selectbox from "./Selectbox/Selectbox";
+import Weather from "./Weather/Weather";
+import Dropdown from "./Dropdown/Dropdown";
+import Summery from "./Summery/Summery";
+import Statistic from "./Statistic/Statistic";
+import Config from "./Config/Config";
+import Pages from "./Pages/Pages";
+import Page from "./Page/Page";
+import Info from "./Info/Info";
+import FormElements from "./FormElements/FormElements";
+import Error from "./Error/Error";
 
 export {
   Searchbar,
@@ -18,4 +21,7 @@ export {
   Config,
   Pages,
   Page,
+  Info,
+  FormElements,
+  Error,
 };

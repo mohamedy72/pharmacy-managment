@@ -9,7 +9,7 @@
   text-transform: capitalize;
 }
 
-.form_control .error {
+.error {
   position: absolute;
   right: 0;
   bottom: -5px;

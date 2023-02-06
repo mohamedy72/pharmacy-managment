@@ -5,7 +5,7 @@ import Table from "@/components/UI/Tables/Table";
 import { locationToArray } from "@Utils/locationToArray";
 import { medicinesTableHeaders } from "@/data/medicinesTableHeaders";
 
-import { useLocation, Outlet, useLoaderData } from "react-router-dom";
+import { useLocation, Outlet, useOutletContext } from "react-router-dom";
 import { Funnel, Plus } from "react-bootstrap-icons";
 
 import {
@@ -16,10 +16,9 @@ import {
 import MedicinesTableData from "@/components/UI/Tables/MedicinesTableData";
 import { Breadcrumbs } from "@/components/UI/Breadcrumbs/Breadcrumbs";
 import LayoutHeader from "@/components/Layouts/LayoutHeader/LayoutHeader";
-import { getAllMedicines } from "@/utils/apiCalls";
 
 const MedicinesList = () => {
-  const medicines = useLoaderData();
+  const medicines = useOutletContext();
   const { pathname } = useLocation();
   const pathnameArr = locationToArray(pathname);
 
@@ -100,8 +99,3 @@ const MedicinesList = () => {
 };
 
 export default MedicinesList;
-
-export const medicinesListLoader = async () => {
-  const res = await getAllMedicines();
-  return res;
-};

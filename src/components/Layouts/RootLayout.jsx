@@ -1,10 +1,17 @@
 import useBodyDismiss from "@/hooks/useBodyDismiss";
+import { getAllMedicines } from "@/utils/apiCalls";
 import { useEffect, useRef, useState } from "react";
-import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import {
+  Outlet,
+  useLoaderData,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import { Header, Sidebar } from "../UI";
 import { Layouts } from "./Layouts";
 
 const RootLayout = () => {
+  const medicines = useLoaderData();
   const [search, setSearch] = useState("");
   const [navOpen, setNavOpen] = useState(false);
   const sideBarRef = useRef(null);
@@ -34,7 +41,7 @@ const RootLayout = () => {
       <Layouts>
         <Header handleNavOpen={handleNavOpen} />
         <section>
-          <Outlet />
+          <Outlet context={medicines} />
         </section>
       </Layouts>
     </div>
@@ -42,3 +49,8 @@ const RootLayout = () => {
 };
 
 export default RootLayout;
+
+export const medicinesLoader = async () => {
+  const res = await getAllMedicines();
+  return res;
+};

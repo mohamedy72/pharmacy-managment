@@ -4,7 +4,12 @@ import { useState } from "react";
 import { Formik, Form } from "formik";
 import { ActionButton } from "@/components/UI/Button/Button";
 
-import { Error, Selectbox, Textarea, TextInput } from "@/components/Widgets";
+import {
+  Error,
+  FormSelectbox,
+  Textarea,
+  TextInput,
+} from "@/components/Widgets";
 import { addNewMedicine } from "@/utils/apiCalls";
 import {
   initialValues,
@@ -63,7 +68,7 @@ const AddMedicines = () => {
               />
             </div>
             <div className="form_container">
-              <Selectbox
+              <FormSelectbox
                 name="med_group"
                 label="medicine group"
                 options={selectGroupOptions}

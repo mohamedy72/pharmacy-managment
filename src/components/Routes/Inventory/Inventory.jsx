@@ -5,12 +5,13 @@ import { inventory } from "@Data/inventory";
 import { locationToArray } from "@Utils/locationToArray";
 
 import { Plus } from "react-bootstrap-icons";
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation, useOutletContext } from "react-router-dom";
 import { Breadcrumbs } from "@/components/UI/Breadcrumbs/Breadcrumbs";
 
 const Inventory = () => {
   let { pathname } = useLocation();
   const pathnameArr = locationToArray(pathname);
+  const medicines = useOutletContext();
 
   return (
     <section className="inventory">
@@ -42,7 +43,7 @@ const Inventory = () => {
           </section>
         </>
       ) : (
-        <Outlet />
+        <Outlet context={medicines} />
       )}
     </section>
   );

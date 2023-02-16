@@ -10,7 +10,7 @@ export const dashboard_statistics = [
     label: "good",
     subheader: "inventory status",
     linktext: "View Detailed Report",
-    linkpath: "inventory",
+    linkpath: "/inventory",
   },
   {
     id: 2,

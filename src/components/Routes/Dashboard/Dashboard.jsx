@@ -7,7 +7,6 @@ import { dashboard_summery } from "@Data/dashboard_summery";
 
 import { ArrowDownShort } from "react-bootstrap-icons";
 import { Breadcrumbs } from "@/components/UI/Breadcrumbs/Breadcrumbs";
-import { useOutletContext } from "react-router-dom";
 
 const Dashboard = () => {
   return (

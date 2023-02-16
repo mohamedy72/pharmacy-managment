@@ -1,3 +1,7 @@
+.medicine_detail {
+  padding-block-end: 1.2rem;
+}
+
 .remove-btn {
   background-color: var(--reddish);
 }

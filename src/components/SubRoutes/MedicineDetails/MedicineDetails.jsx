@@ -2,11 +2,12 @@ import "./medicinedetails.css";
 import { useLoaderData } from "react-router-dom";
 import { GridLayout } from "@/components/Layouts/Layouts";
 import LayoutHeader from "@/components/Layouts/LayoutHeader/LayoutHeader";
-import { PenFill } from "react-bootstrap-icons";
+import { PenFill, Trash3Fill } from "react-bootstrap-icons";
 import { Breadcrumbs } from "@/components/UI/Breadcrumbs/Breadcrumbs";
 import { Info, Searchbar } from "@/components/Widgets";
 import { Suspense } from "react";
 import { getSingleMedicine } from "@/utils/apiCalls";
+import { ActionButton } from "@/components/UI/Button/Button";
 
 const MedicineDetails = () => {
   const [medicine] = useLoaderData();
@@ -73,6 +74,14 @@ const MedicineDetails = () => {
             paragraph={medicine?.side_effects}
           />
         </GridLayout>
+        <ActionButton
+          type="button"
+          label="Delete Medicine"
+          iconDir="left"
+          btnClass="btn_white"
+          icon={<Trash3Fill />}
+          onClick=""
+        />
       </section>
     </Suspense>
   );

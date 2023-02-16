@@ -10,7 +10,7 @@ import {
   Textarea,
   TextInput,
 } from "@/components/Widgets";
-import { addNewMedicine } from "@/utils/apiCalls";
+import { addNewMedicine, getAllMedicines } from "@/utils/apiCalls";
 import {
   initialValues,
   selectGroupOptions,
@@ -97,7 +97,7 @@ const AddMedicines = () => {
             <div className="form_container btn_form">
               <ActionButton
                 type="submit"
-                btnClass="btn-red"
+                btnClass="btn_red"
                 disabled={formik.isSubmitting || !formik.isValid}
                 label="Submit medicine"
               />

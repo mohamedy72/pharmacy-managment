@@ -6,7 +6,7 @@ import {
   Route,
 } from "react-router-dom";
 
-import RootLayout, { medicinesLoader } from "@/components/Layouts/RootLayout";
+import RootLayout from "@/components/Layouts/RootLayout";
 import Dashboard from "@/components/Routes/Dashboard/Dashboard";
 import Inventory from "@/components/Routes/Inventory/Inventory";
 import Reports from "@/components/Routes/Reports/Reports";
@@ -30,10 +30,12 @@ import NewMedicinePage, {
   action as newMedicineAction,
 } from "@Components/Routes/NewMedicinePage/NewMedicinePage";
 import { detailsLoader } from "@/components/SubRoutes/MedicineDetails/MedicineDetails";
+import { medicinesListLoader } from "@/components/SubRoutes/MedicinesList/MedicinesList";
+import { medicinesGroupLoader } from "@/components/SubRoutes/MedicinesGroup/MedicinesGroup";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<RootLayout />} loader={medicinesLoader}>
+    <Route path="/" element={<RootLayout />}>
       <Route
         path="dashboard"
         element={<Dashboard />}
@@ -55,6 +57,7 @@ export const router = createBrowserRouter(
               <MedicinesList />
             </Suspense>
           }
+          loader={medicinesListLoader}
           handle={{
             crumb: () => (
               <Link to="/inventory/medicineslist">Medicines List</Link>
@@ -81,6 +84,7 @@ export const router = createBrowserRouter(
               <MedicinesGroup />
             </Suspense>
           }
+          loader={medicinesGroupLoader}
           handle={{
             crumb: () => <Link to="/medicinesgroup">Medicines Group</Link>,
           }}

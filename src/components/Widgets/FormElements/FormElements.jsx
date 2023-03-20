@@ -3,6 +3,7 @@ import { useField } from "formik";
 
 export const TextInput = ({ label, ...props }) => {
   const [field, meta] = useField(props);
+
   return (
     <p className="form_control">
       <label htmlFor={props.name}>{label}</label>
@@ -11,6 +12,7 @@ export const TextInput = ({ label, ...props }) => {
         className="text_input"
         {...field}
         {...props}
+        defaultValue={props.populate}
         aria-label={label}
       />
       {meta.touched && meta.error ? (
@@ -36,6 +38,7 @@ export const Textarea = ({ label, ...props }) => {
 
 export const FormSelectbox = ({ label, options, ...props }) => {
   const [field, meta] = useField(props);
+
   return (
     <p className="selectbox_control">
       <label htmlFor={field.name}>{label}</label>

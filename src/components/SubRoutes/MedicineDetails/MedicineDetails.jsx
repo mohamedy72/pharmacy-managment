@@ -22,7 +22,7 @@ const MedicineDetails = () => {
           label="edit details"
           text={<Breadcrumbs />}
           paragraph="List of medicines available for sales."
-          path="/inventory/edit"
+          path={`edit`}
         />
         <Searchbar
           label="search_medicine_details"

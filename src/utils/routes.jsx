@@ -32,6 +32,10 @@ import NewMedicinePage, {
 import { detailsLoader } from "@/components/SubRoutes/MedicineDetails/MedicineDetails";
 import { medicinesListLoader } from "@/components/SubRoutes/MedicinesList/MedicinesList";
 import { medicinesGroupLoader } from "@/components/SubRoutes/MedicinesGroup/MedicinesGroup";
+import EditExistingMedicine, {
+  editExistingMedicineAction,
+  editExistingMedicineLoader,
+} from "@/components/SubRoutes/EditExistingMedicine/EditExistingMedicine";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -76,8 +80,14 @@ export const router = createBrowserRouter(
               crumb: (data) => <span>{data.med_name}</span>,
             }}
           />
+          <Route
+            path=":medID/edit"
+            element={<EditExistingMedicine />}
+            loader={editExistingMedicineLoader}
+            action={editExistingMedicineAction}
+          />
         </Route>
-        <Route
+        {/* <Route
           path="medicinesgroup"
           element={
             <Suspense fallback={<h1>Loading...</h1>}>
@@ -88,6 +98,11 @@ export const router = createBrowserRouter(
           handle={{
             crumb: () => <Link to="/medicinesgroup">Medicines Group</Link>,
           }}
+        /> */}
+        <Route
+          path="new"
+          element={<NewMedicinePage />}
+          action={newMedicineAction}
         />
       </Route>
       <Route
@@ -119,11 +134,7 @@ export const router = createBrowserRouter(
           crumb: () => <Link to="/config">Configuration</Link>,
         }}
       />
-      <Route
-        path="inventory/new"
-        element={<NewMedicinePage />}
-        action={newMedicineAction}
-      />
+
       <Route path="*" element={<h1>Coming Soon...</h1>} />
     </Route>
   )

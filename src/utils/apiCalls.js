@@ -30,9 +30,21 @@ export async function getSingleMedicine(medID) {
 
   if (error) {
     throw {
-      message: `Cannot retrieve medicine with ID: ${id}`,
+      message: `Cannot retrieve medicine with ID: ${medID}`,
       status,
     };
   }
   return data;
+}
+
+export async function updateSingleMedicine(medID, updatedData) {
+  const { data, error } = await supabase
+    .from("medicines")
+    .update(updatedData)
+    .eq("med_ID", medID)
+    .select();
+
+  if (error) {
+    throw new Error("Cannot update current item");
+  }
 }

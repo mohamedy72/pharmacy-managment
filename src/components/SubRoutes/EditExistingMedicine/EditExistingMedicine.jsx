@@ -105,11 +105,13 @@ export async function editExistingMedicineLoader({ params }) {
 }
 
 export async function editExistingMedicineAction({ request, params }) {
+  const { medID } = params;
   const formData = await request.formData();
   const updates = Object.fromEntries(formData);
+
   try {
-    await updateSingleMedicine(params.medID, updates);
-    return redirect("/inventory/medicineslist/D06ID232435454");
+    await updateSingleMedicine(medID, updates);
+    return redirect(`/inventory/medicineslist/${medID}`);
   } catch (error) {
     return error;
   }

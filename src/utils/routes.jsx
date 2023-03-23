@@ -36,6 +36,7 @@ import EditExistingMedicine, {
   editExistingMedicineAction,
   editExistingMedicineLoader,
 } from "@/components/SubRoutes/EditExistingMedicine/EditExistingMedicine";
+import Login from "@/components/Routes/Login/Login";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -87,18 +88,7 @@ export const router = createBrowserRouter(
             action={editExistingMedicineAction}
           />
         </Route>
-        {/* <Route
-          path="medicinesgroup"
-          element={
-            <Suspense fallback={<h1>Loading...</h1>}>
-              <MedicinesGroup />
-            </Suspense>
-          }
-          loader={medicinesGroupLoader}
-          handle={{
-            crumb: () => <Link to="/medicinesgroup">Medicines Group</Link>,
-          }}
-        /> */}
+        {/* TODO: Implment Medicines Group page  */}
         <Route
           path="new"
           element={<NewMedicinePage />}
@@ -134,6 +124,8 @@ export const router = createBrowserRouter(
           crumb: () => <Link to="/config">Configuration</Link>,
         }}
       />
+
+      <Route path="/login" element={<Login />} />
 
       <Route path="*" element={<h1>Coming Soon...</h1>} />
     </Route>

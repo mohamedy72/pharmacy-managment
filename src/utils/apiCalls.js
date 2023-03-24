@@ -48,3 +48,13 @@ export async function updateSingleMedicine(medID, updatedData) {
     throw new Error("Cannot update current item");
   }
 }
+/**
+ * App Authentication
+ */
+
+export async function signInWithMagicLink(email) {
+  const { data, error } = await supabase.auth.signInWithOtp({ email });
+  if (error) {
+    throw new Error("Cannot login with this email");
+  }
+}

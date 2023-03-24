@@ -36,7 +36,8 @@ import EditExistingMedicine, {
   editExistingMedicineAction,
   editExistingMedicineLoader,
 } from "@/components/SubRoutes/EditExistingMedicine/EditExistingMedicine";
-import Login from "@/components/Routes/Login/Login";
+import Login from "@/components/Routes/Auth/Login";
+import Signup from "@/components/Routes/Auth/Signup";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -126,6 +127,7 @@ export const router = createBrowserRouter(
       />
 
       <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
 
       <Route path="*" element={<h1>Coming Soon...</h1>} />
     </Route>

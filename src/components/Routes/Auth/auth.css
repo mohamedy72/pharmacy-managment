@@ -1,0 +1,16 @@
+.auth_container {
+  padding: 0;
+  height: calc(100vh - 74px);
+  display: flex;
+  gap: 0.5rem 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  width: 450px;
+  max-width: 80%;
+  grid-template-columns: 1fr;
+  margin-block-start: -3rem;
+}

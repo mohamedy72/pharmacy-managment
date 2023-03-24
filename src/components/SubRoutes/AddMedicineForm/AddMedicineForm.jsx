@@ -19,6 +19,8 @@ import {
 import { useNavigate } from "react-router-dom";
 
 const AddMedicines = () => {
+  // TODO: Refactor to React Router DOM form mutation
+
   const navigate = useNavigate();
   const [error, setError] = useState(null);
   const onSubmit = async (values, onSubmitProps) => {

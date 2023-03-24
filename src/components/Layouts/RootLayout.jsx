@@ -1,12 +1,6 @@
 import useBodyDismiss from "@/hooks/useBodyDismiss";
-import { getAllMedicines } from "@/utils/apiCalls";
 import { useEffect, useRef, useState } from "react";
-import {
-  Outlet,
-  useLoaderData,
-  useLocation,
-  useNavigate,
-} from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { Header, Sidebar } from "../UI";
 import { Layouts } from "./Layouts";
 

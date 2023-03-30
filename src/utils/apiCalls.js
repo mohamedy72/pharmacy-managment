@@ -66,7 +66,3 @@ export async function signup(email, password, username) {
     },
   });
 }
-
-export async function signOut() {
-  return await supabase.auth.signOut();
-}

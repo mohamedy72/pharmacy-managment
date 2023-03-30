@@ -30,8 +30,8 @@
 }
 .dropdown_menu > p > svg {
   margin-inline-end: 0.75rem;
-  width: 1.2rem;
-  height: 1.2rem;
+  /* width: 1.2rem;
+  height: 1.2rem; */
 }
 
 .dropdown_menu > p > a {

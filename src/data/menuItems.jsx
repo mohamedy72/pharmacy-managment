@@ -9,12 +9,12 @@ import {
 export const menuItems = [
   {
     title: "Dashboard",
-    icon: <Kanban />,
+    icon: <Kanban size={18} />,
     path: "dashboard",
   },
   {
     title: "Inventory",
-    icon: <Archive />,
+    icon: <Archive size={18} />,
     path: "inventory",
     chevron: <ChevronDown />,
     submenus: [
@@ -30,7 +30,7 @@ export const menuItems = [
   },
   {
     title: "Reports",
-    icon: <EnvelopePaper />,
+    icon: <EnvelopePaper size={18} />,
     path: "reports",
     chevron: <ChevronDown />,
     submenus: [
@@ -46,7 +46,7 @@ export const menuItems = [
   },
   {
     title: "Configurations",
-    icon: <Gear />,
+    icon: <Gear size={18} />,
     path: "config",
   },
 ];

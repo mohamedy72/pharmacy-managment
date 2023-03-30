@@ -6,12 +6,9 @@ import { useEffect, useRef, useState } from "react";
 import { Outlet } from "react-router-dom";
 
 const ProtectedRoutes = () => {
-  const { loading } = useAuth();
+  const { loading, authUser } = useAuth();
   const [navOpen, setNavOpen] = useState(false);
   const sideBarRef = useRef(null);
-
-  const { authUser } = useAuth();
-  console.log(authUser);
 
   useEffect(() => {
     useBodyDismiss(sideBarRef, setNavOpen);
@@ -25,7 +22,8 @@ const ProtectedRoutes = () => {
   };
 
   return (
-    !loading && (
+    !loading &&
+    authUser && (
       <div className="app">
         <Sidebar
           navOpen={navOpen}

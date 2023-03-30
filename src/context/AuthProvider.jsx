@@ -9,6 +9,7 @@ export const AuthProvider = ({ children }) => {
   const [sessionObj, setSessionObj] = useState(null);
   const [authUser, setAuthUser] = useState(null);
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const getCurrentSession = async () => {
       const {
@@ -23,13 +24,11 @@ export const AuthProvider = ({ children }) => {
 
     const { data: authSession } = supabase.auth.onAuthStateChange(
       async (event, session) => {
-        if (event == "SIGNED_IN") {
-          console.log("sign in", session);
+        if (event === "SIGNED_IN") {
           setSessionObj(session);
           setAuthUser(session?.user);
           setLoading(false);
-        } else if (event == "SIGNED_OUT") {
-          console.log("sign out", session);
+        } else if (event === "SIGNED_OUT") {
           setSessionObj(null);
           setAuthUser(null);
           setLoading(false);
@@ -45,6 +44,7 @@ export const AuthProvider = ({ children }) => {
   const value = {
     authUser,
     sessionObj,
+    signout: () => supabase.auth.signOut(),
   };
 
   return (

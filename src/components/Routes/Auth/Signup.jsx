@@ -8,6 +8,8 @@ import { Form, Link, redirect } from "react-router-dom";
 import { initialValues, validationSchema } from "./authValidation";
 import { signup } from "@/utils/apiCalls";
 
+import logo from "@Assets/images/logo.png";
+
 const Signup = () => {
   const [error, setError] = useState(null);
 
@@ -16,6 +18,9 @@ const Signup = () => {
       <Formik initialValues={initialValues} validationSchema={validationSchema}>
         {(_formik) => (
           <div className="signup_form">
+            <p className="logo">
+              <img src={logo} alt="pharmaone logo" /> pharma one
+            </p>
             <Form className="form" method="post">
               {error && <Error duration={4000} error={error} />}
               <div className="form_container">

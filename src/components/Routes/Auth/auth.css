@@ -9,10 +9,24 @@
   justify-content: center;
   align-items: center;
 }
+.login_form,
+.signup_form {
+  border: 1px solid rgba(0, 0, 0, 0.344);
+  border-radius: 10px;
+  box-shadow: 0 0 50px rgba(236, 231, 231, 0.776);
+  padding: 2rem;
+}
+
+.auth_container .logo {
+  background-color: var(--dark-gray);
+  color: var(--white);
+  justify-content: center;
+  border-radius: 5px;
+  padding-block: 0.5rem;
+}
 
 .form {
   grid-template-columns: 1fr;
-  margin-block-start: -3rem;
 }
 
 .auth_container .auth_nav {

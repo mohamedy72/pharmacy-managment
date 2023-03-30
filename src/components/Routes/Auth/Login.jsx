@@ -3,10 +3,10 @@ import "./auth.css";
 import { ActionButton } from "@/components/UI/Button/Button";
 import { Error, TextInput } from "@/components/Widgets";
 import { Formik } from "formik";
-import { useState } from "react";
 import { Form, Link, redirect, useActionData } from "react-router-dom";
 import { initialValues, validationSchema } from "./authValidation";
 import { login } from "@/utils/apiCalls";
+import logo from "@Assets/images/logo.png";
 
 const Login = () => {
   const actionError = useActionData();
@@ -16,6 +16,9 @@ const Login = () => {
       <Formik initialValues={initialValues} validationSchema={validationSchema}>
         {(formik) => (
           <div className="login_form">
+            <p className="logo">
+              <img src={logo} alt="pharmaone logo" /> pharma one
+            </p>
             <Form className="form" method="post">
               {actionError && <Error duration={4000} error={actionError} />}
               <div className="form_container">

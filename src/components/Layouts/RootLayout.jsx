@@ -1,44 +1,27 @@
-import useBodyDismiss from "@/hooks/useBodyDismiss";
-import { useEffect, useRef, useState } from "react";
-import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import { Header, Sidebar } from "../UI";
-import { Layouts } from "./Layouts";
+import { useAuth } from "@/context/AuthProvider";
+import { useEffect } from "react";
+import { Outlet, redirect, useNavigate } from "react-router-dom";
 
 const RootLayout = () => {
-  const [search, setSearch] = useState("");
-  const [navOpen, setNavOpen] = useState(false);
-  const sideBarRef = useRef(null);
   const navigate = useNavigate();
-  const { pathname } = useLocation();
+  const { authUser, sessionObj } = useAuth();
+  console.log(authUser, sessionObj);
+  // User doesn't exist => Render/Redirect to /login
+
+  // User exists but didn't confirm email (No session) => Popup saying "Please confirm your email" after login
+
+  // User exists => Render/Redirect to /dashboard
 
   useEffect(() => {
-    if (pathname === "/") navigate("/dashboard");
-    useBodyDismiss(sideBarRef, setNavOpen);
-  }, [sideBarRef]);
+    if ((!authUser, !sessionObj)) {
+      navigate("/signup");
+    }
+    if (authUser && sessionObj) {
+      navigate("/dashboard");
+    }
+  }, []);
 
-  const handleNavOpen = () => {
-    setNavOpen(true);
-  };
-  const handleNavClose = () => {
-    setNavOpen(false);
-  };
-
-  return (
-    <div className="app">
-      <Sidebar
-        navOpen={navOpen}
-        handleNavClose={handleNavClose}
-        handleNavOpen={handleNavOpen}
-        sideBarRef={sideBarRef}
-      />
-      <Layouts>
-        <Header handleNavOpen={handleNavOpen} />
-        <section>
-          <Outlet />
-        </section>
-      </Layouts>
-    </div>
-  );
+  return <Outlet />;
 };
 
 export default RootLayout;

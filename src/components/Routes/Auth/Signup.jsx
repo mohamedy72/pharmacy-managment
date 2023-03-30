@@ -4,8 +4,9 @@ import { ActionButton } from "@/components/UI/Button/Button";
 import { Error, TextInput } from "@/components/Widgets";
 import { Formik } from "formik";
 import { useState } from "react";
-import { Form, Link } from "react-router-dom";
+import { Form, Link, redirect } from "react-router-dom";
 import { initialValues, validationSchema } from "./authValidation";
+import { signup } from "@/utils/apiCalls";
 
 const Signup = () => {
   const [error, setError] = useState(null);
@@ -13,7 +14,7 @@ const Signup = () => {
   return (
     <div className="auth_container">
       <Formik initialValues={initialValues} validationSchema={validationSchema}>
-        {(formik) => (
+        {(_formik) => (
           <div className="signup_form">
             <Form className="form" method="post">
               {error && <Error duration={4000} error={error} />}
@@ -22,6 +23,9 @@ const Signup = () => {
               </div>
               <div className="form_container">
                 <TextInput label="Email Address" name="email" type="email" />
+              </div>
+              <div className="form_container">
+                <TextInput label="Password" name="password" type="password" />
               </div>
 
               <ActionButton type="submit" label="Sign up" btnClass="btn_red" />
@@ -45,4 +49,12 @@ const Signup = () => {
 
 export default Signup;
 
-export async function signupAction() {}
+export async function signupAction({ request }) {
+  const formData = await request.formData();
+  const { username, email, password } = Object.fromEntries(formData);
+  const { _data, error } = await signup(email, password, username);
+  if (error) {
+    return error;
+  }
+  return redirect("/login");
+}

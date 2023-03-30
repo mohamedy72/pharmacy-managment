@@ -31,104 +31,106 @@ import NewMedicinePage, {
 } from "@Components/Routes/NewMedicinePage/NewMedicinePage";
 import { detailsLoader } from "@/components/SubRoutes/MedicineDetails/MedicineDetails";
 import { medicinesListLoader } from "@/components/SubRoutes/MedicinesList/MedicinesList";
-import { medicinesGroupLoader } from "@/components/SubRoutes/MedicinesGroup/MedicinesGroup";
 import EditExistingMedicine, {
   editExistingMedicineAction,
   editExistingMedicineLoader,
 } from "@/components/SubRoutes/EditExistingMedicine/EditExistingMedicine";
-import Login from "@/components/Routes/Auth/Login";
-import Signup from "@/components/Routes/Auth/Signup";
+import Login, { loginAction } from "@/components/Routes/Auth/Login";
+import Signup, { signupAction } from "@/components/Routes/Auth/Signup";
+import ProtectedRoutes from "@/components/Routes/ProtectedRoutes/ProtectedRoutes";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
-      <Route
-        path="dashboard"
-        element={<Dashboard />}
-        handle={{
-          crumb: () => <Link to="/dashboard">Dashboard</Link>,
-        }}
-      />
-      <Route
-        path="inventory"
-        element={<Inventory />}
-        handle={{
-          crumb: () => <Link to="/inventory">Inventory</Link>,
-        }}
-      >
+      <Route path="/login" element={<Login />} action={loginAction} />
+      <Route path="/signup" element={<Signup />} action={signupAction} />
+
+      <Route element={<ProtectedRoutes />}>
         <Route
-          path="medicineslist"
-          element={
-            <Suspense fallback={<h1>Loading...</h1>}>
-              <MedicinesList />
-            </Suspense>
-          }
-          loader={medicinesListLoader}
+          index
+          path="dashboard"
+          element={<Dashboard />}
           handle={{
-            crumb: () => (
-              <Link to="/inventory/medicineslist">Medicines List</Link>
-            ),
+            crumb: () => <Link to="/dashboard">Dashboard</Link>,
+          }}
+        />
+        <Route
+          path="inventory"
+          element={<Inventory />}
+          handle={{
+            crumb: () => <Link to="/inventory">Inventory</Link>,
           }}
         >
           <Route
-            path=":medID"
+            path="medicineslist"
             element={
               <Suspense fallback={<h1>Loading...</h1>}>
-                <MedicineDetails />
+                <MedicinesList />
               </Suspense>
             }
-            loader={detailsLoader}
+            loader={medicinesListLoader}
             handle={{
-              crumb: (data) => <span>{data.med_name}</span>,
+              crumb: () => (
+                <Link to="/inventory/medicineslist">Medicines List</Link>
+              ),
+            }}
+          >
+            <Route
+              path=":medID"
+              element={
+                <Suspense fallback={<h1>Loading...</h1>}>
+                  <MedicineDetails />
+                </Suspense>
+              }
+              loader={detailsLoader}
+              handle={{
+                crumb: (data) => <span>{data.med_name}</span>,
+              }}
+            />
+            <Route
+              path=":medID/edit"
+              element={<EditExistingMedicine />}
+              loader={editExistingMedicineLoader}
+              action={editExistingMedicineAction}
+            />
+          </Route>
+          {/* TODO: Implment Medicines Group page  */}
+          <Route
+            path="new"
+            element={<NewMedicinePage />}
+            action={newMedicineAction}
+          />
+        </Route>
+        <Route
+          path="reports"
+          element={<Reports />}
+          handle={{
+            crumb: () => <Link to="/reports">Reports</Link>,
+          }}
+        >
+          <Route
+            path="sales"
+            element={<Sales />}
+            handle={{
+              crumb: () => <Link to="/reports/sales">Sales</Link>,
             }}
           />
           <Route
-            path=":medID/edit"
-            element={<EditExistingMedicine />}
-            loader={editExistingMedicineLoader}
-            action={editExistingMedicineAction}
+            path="payments"
+            element={<Payments />}
+            handle={{
+              crumb: () => <Link to="/reports/payments">Payments</Link>,
+            }}
           />
         </Route>
-        {/* TODO: Implment Medicines Group page  */}
         <Route
-          path="new"
-          element={<NewMedicinePage />}
-          action={newMedicineAction}
-        />
-      </Route>
-      <Route
-        path="reports"
-        element={<Reports />}
-        handle={{
-          crumb: () => <Link to="/reports">Reports</Link>,
-        }}
-      >
-        <Route
-          path="sales"
-          element={<Sales />}
+          path="config"
+          element={<Configuration />}
           handle={{
-            crumb: () => <Link to="/reports/sales">Sales</Link>,
-          }}
-        />
-        <Route
-          path="payments"
-          element={<Payments />}
-          handle={{
-            crumb: () => <Link to="/reports/payments">Payments</Link>,
+            crumb: () => <Link to="/config">Configuration</Link>,
           }}
         />
       </Route>
-      <Route
-        path="config"
-        element={<Configuration />}
-        handle={{
-          crumb: () => <Link to="/config">Configuration</Link>,
-        }}
-      />
-
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<Signup />} />
-
       <Route path="*" element={<h1>Coming Soon...</h1>} />
     </Route>
   )

@@ -25,7 +25,7 @@
   padding-block: 0.5rem;
 }
 
-.form {
+.auth_container .form {
   grid-template-columns: 1fr;
 }
 

@@ -1,4 +1,4 @@
-.form {
+.add_medicine_form {
   max-width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -6,29 +6,25 @@
   padding-block: 1.875rem;
 }
 
-.form_container {
-  width: 100%;
-}
-
-.form_container label {
+.form_control label {
   margin-block-end: 0.3125rem;
   text-transform: capitalize;
 }
 
-.selectbox_control {
+.form_selectbox {
   position: relative;
   display: flex;
   flex-direction: column;
 }
 
-.selectbox_control select {
+.form_selectbox select {
   background-color: #e3ebf3;
   padding: 0.6875rem 1.25rem;
   border: 0.2px solid #1d242e69;
   border-radius: 4px;
 }
 
-.textarea_control {
+.form_textarea {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -40,22 +36,19 @@
   opacity: 0.5;
 }
 
-.form_container.btn_form {
+.add_medicine_form .btn_form {
+  width: 25%;
   grid-column: 1 / -1;
 }
 
 /* 500px */
 
-@media screen and (max-width: 31.25rem) {
-  .form {
+@media screen and (max-width: 40.625rem) {
+  .add_medicine_form {
     grid-template-columns: 1fr;
   }
-  .form_container {
-    width: 80%;
-    margin-inline: auto;
-  }
 
-  .form_container .btn {
+  .add_medicine_form .btn_form {
     width: 100%;
   }
 }

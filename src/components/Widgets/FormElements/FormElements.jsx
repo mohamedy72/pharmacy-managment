@@ -26,7 +26,7 @@ export const Textarea = ({ label, ...props }) => {
   const [field, meta] = useField(props);
 
   return (
-    <p className="textarea_control">
+    <p className="form_control form_textarea">
       <label htmlFor={props.name}>{label}</label>
       <textarea id={props.name} {...props} {...field} />
       {meta.touched && meta.error ? (
@@ -40,7 +40,7 @@ export const FormSelectbox = ({ label, options, ...props }) => {
   const [field, meta] = useField(props);
 
   return (
-    <p className="selectbox_control">
+    <p className="form_control form_selectbox">
       <label htmlFor={field.name}>{label}</label>
       <select id={field.name} {...field} {...props}>
         {options.map((option) => (

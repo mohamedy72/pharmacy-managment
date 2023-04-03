@@ -8,20 +8,6 @@ export async function getAllMedicines() {
   return data;
 }
 
-export async function addNewMedicine(medicine) {
-  const { _, error, status } = await supabase
-    .from("medicines")
-    .insert([medicine])
-    .select();
-
-  if (error) {
-    throw {
-      message: error.message,
-      status,
-    };
-  }
-}
-
 export async function getSingleMedicine(medID) {
   const { data, error, status } = await supabase
     .from("medicines")
@@ -37,6 +23,20 @@ export async function getSingleMedicine(medID) {
   return data;
 }
 
+export async function addNewMedicine(medicine) {
+  const { _, error, status } = await supabase
+    .from("medicines")
+    .insert([medicine])
+    .select();
+
+  if (error) {
+    throw {
+      message: error.message,
+      status,
+    };
+  }
+}
+
 export async function updateSingleMedicine(medID, updatedData) {
   const { data, error } = await supabase
     .from("medicines")
@@ -49,6 +49,18 @@ export async function updateSingleMedicine(medID, updatedData) {
   }
 }
 
+export async function deleteSingleMedicine(medID) {
+  const { data, error } = await supabase
+    .from("medicines")
+    .delete()
+    .eq("med_ID", medID);
+
+  if (error) {
+    throw new Error(`Cannot delete medicine with ID: ${medID}`);
+  }
+}
+
+// Auth helpers
 export async function login(email, password) {
   return await supabase.auth.signInWithPassword({
     email,

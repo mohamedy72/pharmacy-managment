@@ -10,10 +10,7 @@ const RootLayout = () => {
     if ((!authUser, !sessionObj)) {
       navigate("/login");
     }
-    if (authUser && sessionObj) {
-      navigate("/dashboard");
-    }
-  }, [authUser, sessionObj]);
+  }, []);
 
   return <Outlet />;
 };

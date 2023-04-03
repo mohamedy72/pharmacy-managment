@@ -29,7 +29,10 @@ const MedicinesGroup = lazy(() =>
 import NewMedicinePage, {
   action as newMedicineAction,
 } from "@Components/Routes/NewMedicinePage/NewMedicinePage";
-import { detailsLoader } from "@/components/SubRoutes/MedicineDetails/MedicineDetails";
+import {
+  detailsAction,
+  detailsLoader,
+} from "@/components/SubRoutes/MedicineDetails/MedicineDetails";
 import { medicinesListLoader } from "@/components/SubRoutes/MedicinesList/MedicinesList";
 import EditExistingMedicine, {
   editExistingMedicineAction,
@@ -77,15 +80,12 @@ export const router = createBrowserRouter(
           >
             <Route
               path=":medID"
-              element={
-                <Suspense fallback={<h1>Loading...</h1>}>
-                  <MedicineDetails />
-                </Suspense>
-              }
+              element={<MedicineDetails />}
               loader={detailsLoader}
               handle={{
                 crumb: (data) => <span>{data.med_name}</span>,
               }}
+              action={detailsAction}
             />
             <Route
               path=":medID/edit"

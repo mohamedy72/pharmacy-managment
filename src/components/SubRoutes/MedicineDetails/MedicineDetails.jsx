@@ -1,12 +1,12 @@
 import "./medicinedetails.css";
-import { useLoaderData } from "react-router-dom";
+import { Form, redirect, useLoaderData } from "react-router-dom";
 import { GridLayout } from "@/components/Layouts/Layouts";
 import LayoutHeader from "@/components/Layouts/LayoutHeader/LayoutHeader";
 import { PenFill, Trash3Fill } from "react-bootstrap-icons";
 import { Breadcrumbs } from "@/components/UI/Breadcrumbs/Breadcrumbs";
 import { Info, Searchbar } from "@/components/Widgets";
 import { Suspense } from "react";
-import { getSingleMedicine } from "@/utils/apiCalls";
+import { deleteSingleMedicine, getSingleMedicine } from "@/utils/apiCalls";
 import { ActionButton } from "@/components/UI/Button/Button";
 
 const MedicineDetails = () => {
@@ -74,14 +74,15 @@ const MedicineDetails = () => {
             paragraph={medicine?.side_effects}
           />
         </GridLayout>
-        <ActionButton
-          type="button"
-          label="Delete Medicine"
-          iconDir="left"
-          btnClass="btn_white"
-          icon={<Trash3Fill />}
-          onClick=""
-        />
+        <Form method="post">
+          <ActionButton
+            type="submit"
+            label="Delete Medicine"
+            iconDir="left"
+            btnClass="btn_white"
+            icon={<Trash3Fill />}
+          />
+        </Form>
       </section>
     </Suspense>
   );
@@ -93,4 +94,11 @@ export const detailsLoader = async ({ params }) => {
   const { medID } = params;
   const res = await getSingleMedicine(medID);
   return res;
+};
+
+export const detailsAction = async ({ params }) => {
+  const { medID } = params;
+  const res = await deleteSingleMedicine(medID);
+  console.log(res);
+  return redirect("/inventory/medicineslist");
 };

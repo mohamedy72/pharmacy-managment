@@ -41,6 +41,7 @@ import EditExistingMedicine, {
 import Login, { loginAction } from "@/components/Routes/Auth/Login";
 import Signup, { signupAction } from "@/components/Routes/Auth/Signup";
 import ProtectedRoutes from "@/components/Routes/ProtectedRoutes/ProtectedRoutes";
+import { medicinesGroupLoader } from "@/components/SubRoutes/MedicinesGroup/MedicinesGroup";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -95,6 +96,15 @@ export const router = createBrowserRouter(
             />
           </Route>
           {/* TODO: Implment Medicines Group page  */}
+          <Route
+            path="medicinesgroup"
+            element={
+              <Suspense fallback={<h1>Loading...</h1>}>
+                <MedicinesGroup />
+              </Suspense>
+            }
+            loader={medicinesGroupLoader}
+          />
           <Route
             path="new"
             element={<NewMedicinePage />}

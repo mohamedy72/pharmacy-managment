@@ -2,7 +2,7 @@ import * as Yup from "yup";
 
 export const selectGroupOptions = [
   { key: "Select an option", value: "" },
-  { key: "General Medicines", value: "generalMedicine" },
+  { key: "General Medicines", value: "General_Medicine" },
   { key: "Diabetes", value: "diabetes" },
 ];
 

@@ -15,7 +15,7 @@ export function Breadcrumbs() {
       {crumbs.map((crumb, ind) => {
         const notLast = ind < crumbs.length - 1;
         return (
-          <Fragment>
+          <Fragment key={ind * 2.2}>
             {notLast ? (
               <>
                 <Link to={crumb.props.to} className="name">

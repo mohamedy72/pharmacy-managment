@@ -55,7 +55,7 @@ const MedicinesList = () => {
             <option value="select group" defaultChecked>
               Select group
             </option>
-            <option value="generic">Generic medicine</option>
+            <option value="general_medicine">General medicine</option>
             <option value="diabetes">Diabetes</option>
             <option value="hypertension">Hypertens ion</option>
           </Selectbox>

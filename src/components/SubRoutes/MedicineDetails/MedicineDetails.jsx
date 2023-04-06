@@ -5,7 +5,6 @@ import LayoutHeader from "@/components/Layouts/LayoutHeader/LayoutHeader";
 import { PenFill, Trash3Fill } from "react-bootstrap-icons";
 import { Breadcrumbs } from "@/components/UI/Breadcrumbs/Breadcrumbs";
 import { Info, Searchbar } from "@/components/Widgets";
-import { Suspense } from "react";
 import { deleteSingleMedicine, getSingleMedicine } from "@/utils/apiCalls";
 import { ActionButton } from "@/components/UI/Button/Button";
 
@@ -13,7 +12,6 @@ const MedicineDetails = () => {
   const [medicine] = useLoaderData();
 
   return (
-    <Suspense fallback={<h1>Hello</h1>}>
       <section className="medicine_detail">
         <LayoutHeader
           btnClass="btn_edit"
@@ -84,7 +82,6 @@ const MedicineDetails = () => {
           />
         </Form>
       </section>
-    </Suspense>
   );
 };
 

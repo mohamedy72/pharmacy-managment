@@ -10,25 +10,27 @@ export function Breadcrumbs() {
     .filter((match) => Boolean(match.handle?.crumb))
     .map((match) => match.handle.crumb(match.data));
 
-  const breadcrumbs = crumbs.map((crumb, ind) => {
-    const notLast = ind < crumbs.length - 1;
-    return (
-      <Fragment key={ind * 1.2}>
-        {notLast ? (
-          <>
-            <Link to={crumb.props.to} className="name">
-              {crumb.props.children}
-            </Link>
-            <span className="arrow">&gt;</span>
-          </>
-        ) : (
-          <Link to={crumb.props.to} className="name">
-            {crumb.props.children}
-          </Link>
-        )}
-      </Fragment>
-    );
-  });
-
-  return breadcrumbs;
+  return (
+    <>
+      {crumbs.map((crumb, ind) => {
+        const notLast = ind < crumbs.length - 1;
+        return (
+          <Fragment>
+            {notLast ? (
+              <>
+                <Link to={crumb.props.to} className="name">
+                  {crumb.props?.children}
+                </Link>
+                <span className="arrow">&gt;</span>
+              </>
+            ) : (
+              <Link to={crumb.props.to} className="name">
+                {crumb.props?.children}
+              </Link>
+            )}
+          </Fragment>
+        );
+      })}
+    </>
+  );
 }

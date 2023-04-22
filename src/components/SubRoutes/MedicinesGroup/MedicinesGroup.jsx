@@ -59,8 +59,8 @@ const MedicinesGroup = () => {
                   <th>{groupName.replace("_", " ")}</th>
                   <td>{meds.length}</td>
                   <td>
-                    <Link href="#">
-                      details <ArrowRightShort />
+                    <Link to={groupName}>
+                      Details <ArrowRightShort />
                     </Link>
                   </td>
                 </tr>

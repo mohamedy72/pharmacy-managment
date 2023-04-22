@@ -1,7 +1,7 @@
 import "./auth.css";
 
 import { ActionButton } from "@/components/UI/Button/Button";
-import { Error, TextInput } from "@/components/Widgets";
+import { Error as PopupError, TextInput } from "@/components/Widgets";
 import { Formik } from "formik";
 import { Form, Link, redirect, useActionData } from "react-router-dom";
 import { initialValues, validationSchema } from "./authValidation";
@@ -20,7 +20,9 @@ const Login = () => {
               <img src={logo} alt="pharmaone logo" /> pharma one
             </p>
             <Form className="form" method="post">
-              {actionError && <Error duration={4000} error={actionError} />}
+              {actionError && (
+                <PopupError duration={4000} error={actionError} />
+              )}
               <div className="form_container">
                 <TextInput label="Email Address" name="email" type="email" />
               </div>
@@ -54,9 +56,9 @@ export async function loginAction({ request }) {
   const { email, password } = Object.fromEntries(formData);
   const { data, error } = await login(email, password);
 
-  if (data.user && !data.session) throw new Error("Please confirm your email");
+  if (data.user && !data.session) return new Error("Please confirm your email");
   if (error) {
-    return error;
+    return new Error("Can't login. Please check your credentials");
   }
   if (data.user && data.session) {
     return redirect("/dashboard");

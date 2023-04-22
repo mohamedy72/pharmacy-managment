@@ -42,6 +42,7 @@ import Login, { loginAction } from "@/components/Routes/Auth/Login";
 import Signup, { signupAction } from "@/components/Routes/Auth/Signup";
 import ProtectedRoutes from "@/components/Routes/ProtectedRoutes/ProtectedRoutes";
 import { medicinesGroupLoader } from "@/components/SubRoutes/MedicinesGroup/MedicinesGroup";
+import MedicinesGroupDetails from "@/components/SubRoutes/MedicinesGroupDetails/MedicinesGroupDetails";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -103,8 +104,15 @@ export const router = createBrowserRouter(
                 <MedicinesGroup />
               </Suspense>
             }
+            handle={{
+              crumb: () => (
+                <Link to="/inventory/medicinesgroup">Medicines Group</Link>
+              ),
+            }}
             loader={medicinesGroupLoader}
-          />
+          >
+            <Route path=":medGroup" element={<MedicinesGroupDetails />} />
+          </Route>
           <Route
             path="new"
             element={<NewMedicinePage />}

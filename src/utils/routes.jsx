@@ -42,7 +42,9 @@ import Login, { loginAction } from "@/components/Routes/Auth/Login";
 import Signup, { signupAction } from "@/components/Routes/Auth/Signup";
 import ProtectedRoutes from "@/components/Routes/ProtectedRoutes/ProtectedRoutes";
 import { medicinesGroupLoader } from "@/components/SubRoutes/MedicinesGroup/MedicinesGroup";
-import MedicinesGroupDetails from "@/components/SubRoutes/MedicinesGroupDetails/MedicinesGroupDetails";
+import MedicinesGroupDetails, {
+  medicinesGroupDetailsLoader,
+} from "@/components/SubRoutes/MedicinesGroupDetails/MedicinesGroupDetails";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -96,7 +98,6 @@ export const router = createBrowserRouter(
               action={editExistingMedicineAction}
             />
           </Route>
-          {/* TODO: Implment Medicines Group page  */}
           <Route
             path="medicinesgroup"
             element={
@@ -111,7 +112,11 @@ export const router = createBrowserRouter(
             }}
             loader={medicinesGroupLoader}
           >
-            <Route path=":medGroup" element={<MedicinesGroupDetails />} />
+            <Route
+              path=":medGroup"
+              element={<MedicinesGroupDetails />}
+              loader={medicinesGroupDetailsLoader}
+            />
           </Route>
           <Route
             path="new"

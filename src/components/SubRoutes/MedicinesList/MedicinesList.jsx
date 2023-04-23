@@ -34,7 +34,7 @@ const MedicinesList = () => {
       <LayoutHeader
         layoutClass="inventory_header"
         textClass="inventory_header_text"
-        btnClass="inventory_btn"
+        btnClass="btn_red"
         iconDir="left"
         label="Add new item"
         text={<Breadcrumbs />}

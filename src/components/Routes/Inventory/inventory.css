@@ -25,15 +25,7 @@
   background-color: rgba(3, 169, 245, 0.3);
 }
 
-.inventory_btn {
-  background-color: var(--reddish);
-  color: var(--white);
-  border-radius: 5px;
-  transition: background-color 0.3s ease-in-out;
-}
-.inventory_btn:hover {
-  background-color: rgba(240, 72, 62, 0.8);
-}
+
 
 .inventory svg {
   width: 1rem;

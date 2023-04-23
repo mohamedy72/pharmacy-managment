@@ -28,6 +28,9 @@
   color: var(--white);
   background-color: var(--reddish);
 }
+.btn_red:hover {
+  background-color: rgba(187, 36, 28, 0.938);
+}
 
 .btn_edit {
   background: #03a9f5;
@@ -38,4 +41,10 @@
   background-color: var(--white);
   color: var(--reddish);
   border: 0.5px solid var(--reddish);
+}
+
+.btn_transparent {
+  border: none;
+  background: none;
+  color: #f0483e;
 }

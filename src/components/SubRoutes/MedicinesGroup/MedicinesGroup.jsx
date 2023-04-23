@@ -5,11 +5,18 @@ import Table from "@/components/UI/Tables/Table";
 import { Searchbar } from "@/components/Widgets";
 import { groupTableHeader } from "@/data/groupTableHeader";
 import { ArrowDownUp, ArrowRightShort, Plus } from "react-bootstrap-icons";
-import { Link, useLoaderData } from "react-router-dom";
+import {
+  Link,
+  Outlet,
+  useLoaderData,
+  useLocation,
+  useParams,
+} from "react-router-dom";
 import { getAllMedicines } from "@/utils/apiCalls";
 
 const MedicinesGroup = () => {
   const medicines = useLoaderData();
+  const { medGroup: groupParam } = useParams();
 
   const medGroup = medicines?.reduce((group, currentMed) => {
     const { med_group, med_name } = currentMed;
@@ -25,12 +32,16 @@ const MedicinesGroup = () => {
     </th>
   ));
 
+  if (groupParam) {
+    return <Outlet />;
+  }
+
   return (
     <section className="group_list">
       <LayoutHeader
         layoutClass="inventory_header"
         textClass="inventory_header_text"
-        btnClass="inventory_btn"
+        btnClass="btn_red"
         iconDir="left"
         label="Add new Group"
         text={<Breadcrumbs />}
